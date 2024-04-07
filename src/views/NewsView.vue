@@ -33,7 +33,7 @@
                     <a @click="router.push('/about')">资讯中心</a>
                   </li>
                   <li class="uk-width-expand">
-                    <a href="/cactivity/recommendedactivity.html">活动公告</a>
+                    <a @click="router.push('/RecommendedactivityView')">活动公告</a>
                   </li>
                   <li class="uk-width-expand">
                     <a
