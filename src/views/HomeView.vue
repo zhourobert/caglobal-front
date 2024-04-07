@@ -1,0 +1,2222 @@
+<template>
+  <div class="topbar">
+    <div class="uk-container">
+      <div class="uk-grid">
+        <div class="uk-width-auto uk-first-column">
+          <a class="logo" href=""
+            >
+<!--            src="https://www.yesglobal.com.cn/res/202010/14/80073c4fdd34f875.jpg"-->
+            <img
+              src=""
+          /></a>
+        </div>
+        <div class="uk-width-expand">
+          <nav>
+            <ul class="uk-grid-collapse uk-grid" uk-grid="">
+              <li class="uk-width-expand uk-first-column">
+                <a @click="router.push('/')">首页</a>
+              </li>
+              <li class="uk-width-expand">
+                <a @click="router.push('/about')">资讯中心</a>
+              </li>
+              <li class="uk-width-expand">
+                <a href="">活动公告</a>
+              </li>
+              <li class="uk-width-expand">
+                <a
+                  href=""
+                  @mouseenter="ishaiwai = true"
+                  @mouseleave="ishaiwai = false"
+                  >海外生活服务</a
+                >
+                <div
+                  class="nav-dropdown uk-dropdown"
+                  :class="{ 'uk-open': ishaiwai }"
+                >
+                  <a href="" title="海外安家服务" target="">海外安家服务</a>
+                  <a href="" title="海外保险服务" target="">海外保险服务</a>
+                  <a href="" title="海外教育规划" target="">海外教育规划</a>
+                </div>
+              </li>
+              <li class="uk-width-expand">
+                <a
+                  href=""
+                  @mouseenter="isguanyu = true"
+                  @mouseleave="isguanyu = false"
+                  >关于寰宇</a
+                >
+                <div
+                  class="nav-dropdown uk-dropdown"
+                  :class="{ 'uk-open': isguanyu }"
+                >
+                  <a href="" title="行成海外" target="">行成海外</a>
+                  <a href="" title="创始人寄语" target="">创始人寄语</a>
+                  <a href="" title="全球合伙人" target="">全球合伙人</a>
+                  <a href="" title="资料下载" target="">资料下载</a>
+                  <a href="" title="全球客户投诉平台" target=""
+                    >全球客户投诉平台</a
+                  >
+                  <a href="" title="联系我们" target="">联系我们</a>
+                </div>
+              </li>
+              <li class="uk-width-expand">
+                <a href="">EB-1A成功案例</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="uk-width-auto topbar-contact">
+          <div class="uk-flex uk-flex-middle">
+<!--            TODO 把这里换掉成自己的静态资源-->
+            <img src="https://www.yesglobal.com.cn/tpl/www/images/phone.png" />
+            <span>400-001-9801</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--  TODO：这些次级目录都需要完善不要跳转到对方网页上-->
+  <div class="subnav">
+    <div class="uk-container">
+      <div class="subnav-box">
+        <ul>
+          <li>
+            <a>美洲移民</a>
+            <div class="uk-dropdown">
+              <ul class="dp-switcher-title">
+                <li>
+                  <a href=""
+                    ><img
+                      src="https://www.yesglobal.com.cn/res/201812/17/c6f42f55336815e0.png"
+                    />
+                    美国</a
+                  >
+                </li>
+                <li>
+                  <a href=""
+                    ><img
+                      src="https://www.yesglobal.com.cn/res/201812/17/2fd3579168d83e25.png"
+                    />
+                    加拿大</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a class="" aria-expanded="false">欧洲移民</a>
+            <div class="uk-dropdown">
+              <ul class="dp-switcher-title">
+                <li>
+                  <a href=""
+                    ><img
+                      src="https://www.yesglobal.com.cn/res/201812/17/344ef3826194416f.png"
+                    />
+                    希腊</a
+                  >
+                </li>
+                <li class="">
+                  <a href=""
+                    ><img
+                      src="https://www.yesglobal.com.cn/res/201812/17/8c4d7f6487f4b49e.png"
+                    />
+                    西班牙</a
+                  >
+                </li>
+                <li class="">
+                  <a href=""
+                    ><img
+                      src="https://www.yesglobal.com.cn/res/201812/17/bab64e00d6379156.png"
+                    />
+                    马耳他</a
+                  >
+                </li>
+                <li>
+                  <a href=""
+                    ><img
+                      src="https://www.yesglobal.com.cn/res/201812/17/5ebe795419fabd60.png"
+                    />
+                    塞浦路斯</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="javascript:;" class="" aria-expanded="false">大洋洲移民</a>
+            <div class="uk-dropdown">
+              <ul class="dp-switcher-title">
+                <li>
+                  <a href=""
+                    ><img
+                      src="https://www.yesglobal.com.cn/res/201812/17/d7f3f37df0f33488.png"
+                    />
+                    澳大利亚</a
+                  >
+                </li>
+                <li>
+                  <a href=""
+                    ><img
+                      src="https://www.yesglobal.com.cn/res/201812/17/24e8cba64b0eef7a.png"
+                    />
+                    新西兰</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="javascript:;" class="">亚洲移民</a>
+            <div class="uk-dropdown">
+              <ul class="dp-switcher-title">
+                <li>
+                  <a href=""
+                    ><img
+                      src="https://www.yesglobal.com.cn/res/201906/13/50893a6357be4fe1.png"
+                    />
+                    土耳其</a
+                  >
+                </li>
+                <li>
+                  <a href=""
+                    ><img
+                      src="https://www.yesglobal.com.cn/res/201812/17/55bba832b41b646a.png"
+                    />
+                    中国</a
+                  >
+                </li>
+                <li>
+                  <a href=""
+                    ><img
+                      src="https://www.yesglobal.com.cn/res/201812/17/41ba4f2135ef9754.png"
+                    />
+                    中国香港</a
+                  >
+                </li>
+                <li>
+                  <a href=""
+                    ><img
+                      src="https://www.yesglobal.com.cn/res/201812/17/ddd4e3625b728756.png"
+                    />
+                    马来西亚</a
+                  >
+                </li>
+                <li>
+                  <a href=""
+                    ><img
+                      src="https://www.yesglobal.com.cn/res/201812/17/aa40a748bed4186b.png"
+                    />
+                    泰国</a
+                  >
+                </li>
+                <li>
+                  <a href=""
+                    ><img
+                      src="https://www.yesglobal.com.cn/res/201812/17/4c0734db950a6332.png"
+                    />
+                    日本</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="">海外置业</a></li>
+
+          <li>
+            <a href="javascript:;" class="">国际教育</a>
+            <div class="uk-dropdown">
+              <ul class="dp-switcher-title">
+                <li class="">
+                  <a href=""
+                    ><img
+                      src="https://www.yesglobal.com.cn/res/202107/29/148106ac906a65d9.png"
+                    />青少年教育</a
+                  >
+                </li>
+                <li class="">
+                  <a href=""
+                    ><img
+                      src="https://www.yesglobal.com.cn/res/202108/02/e211de22d71bb99d.png"
+                    />升学规划</a
+                  >
+                </li>
+                <li>
+                  <a href=""
+                    ><img
+                      src="https://www.yesglobal.com.cn/res/202108/02/34d86ca9f8534f11.png"
+                    />海外留学</a
+                  >
+                </li>
+                <li class="">
+                  <a href=""
+                    ><img
+                      src="https://www.yesglobal.com.cn/res/202108/02/c8ed286601582761.png"
+                    />背景提升</a
+                  >
+                </li>
+                <li>
+                  <a href=""
+                    ><img
+                      src="https://www.yesglobal.com.cn/res/202108/02/7a89af55e704b4a4.png"
+                    />海归创业班</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<!--图片轮换-->
+  <el-carousel class="swiper" height="580px" autoplay>
+    <el-carousel-item key="1">
+      <img
+        src="https://www.yesglobal.com.cn/res/202109/18/6bde9dd8f8c6df77.jpg"
+        alt=""
+        style="width: 100%"
+      />
+    </el-carousel-item>
+    <el-carousel-item key="2">
+      <img
+        src="https://www.yesglobal.com.cn/res/201905/16/c11b056591f2063d.jpg"
+        alt=""
+        style="width: 100%"
+      />
+    </el-carousel-item>
+  </el-carousel>
+<!--  新闻栏-->
+  <div class="news">
+    <div class="commend-news-box">
+      <div class="uk-width-auto uk-first-column">
+        <div class="live">LIVE</div>
+      </div>
+      <div class="uk-width-expand topslidernews">
+        <el-carousel height="49px" direction="vertical" autoplay>
+          <!-- <el-carousel-item v-for="item in 2" :key="item">
+            <h3 text="2xl" justify="center">{{ item }}</h3>
+          </el-carousel-item> -->
+          <el-carousel-item>
+            <div class="new">美国杰出人才申请（EB1A）——学历是必选项吗？</div>
+          </el-carousel-item>
+          <el-carousel-item>
+            <div class="new">美国EB-5 |新法下I-526E递交数据和排期预测</div>
+          </el-carousel-item>
+          <el-carousel-item>
+            <div class="new">攻略|中小企业主申请EB1A难点解析</div>
+          </el-carousel-item>
+        </el-carousel>
+      </div>
+    </div>
+    <div class="nb-2">
+      <div class="uk-grid-medium uk-grid">
+        <div class="uk-width-auto uk-first-column">
+          <div class="immig">IMMIGRATION ALARMS</div>
+        </div>
+      </div>
+      <div style="flex: 1">
+        <el-carousel height="49px" direction="vertical" autoplay>
+          <!-- <el-carousel-item v-for="item in 2" :key="item">
+            <h3 text="2xl" justify="center">{{ item }}</h3>
+          </el-carousel-item> -->
+          <el-carousel-item>
+            <div class="new">美国杰出人才申请（EB1A）——学历是必选项吗？</div>
+          </el-carousel-item>
+          <el-carousel-item>
+            <div class="new">美国EB-5 |新法下I-526E递交数据和排期预测</div>
+          </el-carousel-item>
+          <el-carousel-item>
+            <div class="new">攻略|中小企业主申请EB1A难点解析</div>
+          </el-carousel-item>
+        </el-carousel>
+      </div>
+    </div>
+  </div>
+<!--  第二栏-->
+  <div class="updates m80">
+    <div class="uk-container">
+      <div class="uk-grid">
+        <div class="uk-width-auto@m uk-visible@m uk-first-column">
+          <div class="squareslider-box">
+<!--            轮换栏目-->
+            <div class="bx-wrapper">
+              <el-carousel autoplay height="398px">
+                <el-carousel-item key="1">
+                  <img
+                    src="https://www.yesglobal.com.cn/res/201902/21/5b23173122a7afce.jpg"
+                    alt=""
+                    style="width: 100%; height: 100%"
+                  />
+                </el-carousel-item>
+                <el-carousel-item key="2">
+                  <img
+                    src="https://www.yesglobal.com.cn/res/202009/18/743c74d9ac0ae956.jpg"
+                    alt=""
+                    style="width: 100%; height: 100%"
+                  />
+                </el-carousel-item>
+              </el-carousel>
+            </div>
+          </div>
+        </div>
+<!--        实时政策-->
+        <div class="uk-width-expand@s uk-visible@m">
+          <h3 class="pg-title">
+            实时政策 <span>Real time policy</span>
+            <a @click="toAbout">More &gt;</a>
+          </h3>
+          <div class="img-updates uk-position-relative">
+            <a href=""
+              ><img
+                src="https://www.yesglobal.com.cn/res/202404/01/thumb_9407.jpg"
+            /></a>
+            <h6 class="uk-position-bottom-left uk-text-truncate">
+              <a href=""
+                >干货 | EB1A申请为何会被拒？原因在这里！</a
+              >
+            </h6>
+          </div>
+          <ul>
+            <li class="uk-text-truncate">
+              <a href=""
+                >官宣！新加坡EP申请门槛再次提高</a
+              >
+            </li>
+            <li class="uk-text-truncate">
+              <a href=""
+                >最新！希腊移民新政解读</a
+              >
+            </li>
+            <li class="uk-text-truncate">
+              <a href=""
+                >十年美签到期，可申请续签免面试！</a
+              >
+            </li>
+            <li class="uk-text-truncate">
+              <a href=""
+                >攻略 | 市场型企业高管如何申请EB1A杰出人才移民？</a
+              >
+            </li>
+          </ul>
+        </div>
+<!--        活动公告-->
+        <div class="uk-width-expand@s">
+          <h3 class="pg-title">
+            活动公告 <span>Activity Bulletin</span>
+            <a
+              href=""
+              >More &gt;</a
+            >
+          </h3>
+          <div class="img-updates uk-position-relative">
+            <a href=""
+              ><img
+                src="https://www.yesglobal.com.cn/res/202401/16/thumb_9224.jpg"
+            /></a>
+            <h6 class="uk-position-bottom-left uk-text-truncate">
+              <a href=""
+                >美国人才类绿卡在线讲座</a
+              >
+            </h6>
+          </div>
+          <ul>
+            <li class="uk-text-truncate">
+              <a href=""
+                >拜登时代最适合中国人移民美国的方式——美国Fragomen律所专题线上分享会圆满举办</a
+              >
+            </li>
+            <li class="uk-text-truncate">
+              <a href=""
+                >拜登当选 美国移民改革 对华策略影响</a
+              >
+            </li>
+            <li class="uk-text-truncate">
+              <a href=""
+                >活动过程：新民法典背景下的家庭财富规划与海外资产配置交流会</a
+              >
+            </li>
+            <li class="uk-text-truncate">
+              <a href=""
+                >活动预告：新民法典背景下的家庭财富规划与海外资产配置交流会</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--  热门项目-->
+  <div class="hot-project p80">
+    <div class="uk-container">
+      <div class="uk-flex-middle uk-grid" uk-grid="">
+        <div class="uk-width-auto@m uk-width-expand uk-first-column">
+          <h3 class="pg-title">热门项目 <span>Hot project</span></h3>
+        </div>
+        <div class="uk-width-expand@m uk-visible@m"></div>
+        <div class="uk-width-2-5@l uk-visible@m">
+          <ul
+            class="hot-project-tab uk-text-center uk-grid-collapse uk-child-width-expand uk-grid"
+            uk-grid=""
+            uk-switcher="connect: .hot-project-switcher"
+          >
+            <li
+              @click="isProject = 'tuijian'"
+              class="uk-first-column"
+              :class="{ 'uk-active': isProject == 'tuijian' }"
+            >
+              <span>推荐</span>
+            </li>
+            <li
+              @click="isProject = 'touzi'"
+              :class="{ 'uk-active': isProject == 'touzi' }"
+            >
+              <span>投资移民</span>
+            </li>
+            <li
+              @click="isProject = 'rencai'"
+              :class="{ 'uk-active': isProject == 'rencai' }"
+            >
+              <span>人才移民</span>
+            </li>
+            <li
+              @click="isProject = 'huzhao'"
+              :class="{ 'uk-active': isProject == 'huzhao' }"
+            >
+              <span>护照移民</span>
+            </li>
+            <li
+              @click="isProject = 'yiming'"
+              :class="{ 'uk-active': isProject == 'yiming' }"
+            >
+              <span>留学生移民</span>
+            </li>
+          </ul>
+        </div>
+        <div class="uk-width-auto">
+          <div class="uk-switcher hot-project-switcher news-center-more">
+            <div class="uk-active">
+              <a href="">More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+<!--      热门项目详情-->
+      <div class="uk-switcher uk-margin-medium-top hot-project-switcher">
+        <div :class="{ 'uk-active': isProject == 'tuijian' }">
+          <div class="uk-child-width-1-3@m uk-grid-small uk-grid ff">
+            <div class="uk-first-column">
+              <div class="img-updates uk-position-relative">
+                <a href=""
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201912/26/thumb_5530.png"
+                /></a>
+                <h6 class="uk-position-bottom-left">
+                  <a
+                    href=""
+                    target="_blank"
+                    >美国杰出人才移民</a
+                  >
+                </h6>
+              </div>
+            </div>
+            <div>
+              <div class="img-updates uk-position-relative">
+                <a href=""
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201905/23/thumb_2957.jpg"
+                /></a>
+                <h6 class="uk-position-bottom-left">
+                  <a
+                    href=""
+                    target="_blank"
+                    >西班牙置业移民</a
+                  >
+                </h6>
+              </div>
+            </div>
+            <div>
+              <div class="img-updates uk-position-relative">
+                <a href=""
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201812/19/thumb_328.jpg"
+                /></a>
+                <h6 class="uk-position-bottom-left">
+                  <a href="" target="_blank"
+                    >马耳他投资移民</a
+                  >
+                </h6>
+              </div>
+            </div>
+            <div class="uk-grid-margin uk-first-column">
+              <div class="img-updates uk-position-relative">
+                <a href=""
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201903/18/thumb_1462.jpg"
+                /></a>
+                <h6 class="uk-position-bottom-left">
+                  <a
+                    href=""
+                    target="_blank"
+                    >圣基茨尼维斯护照</a
+                  >
+                </h6>
+              </div>
+            </div>
+            <div class="uk-grid-margin">
+              <div class="img-updates uk-position-relative">
+                <a href=""
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201906/14/thumb_3285.jpg"
+                /></a>
+                <h6 class="uk-position-bottom-left">
+                  <a
+                    href=""
+                    target="_blank"
+                    >土耳其护照</a
+                  >
+                </h6>
+              </div>
+            </div>
+            <div class="uk-grid-margin">
+              <div class="img-updates uk-position-relative">
+                <a href=""
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201904/17/thumb_2139.jpg"
+                /></a>
+                <h6 class="uk-position-bottom-left">
+                  <a href="" target="_blank"
+                    >加拿大投资移民</a
+                  >
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div :class="{ 'uk-active': isProject == 'touzi' }">
+          <div
+            class="uk-child-width-1-3@m uk-child-width-1-2 uk-grid-small uk-grid ff"
+          >
+            <div class="uk-first-column">
+              <div class="img-updates uk-position-relative">
+                <a href=""
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201904/17/thumb_2110.jpg"
+                /></a>
+                <h6 class="uk-position-bottom-left">
+                  <a href=""
+                    >爱尔兰投资移民</a
+                  >
+                </h6>
+              </div>
+            </div>
+            <div>
+              <div class="img-updates uk-position-relative">
+                <a href=""
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201903/28/thumb_1536.jpg"
+                /></a>
+                <h6 class="uk-position-bottom-left">
+                  <a href=""
+                    >葡萄牙35万黄金居留项目</a
+                  >
+                </h6>
+              </div>
+            </div>
+            <div>
+              <div class="img-updates uk-position-relative">
+                <a href=""
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201901/28/thumb_859.png"
+                /></a>
+                <h6 class="uk-position-bottom-left">
+                  <a href=""
+                    >意大利置业移民</a
+                  >
+                </h6>
+              </div>
+            </div>
+            <div class="uk-grid-margin uk-first-column">
+              <div class="img-updates uk-position-relative">
+                <a href=""
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201904/17/thumb_2140.jpg"
+                /></a>
+                <h6 class="uk-position-bottom-left">
+                  <a href=""
+                    >英国企业家移民</a
+                  >
+                </h6>
+              </div>
+            </div>
+            <div class="uk-grid-margin">
+              <div class="img-updates uk-position-relative">
+                <a href=""
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201905/23/thumb_2957.jpg"
+                /></a>
+                <h6 class="uk-position-bottom-left">
+                  <a href=""
+                    >西班牙置业移民</a
+                  >
+                </h6>
+              </div>
+            </div>
+            <div class="uk-grid-margin">
+              <div class="img-updates uk-position-relative">
+                <a href=""
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201812/19/thumb_328.jpg"
+                /></a>
+                <h6 class="uk-position-bottom-left">
+                  <a href=""
+                    >马耳他投资移民</a
+                  >
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div :class="{ 'uk-active': isProject == 'rencai' }">
+          <div
+            class="uk-child-width-1-3@m uk-child-width-1-2 uk-grid-small uk-grid uk-grid-stack ff"
+            uk-grid=""
+          >
+            <div class="uk-first-column">
+              <div class="img-updates uk-position-relative">
+                <a href=""
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201912/26/thumb_5530.png"
+                /></a>
+                <h6 class="uk-position-bottom-left">
+                  <a
+                    href=""
+                    target="_blank"
+                    >美国杰出人才移民</a
+                  >
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div :class="{ 'uk-active': isProject == 'huzhao' }">
+          <div
+            class="uk-child-width-1-3@m uk-child-width-1-2 uk-grid-small uk-grid ff"
+            uk-grid=""
+          >
+            <div class="uk-first-column">
+              <div class="img-updates uk-position-relative">
+                <a href=""
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201812/20/thumb_356.png"
+                /></a>
+                <h6 class="uk-position-bottom-left">
+                  <a href=""
+                    >塞浦路斯护照</a
+                  >
+                </h6>
+              </div>
+            </div>
+            <div>
+              <div class="img-updates uk-position-relative">
+                <a href=""
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201903/18/thumb_1462.jpg"
+                /></a>
+                <h6 class="uk-position-bottom-left">
+                  <a href=""
+                    >圣基茨尼维斯护照</a
+                  >
+                </h6>
+              </div>
+            </div>
+            <div>
+              <div class="img-updates uk-position-relative">
+                <a href=""
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201906/14/thumb_3285.jpg"
+                /></a>
+                <h6 class="uk-position-bottom-left">
+                  <a href="">土耳其护照</a>
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div :class="{ 'uk-active': isProject == 'yiming' }">
+          <div
+            class="uk-child-width-1-3@m uk-child-width-1-2 uk-grid-small uk-grid ff"
+            uk-grid=""
+          >
+            <div class="uk-first-column">
+              <div class="img-updates uk-position-relative">
+                <a href=""
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201905/15/thumb_2621.jpg"
+                /></a>
+                <h6 class="uk-position-bottom-left">
+                  <a href=""
+                    >新西兰优才移民</a
+                  >
+                </h6>
+              </div>
+            </div>
+            <div>
+              <div class="img-updates uk-position-relative">
+                <a href=""
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201905/14/thumb_2579.jpg"
+                /></a>
+                <h6 class="uk-position-bottom-left">
+                  <a href=""
+                    >澳大利亚留学移民项目</a
+                  >
+                </h6>
+              </div>
+            </div>
+            <div>
+              <div class="img-updates uk-position-relative">
+                <a href=""
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201905/14/thumb_2579.jpg"
+                /></a>
+                <h6 class="uk-position-bottom-left">
+                  <a href=""
+                    >澳大利亚留学移民项目</a
+                  >
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--  海外置业-->
+  <div class="overseas-purchase m80">
+    <div class="uk-container">
+      <div class="uk-flex-middle uk-grid" uk-grid="">
+        <div class="uk-width-auto uk-first-column">
+          <h3 class="pg-title">海外置业 <span>Overseas purchase</span></h3>
+        </div>
+        <div class="uk-width-expand">
+          <ul class="overseas-purchase-tab uk-visible@m">
+            <li class="uk-active" @click="isguojia = 'xibanya'">
+              <div href="" class="uk-flex uk-flex-middle">
+                <img
+                  src="https://www.yesglobal.com.cn/res/201812/17/679d165c057e735a.png"
+                  width="20"
+                />
+                <div>
+                  <span>西班牙</span>
+                </div>
+              </div>
+            </li>
+            <li @click="isguojia = 'tuerqi'">
+              <div href="" class="uk-flex uk-flex-middle">
+                <img
+                  src="https://www.yesglobal.com.cn/res/tuerqi.png"
+                  width="20"
+                />
+                <div>
+                  <span>土耳其</span>
+                </div>
+              </div>
+            </li>
+            <li @click="isguojia = 'putaoya'">
+              <div href="" class="uk-flex uk-flex-middle">
+                <img
+                  src="https://www.yesglobal.com.cn/res/201812/17/d19ea39d27bcb0d4.png"
+                  width="20"
+                />
+                <div>
+                  <span>葡萄牙</span>
+                </div>
+              </div>
+            </li>
+            <li @click="isguojia = 'malai'">
+              <div href="" class="uk-flex uk-flex-middle">
+                <img
+                  src="https://www.yesglobal.com.cn/res/201812/17/ce0ddfc5d58c8faf.png"
+                  width="20"
+                />
+                <div>
+                  <span>马来西亚</span>
+                </div>
+              </div>
+            </li>
+            <li @click="isguojia = 'lusi'">
+              <div href="" class="uk-flex uk-flex-middle">
+                <img
+                  src="https://www.yesglobal.com.cn/res/saipulusi.png"
+                  width="20"
+                />
+                <div>
+                  <span>塞浦路斯</span>
+                </div>
+              </div>
+            </li>
+            <li @click="isguojia = 'xila'">
+              <div href="" class="uk-flex uk-flex-middle">
+                <img
+                  src="https://www.yesglobal.com.cn/res/201812/17/a57b810597ce20b4.png"
+                  width="20"
+                />
+                <div>
+                  <span>希腊</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="uk-width-auto news-center-more">
+          <a href="">More</a>
+        </div>
+      </div>
+      <div
+        class="uk-switcher uk-margin-medium-top dd"
+        id="overseas-purchase-switcher"
+      >
+        <div :class="{ 'uk-active': isguojia == 'xibanya' }">
+          <div class="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid ff">
+            <div class="uk-first-column">
+              <figure class="purchase-switcher-card">
+                <a href="" target="_blank"
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201906/10/thumb_3142.png"
+                /></a>
+                <figcaption>
+                  <h6>
+                    <a
+                      href=""
+                      target="_blank"
+                      >S-02 独栋别墅</a
+                    >
+                  </h6>
+                  <div class="uk-flex uk-flex-middle uk-flex-center">
+                    <div class="uk-flex uk-flex-middle">
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
+                      />
+                      <span class="price">800万</span>
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
+                      />
+                      1025
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
+                      />
+                      别墅
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+            <div>
+              <figure class="purchase-switcher-card">
+                <a href="" target="_blank"
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201906/10/thumb_3130.png"
+                /></a>
+                <figcaption>
+                  <h6>
+                    <a
+                      href=""
+                      target="_blank"
+                      >S-01 独栋别墅</a
+                    >
+                  </h6>
+                  <div class="uk-flex uk-flex-middle uk-flex-center">
+                    <div class="uk-flex uk-flex-middle">
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
+                      />
+                      <span class="price">1200万</span>
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
+                      />
+                      4000平米
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
+                      />
+                      别墅
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+            <div>
+              <figure class="purchase-switcher-card">
+                <a href="" target="_blank"
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201906/28/thumb_3549.png"
+                /></a>
+                <figcaption>
+                  <h6>
+                    <a
+                      href=""
+                      target="_blank"
+                      >精品公寓V342</a
+                    >
+                  </h6>
+                  <div class="uk-flex uk-flex-middle uk-flex-center">
+                    <div class="uk-flex uk-flex-middle">
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
+                      />
+                      <span class="price">280万</span>
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
+                      />
+                      115
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
+                      />
+                      公寓
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="uk-grid-margin uk-first-column">
+              <figure class="purchase-switcher-card">
+                <a href="" target="_blank"
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201902/13/thumb_938.png"
+                /></a>
+                <figcaption>
+                  <h6>
+                    <a
+                      href=""
+                      target="_blank"
+                      >商铺022-牙医诊所</a
+                    >
+                  </h6>
+                  <div class="uk-flex uk-flex-middle uk-flex-center">
+                    <div class="uk-flex uk-flex-middle">
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
+                      />
+                      <span class="price">422万</span>
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
+                      />
+                      190
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
+                      />
+                      投资
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="uk-grid-margin">
+              <figure class="purchase-switcher-card">
+                <a href="" target="_blank"
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201902/13/thumb_923.png"
+                /></a>
+                <figcaption>
+                  <h6>
+                    <a
+                      href=""
+                      target="_blank"
+                      >商铺021-精品火腿商铺</a
+                    >
+                  </h6>
+                  <div class="uk-flex uk-flex-middle uk-flex-center">
+                    <div class="uk-flex uk-flex-middle">
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
+                      />
+                      <span class="price">468万</span>
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
+                      />
+                      290
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
+                      />
+                      投资
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="uk-grid-margin">
+              <figure class="purchase-switcher-card">
+                <a href="" target="_blank"
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201901/24/thumb_820.png"
+                /></a>
+                <figcaption>
+                  <h6>
+                    <a
+                      href=""
+                      target="_blank"
+                      >奢华公寓034-对角线豪庭</a
+                    >
+                  </h6>
+                  <div class="uk-flex uk-flex-middle uk-flex-center">
+                    <div class="uk-flex uk-flex-middle">
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
+                      />
+                      <span class="price">450万</span>
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
+                      />
+                      89
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
+                      />
+                      公寓
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div :class="{ 'uk-active': isguojia == 'tuerqi' }">
+          <div
+            class="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid ff"
+            uk-grid=""
+          >
+            <div>
+              <figure class="purchase-switcher-card">
+                <a href="" target="_blank"
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201910/22/thumb_4548.jpg"
+                /></a>
+                <figcaption>
+                  <h6>
+                    <a
+                      href=""
+                      target="_blank"
+                      >NG Residence公寓项目</a
+                    >
+                  </h6>
+                  <div class="uk-flex uk-flex-middle uk-flex-center">
+                    <div class="uk-flex uk-flex-middle">
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
+                      />
+                      <span class="price"></span>
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
+                      />
+                      65㎡
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
+                      />
+                      公寓
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+            <div>
+              <figure class="purchase-switcher-card">
+                <a href="" target="_blank"
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201910/22/thumb_4541.jpg"
+                /></a>
+                <figcaption>
+                  <h6>
+                    <a
+                      href=""
+                      target="_blank"
+                      >G-悠乐 高级公寓</a
+                    >
+                  </h6>
+                  <div class="uk-flex uk-flex-middle uk-flex-center">
+                    <div class="uk-flex uk-flex-middle">
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
+                      />
+                      <span class="price"></span>
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
+                      />
+                      95000平方米
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
+                      />
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+            <div>
+              <figure class="purchase-switcher-card">
+                <a href="" target="_blank"
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201910/22/thumb_4508.jpg"
+                /></a>
+                <figcaption>
+                  <h6>
+                    <a
+                      href=""
+                      target="_blank"
+                      >G伊斯坦布尔·万达文华酒店式公寓</a
+                    >
+                  </h6>
+                  <div class="uk-flex uk-flex-middle uk-flex-center">
+                    <div class="uk-flex uk-flex-middle">
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
+                      />
+                      <span class="price"></span>
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
+                      />
+                      公寓
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+            <div>
+              <figure class="purchase-switcher-card">
+                <a href="" target="_blank"
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201910/22/thumb_4513.jpg"
+                /></a>
+                <figcaption>
+                  <h6>
+                    <a
+                      href=""
+                      target="_blank"
+                      >G 天塔 行政酒店公寓</a
+                    >
+                  </h6>
+                  <div class="uk-flex uk-flex-middle uk-flex-center">
+                    <div class="uk-flex uk-flex-middle">
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
+                      />
+                      <span class="price"></span>
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
+                      />
+                      65.8m²
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
+                      />
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+            <div>
+              <figure class="purchase-switcher-card">
+                <a href="" target="_blank"
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201910/22/thumb_4518.jpg"
+                /></a>
+                <figcaption>
+                  <h6>
+                    <a
+                      href=""
+                      target="_blank"
+                      >G 玛琳公寓</a
+                    >
+                  </h6>
+                  <div class="uk-flex uk-flex-middle uk-flex-center">
+                    <div class="uk-flex uk-flex-middle">
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
+                      />
+                      <span class="price"></span>
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
+                      />
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+            <div>
+              <figure class="purchase-switcher-card">
+                <a href="" target="_blank"
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201910/22/thumb_4531.jpg"
+                /></a>
+                <figcaption>
+                  <h6>
+                    <a
+                      href=""
+                      target="_blank"
+                      >G Beyond·蓓逸高档度假住宅区</a
+                    >
+                  </h6>
+                  <div class="uk-flex uk-flex-middle uk-flex-center">
+                    <div class="uk-flex uk-flex-middle">
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
+                      />
+                      <span class="price"></span>
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
+                      />
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
+                      />
+                      别墅
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div :class="{ 'uk-active': isguojia == 'putaoya' }">
+          <div
+            class="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid ff"
+            uk-grid=""
+          ></div>
+        </div>
+        <div :class="{ 'uk-active': isguojia == 'malai' }">
+          <div
+            class="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid ff uk-grid-stack"
+            uk-grid=""
+          >
+            <div>
+              <figure class="purchase-switcher-card">
+                <a href="" target="_blank"
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201910/22/thumb_4497.jpg"
+                /></a>
+                <figcaption>
+                  <h6>
+                    <a
+                      href=""
+                      target="_blank"
+                      >富力公主湾</a
+                    >
+                  </h6>
+                  <div class="uk-flex uk-flex-middle uk-flex-center">
+                    <div class="uk-flex uk-flex-middle">
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
+                      />
+                      <span class="price">160万</span>
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
+                      />
+                      71㎡
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
+                      />
+                      公寓
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div :class="{ 'uk-active': isguojia == 'lusi' }">
+          <div
+            class="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid ff"
+            uk-grid=""
+          ></div>
+        </div>
+        <div :class="{ 'uk-active': isguojia == 'xila' }">
+          <div
+            class="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid ff uk-grid-stack"
+            uk-grid=""
+          >
+            <div>
+              <figure class="purchase-switcher-card">
+                <a href="" target="_blank"
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201901/24/thumb_838.jpg"
+                /></a>
+                <figcaption>
+                  <h6>
+                    <a
+                      href=""
+                      target="_blank"
+                      >爱琴海精品公寓04</a
+                    >
+                  </h6>
+                  <div class="uk-flex uk-flex-middle uk-flex-center">
+                    <div class="uk-flex uk-flex-middle">
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
+                      />
+                      <span class="price">200+万</span>
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
+                      />
+                      50-105
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
+                      />
+                      公寓
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+            <div>
+              <figure class="purchase-switcher-card">
+                <a href="" target="_blank"
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201901/24/thumb_837.jpg"
+                /></a>
+                <figcaption>
+                  <h6>
+                    <a
+                      href=""
+                      target="_blank"
+                      >富人区轻奢海景公寓</a
+                    >
+                  </h6>
+                  <div class="uk-flex uk-flex-middle uk-flex-center">
+                    <div class="uk-flex uk-flex-middle">
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
+                      />
+                      <span class="price">200万</span>
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
+                      />
+                      65
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
+                      />
+                      公寓
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+            <div>
+              <figure class="purchase-switcher-card">
+                <a href="" target="_blank"
+                  ><img
+                    src="https://www.yesglobal.com.cn/res/201901/17/thumb_676.png"
+                /></a>
+                <figcaption>
+                  <h6>
+                    <a
+                      href=""
+                      target="_blank"
+                      >使馆花园区公寓II期</a
+                    >
+                  </h6>
+                  <div class="uk-flex uk-flex-middle uk-flex-center">
+                    <div class="uk-flex uk-flex-middle">
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
+                      />
+                      <span class="price">193万</span>
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
+                      />
+                      53
+                    </div>
+                    <div>
+                      <img
+                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
+                      />
+                      公寓
+                    </div>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <dongtai></dongtai>
+  <zixun></zixun>
+  <div class="links uk-visible@m">
+    <div class="uk-container">
+      <strong>友情链接:</strong>
+      <a href="https://www.amchamchina.org/" rel="nofollow" target="_blank"
+        >中国美国商会</a
+      >
+      <a href="https://immi.homeaffairs.gov.au/" rel="nofollow" target="_blank"
+        >澳大利亚移民局官网</a
+      >
+      <a
+        href="https://www.canada.ca/en/services/immigration-citizenship.html"
+        rel="nofollow"
+        target="_blank"
+        >加拿大联邦移民官网</a
+      >
+      <a href="https://www.uscis.gov/" rel="nofollow" target="_blank"
+        >美国移民局官网</a
+      >
+      <a
+        href="http://www.mccusa.org/htm_home/index.asp"
+        rel="nofollow"
+        target="_blank"
+        >美国马里兰中心</a
+      >
+    </div>
+  </div>
+  <footer1></footer1>
+</template>
+<script setup lang="ts">
+import { ref } from 'vue'
+import dongtai from '@/components/dongtai.vue'
+import zixun from '@/components/zixun.vue'
+import footer1 from '@/components/footer.vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const ishaiwai = ref(false)
+const isguanyu = ref(false)
+const isProject = ref('tuijian')
+
+const isguojia = ref('xibanya')
+const toAbout = () => {
+  console.log(router)
+  router.push('/about')
+}
+</script>
+
+<style scoped>
+.topbar {
+  background-color: rgb(23, 38, 50);
+  height: 42px;
+  line-height: 42px;
+}
+@media (min-width: 960px) {
+  .uk-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (min-width: 640px) {
+  .uk-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+.uk-container {
+  box-sizing: content-box;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.uk-container::before,
+.uk-container::after {
+  content: '';
+  display: table;
+}
+.uk-container::after {
+  clear: both;
+}
+.uk-container::before,
+.uk-container::after {
+  content: '';
+  display: table;
+}
+.uk-container > :last-child {
+  margin-bottom: 0;
+}
+@media (min-width: 1200px) {
+  .uk-grid {
+    margin-left: -30px;
+  }
+}
+.uk-grid {
+  margin-left: -30px;
+}
+.uk-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.uk-width-auto {
+  width: auto;
+}
+/* [class*='uk-width'] {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+} */
+@media (min-width: 1200px) {
+  .uk-grid > * {
+    padding-left: 30px;
+  }
+}
+.uk-grid > * {
+  padding-left: 30px;
+}
+.uk-grid > * {
+  margin: 0;
+}
+
+a,
+.uk-link {
+  color: #1e87f0;
+  text-decoration: none;
+  cursor: pointer;
+}
+a {
+  -webkit-text-decoration-skip: objects;
+}
+a:-webkit-any-link {
+  /* color: -webkit-link; */
+  cursor: pointer;
+  /* text-decoration: underline; */
+}
+canvas,
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+.uk-width-expand {
+  flex: 1;
+  min-width: 1px;
+}
+/* [class*='uk-width'] {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+} */
+@media (min-width: 1200px) {
+  .uk-grid > * {
+    padding-left: 30px;
+  }
+}
+.uk-grid > * {
+  padding-left: 30px;
+}
+.uk-grid > * {
+  margin: 0;
+}
+
+.uk-grid-collapse {
+  margin-left: 0;
+}
+@media (min-width: 1200px) {
+  .uk-grid {
+    margin-left: -30px;
+  }
+}
+.uk-grid {
+  margin-left: -30px;
+}
+/* .uk-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+} */
+nav ul {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  padding-left: 30px;
+}
+p,
+ul,
+ol,
+dl,
+pre,
+address,
+fieldset,
+figure {
+  margin: 0 0 20px 0;
+}
+.uk-width-expand {
+  flex: 1;
+  min-width: 1px;
+}
+/* [class*='uk-width'] {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+} */
+.uk-grid-collapse > * {
+  padding-left: 0;
+}
+@media (min-width: 1200px) {
+  .uk-grid > * {
+    padding-left: 30px;
+  }
+}
+.uk-grid > * {
+  padding-left: 30px;
+}
+.uk-grid > * {
+  margin: 0;
+}
+nav ul li {
+  display: inline-block;
+  text-align: center;
+}
+.uk-grid > * > :last-child {
+  margin-bottom: 0;
+}
+nav ul li a {
+  color: #fff;
+  font-size: 14px;
+}
+
+.topbar-contact {
+  width: 200px;
+}
+.uk-width-auto {
+  width: auto;
+}
+/* [class*='uk-width'] {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+} */
+@media (min-width: 1200px) {
+  .uk-grid > * {
+    padding-left: 30px;
+  }
+}
+.uk-grid > * {
+  padding-left: 30px;
+}
+.uk-grid > * {
+  margin: 0;
+}
+
+.uk-flex-middle {
+  align-items: center;
+}
+.uk-flex {
+  display: flex;
+}
+.topbar-contact img {
+  margin-right: 10px;
+}
+.topbar-contact span {
+  color: #fff;
+}
+
+.nav-dropdown a {
+  display: block;
+  color: #fff;
+  font-size: 13px;
+}
+.uk-dropdown {
+  display: none;
+  position: absolute;
+  z-index: 1020;
+  box-sizing: border-box;
+  min-width: 200px;
+  padding: 25px;
+  background: #fff;
+  color: #666;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+.nav-dropdown {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  min-width: 130px !important;
+  transform: translateX(-15%);
+}
+
+.uk-open {
+  display: block;
+}
+.subnav {
+  background: rgba(255, 255, 255, 0.39);
+  position: relative;
+  z-index: 10;
+}
+.subnav-box > ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.subnav-box > ul > li {
+  display: inline-block;
+}
+.subnav-box > ul > li > a {
+  display: inline-block;
+  color: #333;
+  padding: 11px 41px;
+  font-size: 14px;
+}
+a,
+.uk-link {
+  color: #1e87f0;
+  text-decoration: none;
+  cursor: pointer;
+}
+.subnav-box .uk-dropdown {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0;
+  text-align: left;
+}
+.dp-switcher-title {
+  margin: 0;
+  padding: 0;
+  background: rgba(0, 102, 204, 0.3);
+}
+.dp-switcher-title li {
+  list-style: none;
+  line-height: 54px;
+  display: inline-block;
+}
+
+.dp-switcher-title li a {
+  color: #fff;
+  display: block;
+  line-height: 54px;
+  color: #fff;
+  padding: 0 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.dp-switcher-title li a img {
+  margin-right: 5px;
+}
+
+.subnav-box > ul > li > a:hover + .uk-dropdown {
+  display: block;
+}
+.subnav-box .uk-dropdown:hover {
+  display: block;
+}
+.dp-switcher-title li:hover a {
+  background: rgb(0, 102, 204);
+  text-decoration: none;
+}
+.swiper {
+  position: relative;
+  top: -40px;
+  z-index: 0;
+}
+.news {
+  box-sizing: content-box;
+  max-width: 1200px;
+  background: rgba(186, 9, 32, 0.8);
+  /* margin-left: auto;
+
+  margin-right: auto; */
+  margin: 0 auto;
+  position: relative;
+  /* height: 49px; */
+  /* position: relative; */
+  /* top: -40px; */
+  transform: translateY(-88px);
+}
+.commend-news-box {
+  /* background: rgba(186, 9, 32, 0.8); */
+  /* transform: translateY(68px); */
+  width: 100%;
+  /* position: absolute; */
+  /* top: -40px; */
+  display: flex;
+}
+.uk-grid-small {
+  margin-left: -15px;
+}
+.uk-grid-small > * {
+  margin: 0;
+}
+.commend-news-box .live {
+  background: #fff;
+  width: 227px;
+  height: 49px;
+  line-height: 49px;
+  text-align: center;
+  font-size: 28px;
+  color: #000;
+}
+.news >>> .el-carousel__indicators {
+  display: none;
+}
+.new {
+  line-height: 49px;
+  padding-left: 10px;
+  color: #fff;
+}
+.nb-2 {
+  font-size: 14px;
+  color: #fff;
+  line-height: 49px;
+  /* background: rgba(186, 9, 32, 0.8); */
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+}
+.nb-2 .immig {
+  text-align: center;
+  font-size: 18px;
+  line-height: 32px;
+  margin: 8px 0;
+  color: #fff;
+  width: 255px;
+  border-right: #fff 1px solid;
+}
+@media (max-width: 2560px) {
+  .m80 {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+}
+.uk-width-auto\@m {
+  width: auto;
+}
+.squareslider-box {
+  width: 380px;
+}
+.bx-wrapper {
+  position: relative;
+  padding: 0;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+}
+@media (min-width: 640px) {
+  .uk-width-expand\@s {
+    flex: 1;
+    min-width: 1px;
+  }
+}
+h3,
+.uk-h3 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+}
+.pg-title span {
+  font-size: 1rem;
+  line-height: 14px;
+  color: #999;
+}
+.pg-title a {
+  float: right;
+  color: #666;
+  font-size: 14px;
+  transform: translateY(4px);
+}
+.uk-position-relative {
+  position: relative !important;
+}
+.img-updates h6 {
+  text-align: center;
+  width: 100%;
+  margin: 0;
+}
+.uk-position-bottom-left {
+  bottom: 0;
+  left: 0;
+}
+.uk-text-truncate {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+h6,
+.uk-h6 {
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+h1,
+.uk-h1,
+h2,
+.uk-h2,
+h3,
+.uk-h3,
+h4,
+.uk-h4,
+h5,
+.uk-h5,
+h6,
+.uk-h6 {
+  margin: 0 0 20px 0;
+  font-family: 'Microsoft Yahei', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: normal;
+  color: #333;
+  text-transform: none;
+}
+.img-updates h6 a {
+  color: #fff;
+  display: block;
+  padding: 8px 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: all 0.3s;
+}
+.updates ul {
+  margin: 0;
+  padding: 0;
+}
+.updates ul li {
+  list-style: none;
+  line-height: 40px;
+  border-bottom: rgba(0, 0, 0, 0.1) 1px solid;
+}
+.uk-text-truncate {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.updates ul li a {
+  color: #666;
+  font-size: 16px;
+}
+.p80 {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.hot-project {
+  background: #f9f9f9;
+}
+
+.uk-width-expand {
+  flex: 1;
+  min-width: 1px;
+}
+.pg-title span {
+  font-size: 1rem;
+  line-height: 14px;
+  color: #999;
+}
+.uk-width-expand\@m {
+  flex: 1;
+  min-width: 1px;
+}
+@media (min-width: 1200px) {
+  .uk-width-2-5\@l {
+    width: 45%;
+  }
+}
+.hot-project-tab {
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+.uk-text-center {
+  text-align: center !important;
+}
+.hot-project-tab li {
+  list-style: none;
+  display: inline-block;
+}
+.hot-project-tab li.uk-active span {
+  color: #fff;
+  background: #0f6ecd;
+}
+.hot-project-tab li span {
+  display: block;
+  padding: 3px 0;
+  font-size: 14px;
+  color: #333;
+  transition: all 0.5s;
+}
+.hot-project-tab li span:hover {
+  color: #fff;
+  background: #0f6ecd;
+}
+.uk-child-width-expand > :not([class*='uk-width']) {
+  flex: 1;
+  min-width: 1px;
+}
+.uk-grid > * > :last-child {
+  margin-bottom: 0;
+}
+.uk-margin-medium-top {
+  margin-top: 40px !important;
+}
+.uk-grid-small {
+  margin-left: -15px;
+}
+@media (min-width: 960px) {
+  .uk-child-width-1-3\@m > * {
+    /* width: calc(100% * 1 / 3.001); */
+  }
+}
+.uk-grid-small > * {
+  padding-left: 15px;
+}
+.ff {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 !important;
+  justify-content: space-between;
+}
+.ff > div {
+  margin: 20px 0 0 !important;
+  padding: 0 !important;
+  width: 32%;
+}
+.hot-project-switcher .uk-active {
+  display: block;
+}
+.hot-project-switcher > div {
+  display: none;
+}
+.m80 {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+.uk-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.overseas-purchase-tab {
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+.overseas-purchase-tab li {
+  display: inline-block;
+  list-style: none;
+  text-align: left;
+  margin-left: 40px;
+}
+.overseas-purchase-tab li img {
+  margin-right: 12px;
+}
+.overseas-purchase-tab li div {
+  transform: translateY(3px);
+}
+.overseas-purchase-tab li span {
+  display: block;
+  font-size: 14px;
+  color: #000;
+  line-height: 12px;
+}
+.uk-switcher {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.purchase-switcher-card figcaption {
+  padding: 30px 45px;
+  text-align: center;
+  border: #eee 1px solid;
+}
+.purchase-switcher-card figcaption h6 a {
+  color: #000;
+  font-size: 16px;
+}
+.purchase-switcher-card figcaption > .uk-flex {
+  line-height: 28px;
+  font-size: 12px;
+  color: #999;
+}
+
+.uk-flex-center {
+  justify-content: center;
+}
+.dd > div {
+  display: none;
+}
+.dd .uk-active {
+  display: block;
+}
+.links {
+  background: #151e2a;
+}
+.links strong {
+  color: #fff;
+  padding: 15px 0;
+  font-size: 14px;
+}
+.links a {
+  color: #a6b0c0;
+  display: inline-block;
+  padding: 15px;
+  font-size: 12px;
+}
+</style>
