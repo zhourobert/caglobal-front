@@ -1,3 +1,25 @@
+<script setup lang="ts">
+import { ref} from 'vue'
+import { useRouter } from 'vue-router'
+import {api} from "@/utils/axiosPackaging";
+import {MenuVo} from "@/entity/Entity";
+
+
+let menuVo:Array<MenuVo>=new Array<MenuVo>();
+api('/menu/getMenu')
+    .then((response)=>{
+      menuVo=response.data.data
+      for(let i in menuVo){
+        menuVo[i].subMenuShow=ref(false);
+      }
+      console.log(menuVo)
+    })
+
+
+
+const router = useRouter()
+</script>
+
 <template>
   <div class="topbar">
     <div class="uk-container">
@@ -11,55 +33,23 @@
         <div class="uk-width-expand">
           <nav>
             <ul class="uk-grid-collapse uk-grid" uk-grid="">
-              <li class="uk-width-expand uk-first-column">
-                <a href="/">首页</a>
-              </li>
-              <li class="uk-width-expand">
-                <a href="news.html">资讯中心</a>
-              </li>
-              <li class="uk-width-expand">
-                <a href="">活动公告</a>
-              </li>
-              <li class="uk-width-expand">
+              <li v-for="item in menuVo" class="uk-width-expand">
                 <a
-                  href=""
-                  @mouseenter="ishaiwai = true"
-                  @mouseleave="ishaiwai = false"
-                  >海外生活服务</a
+                    href=""
+                    @mouseenter="item.subMenuShow=true"
+                    @mouseleave="item.subMenuShow=false"
+                >{{ item.name }}</a
                 >
+
                 <div
-                  class="nav-dropdown uk-dropdown"
-                  :class="{ 'uk-open': ishaiwai }"
+                    v-if="item.subMenu.length!==0"
+                    class="nav-dropdown uk-dropdown"
+                    :class="{ 'uk-open': item.subMenuShow}"
                 >
-                  <a href="" title="海外安家服务" target="">海外安家服务</a>
-                  <a href="" title="海外保险服务" target="">海外保险服务</a>
-                  <a href="" title="海外教育规划" target="">海外教育规划</a>
+                  <a v-for="subItem in item.subMenu" href="" v-title=subItem.name target="">{{ subItem.name }}</a>
                 </div>
               </li>
-              <li class="uk-width-expand">
-                <a
-                  href=""
-                  @mouseenter="isguanyu = true"
-                  @mouseleave="isguanyu = false"
-                  >关于行成</a
-                >
-                <div
-                  class="nav-dropdown uk-dropdown"
-                  :class="{ 'uk-open': isguanyu }"
-                >
-                  <a href="" title="行成海外" target="">行成海外</a>
-                  <a href="" title="创始人寄语" target="">创始人寄语</a>
-                  <a href="" title="全球合伙人" target="">全球合伙人</a>
-                  <a href="" title="资料下载" target="">资料下载</a>
-                  <a href="" title="全球客户投诉平台" target=""
-                    >全球客户投诉平台</a
-                  >
-                  <a href="" title="联系我们" target="">联系我们</a>
-                </div>
-              </li>
-              <li class="uk-width-expand">
-                <a href="">EB-1A成功案例</a>
-              </li>
+
             </ul>
           </nav>
         </div>
@@ -267,16 +257,7 @@
   </div>
 </template>
 
-<script setup lang="ts">
-import { ref } from 'vue'
-import { useRouter } from 'vue-router'
 
-const router = useRouter()
-const ishaiwai = ref(false)
-const isguanyu = ref(false)
-
-
-</script>
 
 <style scoped>
 .topbar {
