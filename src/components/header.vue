@@ -5,12 +5,12 @@ import {api} from "@/utils/axiosPackaging";
 import {MenuVo} from "@/entity/Entity";
 
 
-let menuVo:Array<MenuVo>=new Array<MenuVo>();
+let menuVo=ref(new Array<MenuVo>());
 api('/menu/getMenu')
     .then((response)=>{
-      menuVo=response.data.data
+      menuVo.value=response.data.data
       for(let i in menuVo){
-        menuVo[i].subMenuShow=ref(false);
+        menuVo[i].value.subMenuShow=false;
       }
       console.log(menuVo)
     })
@@ -34,22 +34,20 @@ const router = useRouter()
           <nav>
             <ul class="uk-grid-collapse uk-grid" uk-grid="">
               <li v-for="item in menuVo" class="uk-width-expand">
-                <a
-                    href=""
+                <div
                     @mouseenter="item.subMenuShow=true"
                     @mouseleave="item.subMenuShow=false"
-                >{{ item.name }}</a
                 >
-
-                <div
-                    v-if="item.subMenu.length!==0"
-                    class="nav-dropdown uk-dropdown"
-                    :class="{ 'uk-open': item.subMenuShow}"
-                >
-                  <a v-for="subItem in item.subMenu" href="" v-title=subItem.name target="">{{ subItem.name }}</a>
+                  <a href="">{{ item.name }}</a>
+                  <div
+                      v-if="item.subMenu.length!==0"
+                      class="nav-dropdown uk-dropdown"
+                      :class="{ 'uk-open': item.subMenuShow}"
+                  >
+                    <a v-for="subItem in item.subMenu" href="" v-title=subItem.name target="">{{ subItem.name }}</a>
+                  </div>
                 </div>
               </li>
-
             </ul>
           </nav>
         </div>
