@@ -25,7 +25,29 @@ export class MenuVo extends Menu{
     subMenu!:Menu[];
     subMenuShow?:any;
 
-
-
 }
 
+export class Blog extends Base{
+    author!:string;
+    source!:string;
+    countryId!:number;
+    title!:string;
+    text!:string;
+    hits!:number;
+    typeId!:number;
+}
+
+export class BlogDto extends Blog{
+    size:number;
+    current:number;
+
+    constructor(size: number, current: number) {
+        super();
+        this.size = size;
+        this.current = current;
+    }
+}
+
+export class Country extends Base{
+    countryName!:string;
+}
