@@ -5,26 +5,24 @@ import {getBlogList, getCountyList} from "@/utils/UrlPackaging";
 import {onMounted, ref} from "vue";
 import {Country} from "@/entity/Entity";
 import {ElMessageBox} from "element-plus";
+// import qullUtils from "@/utils/qullUtils";
 
-let blogReceive:Blog;
 
-let blogAdd:Blog;
+let blogReceive=ref();
+
+let blogAdd=ref()
 
 let country:Country=ref();
 
-let blogQuery:Blog=ref({
-  title:"",
-  author:"",
-  source:"",
-  countyId:null
-});
+let blogQuery=ref();
 
-let dialogVisible = ref(false)
+
 
 
 api.get(getBlogList)
 .then((result)=>{
-  blogReceive=result.data.data;
+  blogReceive=result.data.records;
+  console.log(blogReceive)
 })
 
 
@@ -38,15 +36,10 @@ const onSubmit = () => {
   console.log('submit!')
 }
 
-const handleClose = (done: () => void) => {
-  ElMessageBox.confirm('Are you sure to close this dialog?')
-      .then(() => {
-        done()
-      })
-      .catch(() => {
-        // catch error
-      })
-}
+const dialogVisible = ref(false)
+
+
+
 </script>
 
 <template>
@@ -89,18 +82,21 @@ const handleClose = (done: () => void) => {
 
     <el-dialog
         v-model="dialogVisible"
-        title="Tips"
+        title="新增文章"
         width="500"
-        :before-close="handleClose"
     >
-      <span>新增文章</span>
       <template #footer>
-        <div class="dialog-footer">
-          <el-button @click="dialogVisible = false">Cancel</el-button>
+        <el-form :model="blogAdd" label-width="auto" style="max-width: 600px">
+          <el-form-item label="文章标题">
+<!--            <el-input v-model="blogAdd.title" placeholder="文章标题" clearable />-->
+          </el-form-item>
+          <el-button @click="dialogVisible = false">取消</el-button>
           <el-button type="primary" @click="dialogVisible = false">
-            Confirm
+            提交文章
           </el-button>
-        </div>
+
+        </el-form>
+
       </template>
     </el-dialog>
 
@@ -122,7 +118,5 @@ const handleClose = (done: () => void) => {
   width: inherit;
   height: inherit;
 }
-.query-conditions{
 
-}
 </style>

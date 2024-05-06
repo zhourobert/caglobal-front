@@ -6,10 +6,16 @@ import ElementPlus from 'element-plus'
 
 
 
+// require styles
+import 'quill/dist/quill.core.css'
+import 'quill/dist/quill.snow.css'
+import 'quill/dist/quill.bubble.css'
+
+
+
 const app = createApp(App)
 
 app.use(router)
 app.use(ElementPlus)
 app.mount('#app')
-
 
