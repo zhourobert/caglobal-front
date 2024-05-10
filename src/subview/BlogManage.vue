@@ -1,27 +1,40 @@
 <script setup lang="ts">
 import type {Blog} from "@/entity/Entity";
 import {api} from "@/utils/axiosPackaging";
-import {getBlogList, getCountyList} from "@/utils/UrlPackaging";
+import {getBlogList, getCountyList, getTypeList} from "@/utils/UrlPackaging";
 import {onMounted, ref} from "vue";
-import {Country} from "@/entity/Entity";
-import {ElMessageBox} from "element-plus";
-// import qullUtils from "@/utils/qullUtils";
+
+
+
 
 
 let blogReceive=ref();
 
-let blogAdd=ref()
+let blogAdd=ref({
+  title:"",
+  author:"",
+  source:"",
+  countyId:null,
+  typeId:null
+})
 
-let country:Country=ref();
+let country=ref();
 
-let blogQuery=ref();
+let type=ref();
+
+let blogQuery:Blog=ref({
+  title:"",
+  author:"",
+  source:"",
+  countyId:null
+});
 
 
 
 
 api.get(getBlogList)
 .then((result)=>{
-  blogReceive=result.data.records;
+  blogReceive=result.data.data.records;
   console.log(blogReceive)
 })
 
@@ -29,6 +42,12 @@ api.get(getBlogList)
 api.get(getCountyList).then(
     (result)=>{
       country.value=result.data.data;
+    }
+)
+
+api.get(getTypeList).then(
+    (result)=>{
+      type.value=result.data.data;
     }
 )
 
@@ -88,12 +107,40 @@ const dialogVisible = ref(false)
       <template #footer>
         <el-form :model="blogAdd" label-width="auto" style="max-width: 600px">
           <el-form-item label="文章标题">
-<!--            <el-input v-model="blogAdd.title" placeholder="文章标题" clearable />-->
+            <el-input v-model="blogAdd.title" placeholder="文章标题" clearable />
           </el-form-item>
+          <el-form-item label="文章类型">
+            <el-select
+                v-model="blogAdd.typeId"
+                placeholder="Select"
+                size="large"
+                style="width: 240px"
+            >
+              <el-option
+                  v-for="item in type"
+                  :key="item.id"
+                  :label="item.typeName"
+                  :value="item.id"
+              />
+            </el-select>
+          </el-form-item>
+          <el-form-item label="国家" >
+            <el-select
+                v-model="blogAdd.countryId"
+                placeholder="可选国家"
+                style="width: 100px;margin-left: 10px;"
+                clearable
+
+            >
+              <el-option v-for="(item,key) in country" :key="key" :label=item.countryName :value=item.id />
+            </el-select>
+          </el-form-item>
+          <quill-editor theme="snow"/>
           <el-button @click="dialogVisible = false">取消</el-button>
           <el-button type="primary" @click="dialogVisible = false">
             提交文章
           </el-button>
+
 
         </el-form>
 
