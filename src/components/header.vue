@@ -3,12 +3,12 @@ import { ref} from 'vue'
 import { useRouter } from 'vue-router'
 import {api} from "@/utils/axiosPackaging";
 import {MenuVo} from "@/entity/Entity";
-import {getMenu} from "@/utils/UrlPackaging";
+import {getHeaderMenu} from "@/utils/UrlPackaging";
 
 
 
 let menuVo=ref(new Array<MenuVo>());
-api(getMenu)
+api(getHeaderMenu)
     .then((response)=>{
       menuVo.value=response.data.data
       for(let i in menuVo){
