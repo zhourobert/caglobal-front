@@ -1,23 +1,23 @@
 <template>
   <<header1></header1>
-<!--图片轮换-->
+  <!--图片轮换-->
   <el-carousel class="swiper" height="580px" autoplay>
     <el-carousel-item key="1">
       <img
         src="https://www.yesglobal.com.cn/res/202109/18/6bde9dd8f8c6df77.jpg"
         alt=""
-        style="width: 100%"
+        style="width: 100%; height: 100%"
       />
     </el-carousel-item>
     <el-carousel-item key="2">
       <img
         src="https://www.yesglobal.com.cn/res/201905/16/c11b056591f2063d.jpg"
         alt=""
-        style="width: 100%"
+        style="width: 100%; height: 100%"
       />
     </el-carousel-item>
   </el-carousel>
-<!--  新闻栏-->
+  <!--  新闻栏-->
   <div class="news">
     <div class="commend-news-box">
       <div class="uk-width-auto uk-first-column">
@@ -64,13 +64,13 @@
       </div>
     </div>
   </div>
-<!--  第二栏-->
+  <!--  第二栏-->
   <div class="updates m80">
     <div class="uk-container">
       <div class="uk-grid">
         <div class="uk-width-auto@m uk-visible@m uk-first-column">
           <div class="squareslider-box">
-<!--            轮换栏目-->
+            <!--            轮换栏目-->
             <div class="bx-wrapper">
               <el-carousel autoplay height="398px">
                 <el-carousel-item key="1">
@@ -91,7 +91,7 @@
             </div>
           </div>
         </div>
-<!--        实时政策-->
+        <!--        实时政策-->
         <div class="uk-width-expand@s uk-visible@m">
           <h3 class="pg-title">
             实时政策 <span>Real time policy</span>
@@ -103,81 +103,30 @@
                 src="https://www.yesglobal.com.cn/res/202404/01/thumb_9407.jpg"
             /></a>
             <h6 class="uk-position-bottom-left uk-text-truncate">
-              <a href=""
-                >干货 | EB1A申请为何会被拒？原因在这里！</a
-              >
+              <a href="">干货 | EB1A申请为何会被拒？原因在这里！</a>
             </h6>
           </div>
           <ul>
             <li class="uk-text-truncate">
-              <a href=""
-                >官宣！新加坡EP申请门槛再次提高</a
-              >
+              <a href="">官宣！新加坡EP申请门槛再次提高</a>
             </li>
             <li class="uk-text-truncate">
-              <a href=""
-                >最新！希腊移民新政解读</a
-              >
+              <a href="">最新！希腊移民新政解读</a>
             </li>
             <li class="uk-text-truncate">
-              <a href=""
-                >十年美签到期，可申请续签免面试！</a
-              >
+              <a href="">十年美签到期，可申请续签免面试！</a>
             </li>
             <li class="uk-text-truncate">
-              <a href=""
-                >攻略 | 市场型企业高管如何申请EB1A杰出人才移民？</a
-              >
+              <a href="">攻略 | 市场型企业高管如何申请EB1A杰出人才移民？</a>
             </li>
           </ul>
         </div>
-<!--        活动公告-->
-        <div class="uk-width-expand@s">
-          <h3 class="pg-title">
-            活动公告 <span>Activity Bulletin</span>
-            <a
-              href=""
-              >More &gt;</a
-            >
-          </h3>
-          <div class="img-updates uk-position-relative">
-            <a href=""
-              ><img
-                src="https://www.yesglobal.com.cn/res/202401/16/thumb_9224.jpg"
-            /></a>
-            <h6 class="uk-position-bottom-left uk-text-truncate">
-              <a href=""
-                >美国人才类绿卡在线讲座</a
-              >
-            </h6>
-          </div>
-          <ul>
-            <li class="uk-text-truncate">
-              <a href=""
-                >拜登时代最适合中国人移民美国的方式——美国Fragomen律所专题线上分享会圆满举办</a
-              >
-            </li>
-            <li class="uk-text-truncate">
-              <a href=""
-                >拜登当选 美国移民改革 对华策略影响</a
-              >
-            </li>
-            <li class="uk-text-truncate">
-              <a href=""
-                >活动过程：新民法典背景下的家庭财富规划与海外资产配置交流会</a
-              >
-            </li>
-            <li class="uk-text-truncate">
-              <a href=""
-                >活动预告：新民法典背景下的家庭财富规划与海外资产配置交流会</a
-              >
-            </li>
-          </ul>
-        </div>
+        <!--        活动公告-->
+        <div class="uk-width-expand@s"></div>
       </div>
     </div>
   </div>
-<!--  热门项目-->
+  <!--  热门项目-->
   <div class="hot-project p80">
     <div class="uk-container">
       <div class="uk-flex-middle uk-grid" uk-grid="">
@@ -232,7 +181,7 @@
           </div>
         </div>
       </div>
-<!--      热门项目详情-->
+      <!--      热门项目详情-->
       <div class="uk-switcher uk-margin-medium-top hot-project-switcher">
         <div :class="{ 'uk-active': isProject == 'tuijian' }">
           <div class="uk-child-width-1-3@m uk-grid-small uk-grid ff">
@@ -243,11 +192,7 @@
                     src="https://www.yesglobal.com.cn/res/201912/26/thumb_5530.png"
                 /></a>
                 <h6 class="uk-position-bottom-left">
-                  <a
-                    href=""
-                    target="_blank"
-                    >美国杰出人才移民</a
-                  >
+                  <a href="" target="_blank">美国杰出人才移民</a>
                 </h6>
               </div>
             </div>
@@ -258,11 +203,7 @@
                     src="https://www.yesglobal.com.cn/res/201905/23/thumb_2957.jpg"
                 /></a>
                 <h6 class="uk-position-bottom-left">
-                  <a
-                    href=""
-                    target="_blank"
-                    >西班牙置业移民</a
-                  >
+                  <a href="" target="_blank">西班牙置业移民</a>
                 </h6>
               </div>
             </div>
@@ -273,9 +214,7 @@
                     src="https://www.yesglobal.com.cn/res/201812/19/thumb_328.jpg"
                 /></a>
                 <h6 class="uk-position-bottom-left">
-                  <a href="" target="_blank"
-                    >马耳他投资移民</a
-                  >
+                  <a href="" target="_blank">马耳他投资移民</a>
                 </h6>
               </div>
             </div>
@@ -286,11 +225,7 @@
                     src="https://www.yesglobal.com.cn/res/201903/18/thumb_1462.jpg"
                 /></a>
                 <h6 class="uk-position-bottom-left">
-                  <a
-                    href=""
-                    target="_blank"
-                    >圣基茨尼维斯护照</a
-                  >
+                  <a href="" target="_blank">圣基茨尼维斯护照</a>
                 </h6>
               </div>
             </div>
@@ -301,11 +236,7 @@
                     src="https://www.yesglobal.com.cn/res/201906/14/thumb_3285.jpg"
                 /></a>
                 <h6 class="uk-position-bottom-left">
-                  <a
-                    href=""
-                    target="_blank"
-                    >土耳其护照</a
-                  >
+                  <a href="" target="_blank">土耳其护照</a>
                 </h6>
               </div>
             </div>
@@ -316,9 +247,7 @@
                     src="https://www.yesglobal.com.cn/res/201904/17/thumb_2139.jpg"
                 /></a>
                 <h6 class="uk-position-bottom-left">
-                  <a href="" target="_blank"
-                    >加拿大投资移民</a
-                  >
+                  <a href="" target="_blank">加拿大投资移民</a>
                 </h6>
               </div>
             </div>
@@ -335,9 +264,7 @@
                     src="https://www.yesglobal.com.cn/res/201904/17/thumb_2110.jpg"
                 /></a>
                 <h6 class="uk-position-bottom-left">
-                  <a href=""
-                    >爱尔兰投资移民</a
-                  >
+                  <a href="">爱尔兰投资移民</a>
                 </h6>
               </div>
             </div>
@@ -348,9 +275,7 @@
                     src="https://www.yesglobal.com.cn/res/201903/28/thumb_1536.jpg"
                 /></a>
                 <h6 class="uk-position-bottom-left">
-                  <a href=""
-                    >葡萄牙35万黄金居留项目</a
-                  >
+                  <a href="">葡萄牙35万黄金居留项目</a>
                 </h6>
               </div>
             </div>
@@ -361,9 +286,7 @@
                     src="https://www.yesglobal.com.cn/res/201901/28/thumb_859.png"
                 /></a>
                 <h6 class="uk-position-bottom-left">
-                  <a href=""
-                    >意大利置业移民</a
-                  >
+                  <a href="">意大利置业移民</a>
                 </h6>
               </div>
             </div>
@@ -374,9 +297,7 @@
                     src="https://www.yesglobal.com.cn/res/201904/17/thumb_2140.jpg"
                 /></a>
                 <h6 class="uk-position-bottom-left">
-                  <a href=""
-                    >英国企业家移民</a
-                  >
+                  <a href="">英国企业家移民</a>
                 </h6>
               </div>
             </div>
@@ -387,9 +308,7 @@
                     src="https://www.yesglobal.com.cn/res/201905/23/thumb_2957.jpg"
                 /></a>
                 <h6 class="uk-position-bottom-left">
-                  <a href=""
-                    >西班牙置业移民</a
-                  >
+                  <a href="">西班牙置业移民</a>
                 </h6>
               </div>
             </div>
@@ -400,9 +319,7 @@
                     src="https://www.yesglobal.com.cn/res/201812/19/thumb_328.jpg"
                 /></a>
                 <h6 class="uk-position-bottom-left">
-                  <a href=""
-                    >马耳他投资移民</a
-                  >
+                  <a href="">马耳他投资移民</a>
                 </h6>
               </div>
             </div>
@@ -420,11 +337,7 @@
                     src="https://www.yesglobal.com.cn/res/201912/26/thumb_5530.png"
                 /></a>
                 <h6 class="uk-position-bottom-left">
-                  <a
-                    href=""
-                    target="_blank"
-                    >美国杰出人才移民</a
-                  >
+                  <a href="" target="_blank">美国杰出人才移民</a>
                 </h6>
               </div>
             </div>
@@ -442,9 +355,7 @@
                     src="https://www.yesglobal.com.cn/res/201812/20/thumb_356.png"
                 /></a>
                 <h6 class="uk-position-bottom-left">
-                  <a href=""
-                    >塞浦路斯护照</a
-                  >
+                  <a href="">塞浦路斯护照</a>
                 </h6>
               </div>
             </div>
@@ -455,9 +366,7 @@
                     src="https://www.yesglobal.com.cn/res/201903/18/thumb_1462.jpg"
                 /></a>
                 <h6 class="uk-position-bottom-left">
-                  <a href=""
-                    >圣基茨尼维斯护照</a
-                  >
+                  <a href="">圣基茨尼维斯护照</a>
                 </h6>
               </div>
             </div>
@@ -486,9 +395,7 @@
                     src="https://www.yesglobal.com.cn/res/201905/15/thumb_2621.jpg"
                 /></a>
                 <h6 class="uk-position-bottom-left">
-                  <a href=""
-                    >新西兰优才移民</a
-                  >
+                  <a href="">新西兰优才移民</a>
                 </h6>
               </div>
             </div>
@@ -499,9 +406,7 @@
                     src="https://www.yesglobal.com.cn/res/201905/14/thumb_2579.jpg"
                 /></a>
                 <h6 class="uk-position-bottom-left">
-                  <a href=""
-                    >澳大利亚留学移民项目</a
-                  >
+                  <a href="">澳大利亚留学移民项目</a>
                 </h6>
               </div>
             </div>
@@ -512,9 +417,7 @@
                     src="https://www.yesglobal.com.cn/res/201905/14/thumb_2579.jpg"
                 /></a>
                 <h6 class="uk-position-bottom-left">
-                  <a href=""
-                    >澳大利亚留学移民项目</a
-                  >
+                  <a href="">澳大利亚留学移民项目</a>
                 </h6>
               </div>
             </div>
@@ -523,717 +426,7 @@
       </div>
     </div>
   </div>
-<!--  海外置业-->
-  <div class="overseas-purchase m80">
-    <div class="uk-container">
-      <div class="uk-flex-middle uk-grid" uk-grid="">
-        <div class="uk-width-auto uk-first-column">
-          <h3 class="pg-title">海外置业 <span>Overseas purchase</span></h3>
-        </div>
-        <div class="uk-width-expand">
-          <ul class="overseas-purchase-tab uk-visible@m">
-            <li class="uk-active" @click="isguojia = 'xibanya'">
-              <div href="" class="uk-flex uk-flex-middle">
-                <img
-                  src="https://www.yesglobal.com.cn/res/201812/17/679d165c057e735a.png"
-                  width="20"
-                />
-                <div>
-                  <span>西班牙</span>
-                </div>
-              </div>
-            </li>
-            <li @click="isguojia = 'tuerqi'">
-              <div href="" class="uk-flex uk-flex-middle">
-                <img
-                  src="https://www.yesglobal.com.cn/res/tuerqi.png"
-                  width="20"
-                />
-                <div>
-                  <span>土耳其</span>
-                </div>
-              </div>
-            </li>
-            <li @click="isguojia = 'putaoya'">
-              <div href="" class="uk-flex uk-flex-middle">
-                <img
-                  src="https://www.yesglobal.com.cn/res/201812/17/d19ea39d27bcb0d4.png"
-                  width="20"
-                />
-                <div>
-                  <span>葡萄牙</span>
-                </div>
-              </div>
-            </li>
-            <li @click="isguojia = 'malai'">
-              <div href="" class="uk-flex uk-flex-middle">
-                <img
-                  src="https://www.yesglobal.com.cn/res/201812/17/ce0ddfc5d58c8faf.png"
-                  width="20"
-                />
-                <div>
-                  <span>马来西亚</span>
-                </div>
-              </div>
-            </li>
-            <li @click="isguojia = 'lusi'">
-              <div href="" class="uk-flex uk-flex-middle">
-                <img
-                  src="https://www.yesglobal.com.cn/res/saipulusi.png"
-                  width="20"
-                />
-                <div>
-                  <span>塞浦路斯</span>
-                </div>
-              </div>
-            </li>
-            <li @click="isguojia = 'xila'">
-              <div href="" class="uk-flex uk-flex-middle">
-                <img
-                  src="https://www.yesglobal.com.cn/res/201812/17/a57b810597ce20b4.png"
-                  width="20"
-                />
-                <div>
-                  <span>希腊</span>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div class="uk-width-auto news-center-more">
-          <a href="">More</a>
-        </div>
-      </div>
-      <div
-        class="uk-switcher uk-margin-medium-top dd"
-        id="overseas-purchase-switcher"
-      >
-        <div :class="{ 'uk-active': isguojia == 'xibanya' }">
-          <div class="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid ff">
-            <div class="uk-first-column">
-              <figure class="purchase-switcher-card">
-                <a href="" target="_blank"
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201906/10/thumb_3142.png"
-                /></a>
-                <figcaption>
-                  <h6>
-                    <a
-                      href=""
-                      target="_blank"
-                      >S-02 独栋别墅</a
-                    >
-                  </h6>
-                  <div class="uk-flex uk-flex-middle uk-flex-center">
-                    <div class="uk-flex uk-flex-middle">
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
-                      />
-                      <span class="price">800万</span>
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
-                      />
-                      1025
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
-                      />
-                      别墅
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-            <div>
-              <figure class="purchase-switcher-card">
-                <a href="" target="_blank"
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201906/10/thumb_3130.png"
-                /></a>
-                <figcaption>
-                  <h6>
-                    <a
-                      href=""
-                      target="_blank"
-                      >S-01 独栋别墅</a
-                    >
-                  </h6>
-                  <div class="uk-flex uk-flex-middle uk-flex-center">
-                    <div class="uk-flex uk-flex-middle">
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
-                      />
-                      <span class="price">1200万</span>
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
-                      />
-                      4000平米
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
-                      />
-                      别墅
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-            <div>
-              <figure class="purchase-switcher-card">
-                <a href="" target="_blank"
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201906/28/thumb_3549.png"
-                /></a>
-                <figcaption>
-                  <h6>
-                    <a
-                      href=""
-                      target="_blank"
-                      >精品公寓V342</a
-                    >
-                  </h6>
-                  <div class="uk-flex uk-flex-middle uk-flex-center">
-                    <div class="uk-flex uk-flex-middle">
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
-                      />
-                      <span class="price">280万</span>
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
-                      />
-                      115
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
-                      />
-                      公寓
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-            <div class="uk-grid-margin uk-first-column">
-              <figure class="purchase-switcher-card">
-                <a href="" target="_blank"
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201902/13/thumb_938.png"
-                /></a>
-                <figcaption>
-                  <h6>
-                    <a
-                      href=""
-                      target="_blank"
-                      >商铺022-牙医诊所</a
-                    >
-                  </h6>
-                  <div class="uk-flex uk-flex-middle uk-flex-center">
-                    <div class="uk-flex uk-flex-middle">
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
-                      />
-                      <span class="price">422万</span>
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
-                      />
-                      190
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
-                      />
-                      投资
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-            <div class="uk-grid-margin">
-              <figure class="purchase-switcher-card">
-                <a href="" target="_blank"
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201902/13/thumb_923.png"
-                /></a>
-                <figcaption>
-                  <h6>
-                    <a
-                      href=""
-                      target="_blank"
-                      >商铺021-精品火腿商铺</a
-                    >
-                  </h6>
-                  <div class="uk-flex uk-flex-middle uk-flex-center">
-                    <div class="uk-flex uk-flex-middle">
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
-                      />
-                      <span class="price">468万</span>
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
-                      />
-                      290
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
-                      />
-                      投资
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-            <div class="uk-grid-margin">
-              <figure class="purchase-switcher-card">
-                <a href="" target="_blank"
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201901/24/thumb_820.png"
-                /></a>
-                <figcaption>
-                  <h6>
-                    <a
-                      href=""
-                      target="_blank"
-                      >奢华公寓034-对角线豪庭</a
-                    >
-                  </h6>
-                  <div class="uk-flex uk-flex-middle uk-flex-center">
-                    <div class="uk-flex uk-flex-middle">
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
-                      />
-                      <span class="price">450万</span>
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
-                      />
-                      89
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
-                      />
-                      公寓
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
-        <div :class="{ 'uk-active': isguojia == 'tuerqi' }">
-          <div
-            class="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid ff"
-            uk-grid=""
-          >
-            <div>
-              <figure class="purchase-switcher-card">
-                <a href="" target="_blank"
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201910/22/thumb_4548.jpg"
-                /></a>
-                <figcaption>
-                  <h6>
-                    <a
-                      href=""
-                      target="_blank"
-                      >NG Residence公寓项目</a
-                    >
-                  </h6>
-                  <div class="uk-flex uk-flex-middle uk-flex-center">
-                    <div class="uk-flex uk-flex-middle">
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
-                      />
-                      <span class="price"></span>
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
-                      />
-                      65㎡
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
-                      />
-                      公寓
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-            <div>
-              <figure class="purchase-switcher-card">
-                <a href="" target="_blank"
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201910/22/thumb_4541.jpg"
-                /></a>
-                <figcaption>
-                  <h6>
-                    <a
-                      href=""
-                      target="_blank"
-                      >G-悠乐 高级公寓</a
-                    >
-                  </h6>
-                  <div class="uk-flex uk-flex-middle uk-flex-center">
-                    <div class="uk-flex uk-flex-middle">
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
-                      />
-                      <span class="price"></span>
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
-                      />
-                      95000平方米
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
-                      />
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-            <div>
-              <figure class="purchase-switcher-card">
-                <a href="" target="_blank"
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201910/22/thumb_4508.jpg"
-                /></a>
-                <figcaption>
-                  <h6>
-                    <a
-                      href=""
-                      target="_blank"
-                      >G伊斯坦布尔·万达文华酒店式公寓</a
-                    >
-                  </h6>
-                  <div class="uk-flex uk-flex-middle uk-flex-center">
-                    <div class="uk-flex uk-flex-middle">
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
-                      />
-                      <span class="price"></span>
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
-                      />
-                      公寓
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-            <div>
-              <figure class="purchase-switcher-card">
-                <a href="" target="_blank"
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201910/22/thumb_4513.jpg"
-                /></a>
-                <figcaption>
-                  <h6>
-                    <a
-                      href=""
-                      target="_blank"
-                      >G 天塔 行政酒店公寓</a
-                    >
-                  </h6>
-                  <div class="uk-flex uk-flex-middle uk-flex-center">
-                    <div class="uk-flex uk-flex-middle">
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
-                      />
-                      <span class="price"></span>
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
-                      />
-                      65.8m²
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
-                      />
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-            <div>
-              <figure class="purchase-switcher-card">
-                <a href="" target="_blank"
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201910/22/thumb_4518.jpg"
-                /></a>
-                <figcaption>
-                  <h6>
-                    <a
-                      href=""
-                      target="_blank"
-                      >G 玛琳公寓</a
-                    >
-                  </h6>
-                  <div class="uk-flex uk-flex-middle uk-flex-center">
-                    <div class="uk-flex uk-flex-middle">
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
-                      />
-                      <span class="price"></span>
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
-                      />
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-            <div>
-              <figure class="purchase-switcher-card">
-                <a href="" target="_blank"
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201910/22/thumb_4531.jpg"
-                /></a>
-                <figcaption>
-                  <h6>
-                    <a
-                      href=""
-                      target="_blank"
-                      >G Beyond·蓓逸高档度假住宅区</a
-                    >
-                  </h6>
-                  <div class="uk-flex uk-flex-middle uk-flex-center">
-                    <div class="uk-flex uk-flex-middle">
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
-                      />
-                      <span class="price"></span>
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
-                      />
-                      别墅
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
-        <div :class="{ 'uk-active': isguojia == 'putaoya' }">
-          <div
-            class="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid ff"
-            uk-grid=""
-          ></div>
-        </div>
-        <div :class="{ 'uk-active': isguojia == 'malai' }">
-          <div
-            class="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid ff uk-grid-stack"
-            uk-grid=""
-          >
-            <div>
-              <figure class="purchase-switcher-card">
-                <a href="" target="_blank"
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201910/22/thumb_4497.jpg"
-                /></a>
-                <figcaption>
-                  <h6>
-                    <a
-                      href=""
-                      target="_blank"
-                      >富力公主湾</a
-                    >
-                  </h6>
-                  <div class="uk-flex uk-flex-middle uk-flex-center">
-                    <div class="uk-flex uk-flex-middle">
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
-                      />
-                      <span class="price">160万</span>
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
-                      />
-                      71㎡
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
-                      />
-                      公寓
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
-        <div :class="{ 'uk-active': isguojia == 'lusi' }">
-          <div
-            class="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid ff"
-            uk-grid=""
-          ></div>
-        </div>
-        <div :class="{ 'uk-active': isguojia == 'xila' }">
-          <div
-            class="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid ff uk-grid-stack"
-            uk-grid=""
-          >
-            <div>
-              <figure class="purchase-switcher-card">
-                <a href="" target="_blank"
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201901/24/thumb_838.jpg"
-                /></a>
-                <figcaption>
-                  <h6>
-                    <a
-                      href=""
-                      target="_blank"
-                      >爱琴海精品公寓04</a
-                    >
-                  </h6>
-                  <div class="uk-flex uk-flex-middle uk-flex-center">
-                    <div class="uk-flex uk-flex-middle">
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
-                      />
-                      <span class="price">200+万</span>
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
-                      />
-                      50-105
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
-                      />
-                      公寓
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-            <div>
-              <figure class="purchase-switcher-card">
-                <a href="" target="_blank"
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201901/24/thumb_837.jpg"
-                /></a>
-                <figcaption>
-                  <h6>
-                    <a
-                      href=""
-                      target="_blank"
-                      >富人区轻奢海景公寓</a
-                    >
-                  </h6>
-                  <div class="uk-flex uk-flex-middle uk-flex-center">
-                    <div class="uk-flex uk-flex-middle">
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
-                      />
-                      <span class="price">200万</span>
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
-                      />
-                      65
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
-                      />
-                      公寓
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-            <div>
-              <figure class="purchase-switcher-card">
-                <a href="" target="_blank"
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201901/17/thumb_676.png"
-                /></a>
-                <figcaption>
-                  <h6>
-                    <a
-                      href=""
-                      target="_blank"
-                      >使馆花园区公寓II期</a
-                    >
-                  </h6>
-                  <div class="uk-flex uk-flex-middle uk-flex-center">
-                    <div class="uk-flex uk-flex-middle">
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-1.jpg"
-                      />
-                      <span class="price">193万</span>
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-2.jpg"
-                      />
-                      53
-                    </div>
-                    <div>
-                      <img
-                        src="https://www.yesglobal.com.cn/tpl/www/images/icon-3.jpg"
-                      />
-                      公寓
-                    </div>
-                  </div>
-                </figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+
   <dongtai></dongtai>
   <zixun></zixun>
   <div class="links uk-visible@m">
@@ -1263,6 +456,7 @@
     </div>
   </div>
   <footer1></footer1>
+  <Dialog1></Dialog1>
 </template>
 <script setup lang="ts">
 import { ref } from 'vue'
@@ -1270,10 +464,8 @@ import dongtai from '@/components/dongtai.vue'
 import zixun from '@/components/zixun.vue'
 import footer1 from '@/components/footer.vue'
 import header1 from '@/components/header.vue'
+import Dialog1 from '@/components/dialog.vue'
 import { useRouter } from 'vue-router'
-
-
-
 
 const router = useRouter()
 const ishaiwai = ref(false)

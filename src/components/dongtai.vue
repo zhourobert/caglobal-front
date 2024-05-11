@@ -2,10 +2,8 @@
   <div class="information p80">
     <div class="uk-container">
       <h3 class="pg-title">
-        寰球动态 <span>Information</span>
-        <a href=""
-          >More</a
-        >
+        寰球案例 <span>Information</span>
+        <a href="">More</a>
       </h3>
       <div class="uk-margin-medium-top uk-grid bet">
         <div class="uk-width-1-2@m uk-first-column">
@@ -28,9 +26,7 @@
             <div class="uk-flex-middle uk-grid" uk-grid="">
               <div class="uk-width-expand uk-first-column">
                 <h5 class="uk-text-truncate">
-                  <a href=""
-                    >美国人才类绿卡在线讲座
-                  </a>
+                  <a href="">美国人才类绿卡在线讲座 </a>
                 </h5>
                 <div class="uk-grid-small uk-flex-middle uk-grid" uk-grid="">
                   <div class="uk-width-1-3@m uk-visible@m uk-first-column">
