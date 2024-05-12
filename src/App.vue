@@ -5,4 +5,8 @@
 import { RouterView } from 'vue-router'
 </script>
 
-<style scoped></style>
+<style scoped>
+html,body {
+  height: 100%;
+}
+</style>

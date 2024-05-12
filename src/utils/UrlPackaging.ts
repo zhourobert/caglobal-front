@@ -4,3 +4,5 @@ export const saveMenu:string="/menu/addMenu";
 export const getBlogList:string="/blog/queryList";
 export const getCountyList:string="/country/getCountryName";
 export const getTypeList:string="/blogType/getTypes";
+export const login:string="/user/login";
+

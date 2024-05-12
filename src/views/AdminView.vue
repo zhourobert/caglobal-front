@@ -1,6 +1,11 @@
 <script setup lang="ts">
 
 import {jump} from "@/utils/RouterJumpUtils";
+import {jwtDecode} from "jwt-decode";
+
+const token=window.localStorage.getItem("userJwt")
+//TODO:解析jwt获得用户数据
+const userInfo=jwtDecode(token);
 </script>
 
 <template>
