@@ -1,9 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import MenuManage from "@/subview/MenuManage.vue";
-import BlogManage from "@/subview/BlogManage.vue";
-import Setting from "@/subview/Setting.vue";
-import UserManage from "@/subview/UserManage.vue";
+import MenuManage from '@/subview/MenuManage.vue'
+import BlogManage from '@/subview/BlogManage.vue'
+import Setting from '@/subview/Setting.vue'
+import UserManage from '@/subview/UserManage.vue'
+import test from '@/subview/test.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -33,32 +34,37 @@ const router = createRouter({
       name: 'login',
       component: () => import('../views/LoginView.vue')
     },
-      //TODO:添加路由守卫检验userJwt，jwt没有或者错误跳转回登录页面
+    {
+      path: '/test',
+      name: 'test',
+      component: test
+    },
+    //TODO:添加路由守卫检验userJwt，jwt没有或者错误跳转回登录页面
     {
       path: '/admin',
       name: 'admin',
       component: () => import('../views/AdminView.vue'),
-      children:[
+      children: [
         {
           path: '/menuManage',
           name: 'menuManage',
-          component: MenuManage,
+          component: MenuManage
         },
         {
           path: '/blogManage',
           name: 'blogManage',
-          component: BlogManage,
+          component: BlogManage
         },
         {
           path: '/userManage',
           name: 'userManage',
-          component: UserManage,
+          component: UserManage
         },
         {
           path: '/setting',
           name: 'setting',
-          component: Setting,
-        },
+          component: Setting
+        }
       ]
     }
   ]
