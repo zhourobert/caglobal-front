@@ -1,5 +1,5 @@
 <template>
-  <<header1></header1>
+  <header1></header1>
   <!--图片轮换-->
   <el-carousel class="swiper" height="580px" autoplay>
     <el-carousel-item key="1">

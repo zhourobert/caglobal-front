@@ -18,10 +18,7 @@
         <div class="uk-container">
           <div uk-grid="" class="uk-grid">
             <div class="uk-width-auto uk-first-column">
-              <a class="logo" href="/"
-                ><img
-                  src=""
-              /></a>
+              <a class="logo" href="/"><img src="" /></a>
             </div>
             <div class="uk-width-expand">
               <nav>
@@ -33,7 +30,9 @@
                     <a @click="router.push('/about')">资讯中心</a>
                   </li>
                   <li class="uk-width-expand">
-                    <a @click="router.push('/RecommendedactivityView')">活动公告</a>
+                    <a @click="router.push('/RecommendedactivityView')"
+                      >活动公告</a
+                    >
                   </li>
                   <li class="uk-width-expand">
                     <a
@@ -113,7 +112,7 @@
           </div>
         </div>
       </div>
-      <div class="subnav">
+      <div class="subnav" style="opacity: 0">
         <div class="uk-container">
           <div class="subnav-box">
             <ul>
@@ -317,17 +316,17 @@
       </div>
     </div>
     <!-- page-nav -->
-    <div class="page-nav uk-position-bottom-left uk-width-1-1">
+    <div
+      class="page-nav uk-position-bottom-left uk-width-1-1"
+      style="opacity: 0"
+    >
       <div class="uk-container">
         <div
           class="uk-child-width-1-5@l uk-child-width-1-4 uk-grid-collapse uk-grid"
           uk-grid=""
         >
           <div class="uk-first-column">
-            <a
-              href=""
-              class="on"
-            >
+            <a href="" class="on">
               <span>新闻动态</span>
               <i class="uk-visible@m">News</i>
             </a>
@@ -443,9 +442,7 @@
               </div>
               <div class="uk-width-expand">
                 <h5>
-                  <a href=""
-                    >最新！希腊移民新政解读</a
-                  >
+                  <a href="">最新！希腊移民新政解读</a>
                 </h5>
                 <p>
                   2024年3月21日希腊国民经济和财政部长哈齐达基斯宣布了关于希腊本次“黄金签证”的调整细则。哈齐达基斯宣布..
@@ -474,9 +471,7 @@
               </div>
               <div class="uk-width-expand">
                 <h5>
-                  <a href=""
-                    >十年美签到期，可申请续签免面试！</a
-                  >
+                  <a href="">十年美签到期，可申请续签免面试！</a>
                 </h5>
                 <p>
                   十年美签如何申请免面试及申请条件2014年11月美国驻华大使馆签证处为首批获得十年签的中国申请人颁发了新签..
@@ -505,9 +500,7 @@
               </div>
               <div class="uk-width-expand">
                 <h5>
-                  <a href=""
-                    >攻略 | 市场型企业高管如何申请EB1A杰出人才移民？</a
-                  >
+                  <a href="">攻略 | 市场型企业高管如何申请EB1A杰出人才移民？</a>
                 </h5>
                 <p>
                   01EB1A高性价比备受追捧近年来，越来越多的企业高管通过EB1A杰出人才移民拿到美国绿卡。对于企业高管来说，..
@@ -536,9 +529,7 @@
               </div>
               <div class="uk-width-expand">
                 <h5>
-                  <a href=""
-                    >马耳他移民法案修订更新！</a
-                  >
+                  <a href="">马耳他移民法案修订更新！</a>
                 </h5>
                 <p>
                   2024年3月6日马耳他移民局突然对移民法案做出修订，并于3月7日立即执行！——此次，针对马耳他永居项目MPRP..
@@ -567,9 +558,7 @@
               </div>
               <div class="uk-width-expand">
                 <h5>
-                  <a href=""
-                    >突发！加拿大移民全面设置语言门槛！</a
-                  >
+                  <a href="">突发！加拿大移民全面设置语言门槛！</a>
                 </h5>
                 <p>
                   2024年3月14日继阿省提名AOS突然暂停后，萨省企业家移民也于前两日突发重大改革:——新增语言要求、强制商考..
@@ -598,9 +587,7 @@
               </div>
               <div class="uk-width-expand">
                 <h5>
-                  <a href=""
-                    >清华本硕也被拒！细说香港优才的几种拒签信！</a
-                  >
+                  <a href="">清华本硕也被拒！细说香港优才的几种拒签信！</a>
                 </h5>
                 <p>
                   香港入境处最近公布了2022至2023年各项入境计划申请人数及获批人数的统计数字；其中优秀人才入境计划的增长..
@@ -622,53 +609,28 @@
           <div class="uk-margin">
             <ul class="pages">
               <li>
-                <a
-                  href=""
-                  >上一页</a
-                >
+                <a href="">上一页</a>
               </li>
               <li>
-                <a
-                  href=""
-                  class="active"
-                  >1</a
-                >
+                <a href="" class="active">1</a>
               </li>
               <li>
-                <a
-                  href=""
-                  >2</a
-                >
+                <a href="">2</a>
               </li>
               <li>
-                <a
-                  href=""
-                  >3</a
-                >
+                <a href="">3</a>
               </li>
               <li>
-                <a
-                  href=""
-                  >4</a
-                >
+                <a href="">4</a>
               </li>
               <li>
-                <a
-                  href=""
-                  >5</a
-                >
+                <a href="">5</a>
               </li>
               <li>
-                <a
-                  href=""
-                  >6</a
-                >
+                <a href="">6</a>
               </li>
               <li>
-                <a
-                  href=""
-                  >下一页</a
-                >
+                <a href="">下一页</a>
               </li>
             </ul>
           </div>
@@ -685,16 +647,11 @@
             <h6 class="uk-position-bottom uk-overlay">
               2021年6月签证排期公告：EB-5前进1个月，EB..
             </h6>
-            <a
-              href=""
-              class="uk-position-cover"
-            ></a>
+            <a href="" class="uk-position-cover"></a>
           </div>
           <div class="uk-margin side-more">
             <div class="uk-text-truncate">
-              <a href=""
-                >10月美签预约全部取消全部取消，2020年恢复无望</a
-              >
+              <a href="">10月美签预约全部取消全部取消，2020年恢复无望</a>
             </div>
             <hr />
             <div class="uk-text-truncate">
@@ -704,9 +661,7 @@
             </div>
             <hr />
             <div class="uk-text-truncate">
-              <a href=""
-                >日本新签证制度：给予日本留学生2年创业时间</a
-              >
+              <a href="">日本新签证制度：给予日本留学生2年创业时间</a>
             </div>
             <hr />
             <div class="uk-text-truncate">
@@ -725,10 +680,7 @@
               alt="美国杰出人才移民"
             />
             <h6 class="uk-position-bottom uk-overlay">美国杰出人才移民</h6>
-            <a
-              href=""
-              class="uk-position-cover"
-            ></a>
+            <a href="" class="uk-position-cover"></a>
           </div>
           <div class="uk-inline-clip side-figure uk-margin-small-bottom">
             <img
@@ -736,10 +688,7 @@
               alt="西班牙置业移民"
             />
             <h6 class="uk-position-bottom uk-overlay">西班牙置业移民</h6>
-            <a
-              href=""
-              class="uk-position-cover"
-            ></a>
+            <a href="" class="uk-position-cover"></a>
           </div>
           <div class="uk-inline-clip side-figure uk-margin-small-bottom">
             <img
@@ -747,10 +696,7 @@
               alt="马耳他投资移民"
             />
             <h6 class="uk-position-bottom uk-overlay">马耳他投资移民</h6>
-            <a
-              href=""
-              class="uk-position-cover"
-            ></a>
+            <a href="" class="uk-position-cover"></a>
           </div>
           <div class="uk-inline-clip side-figure uk-margin-small-bottom">
             <img
@@ -758,10 +704,7 @@
               alt="圣基茨尼维斯护照"
             />
             <h6 class="uk-position-bottom uk-overlay">圣基茨尼维斯护照</h6>
-            <a
-              href=""
-              class="uk-position-cover"
-            ></a>
+            <a href="" class="uk-position-cover"></a>
           </div>
         </div>
       </div>
