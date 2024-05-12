@@ -1,6 +1,5 @@
 <script setup lang="ts">
 
-
 import {ref} from "vue";
 import {api} from "@/utils/axiosPackaging";
 import {getMenuList, saveMenu} from "@/utils/UrlPackaging";
@@ -43,6 +42,7 @@ const submitMenu=()=>{
       <el-table-column prop="route" label="路由" width="150" />
       <el-table-column prop="type" label="菜单类型" width="150" />
       <el-table-column label="操作" width="150" >
+<!--        TODO:删除修改逻辑书写完整-->
         <a href="">修改</a> |  <a href="">删除</a>
       </el-table-column>
     </el-table>

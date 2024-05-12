@@ -5,20 +5,23 @@ import {jwtDecode} from "jwt-decode";
 
 const token=window.localStorage.getItem("userJwt")
 //TODO:解析jwt获得用户数据
-const userInfo=jwtDecode(token);
+// const userInfo=jwtDecode(token);
 </script>
 
 <template>
   <!-- 导航栏 -->
   <nav class="navbar">
-    <div class="container">
+    <div class="header">
       <h1>寰宇后台管理系统</h1>
+<!--      TODO:修改登出样式使之美观-->
+      <a style="color: white" href="">登出</a>
     </div>
   </nav>
 
   <div id="tool-bar">
     <!-- 侧边栏 -->
     <aside class="sidebar">
+<!--      TODO:修改样式使得鼠标悬停和点击底色会变化（采用不同灰度区分）-->
       <ul class="menu">
         <li @click="jump('/menuManage')">目录管理</li>
         <li @click="jump('/blogManage')">文章管理</li>
@@ -45,8 +48,11 @@ const userInfo=jwtDecode(token);
   display: inline-flex;
 }
 
-.container {
-  max-width: 1200px;
+.header {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
   margin: 0 auto;
   padding: 0 20px;
 }

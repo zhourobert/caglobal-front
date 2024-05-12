@@ -21,15 +21,13 @@ const submitUser=()=>{
 </script>
 
 <template>
-  <h2>欢迎来到用户管理</h2>
-  <p>这里是后台管理页面的内容区域。</p>
-
   <el-table :data="userVo" border style="width: 100%">
     <el-table-column prop="username" label="用户名" width="150" />
     <el-table-column prop="password" label="密码" width="150" />
     <el-table-column prop="updateTime" label="修改时间" width="150" />
     <el-table-column prop="authority" label="权限" width="150" />
     <el-table-column label="操作" width="150" >
+<!--      TODO:增加删除修改逻辑-->
       <a href="">修改</a> |  <a href="">删除</a>
     </el-table-column>
   </el-table>
@@ -52,7 +50,6 @@ const submitUser=()=>{
         </el-form-item>
         <el-form-item label="权限">
         </el-form-item>
-
         <el-button @click="dialogVisible = false">取消</el-button>
         <el-button type="primary" @click="submitUser">
           提交

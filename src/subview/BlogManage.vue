@@ -14,7 +14,7 @@ let blogAdd=ref({
   title:"",
   author:"",
   source:"",
-  countyId:null,
+  countryId:null,
   typeId:null
 })
 
@@ -22,11 +22,11 @@ let country=ref();
 
 let type=ref();
 
-let blogQuery:Blog=ref({
+let blogQuery=ref({
   title:"",
   author:"",
   source:"",
-  countyId:null
+  countryId:null
 });
 
 
@@ -135,6 +135,7 @@ const dialogVisible = ref(false)
               <el-option v-for="(item,key) in country" :key="key" :label=item.countryName :value=item.id />
             </el-select>
           </el-form-item>
+<!--          TODO:引入富文本框架使得满足上传图文混排富文本-->
           <quill-editor theme="snow"/>
           <el-button @click="dialogVisible = false">取消</el-button>
           <el-button type="primary" @click="dialogVisible = false">
@@ -156,6 +157,7 @@ const dialogVisible = ref(false)
         <el-table-column prop="title" label="标题" width="150" />
         <el-table-column prop="TypeId" label="文章类型" />
         <el-table-column label="操作" width="150" >
+<!--          TODO:增加文章的修改和删除-->
           <a href="">修改</a> |  <a href="">删除</a>
         </el-table-column>
       </el-table>

@@ -33,6 +33,7 @@ const router = createRouter({
       name: 'login',
       component: () => import('../views/LoginView.vue')
     },
+      //TODO:添加路由守卫检验userJwt，jwt没有或者错误跳转回登录页面
     {
       path: '/admin',
       name: 'admin',
