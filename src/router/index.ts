@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import MenuManage from "@/subview/MenuManage.vue";
 import BlogManage from "@/subview/BlogManage.vue";
 import Setting from "@/subview/Setting.vue";
+import UserManage from "@/subview/UserManage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -41,6 +42,11 @@ const router = createRouter({
           path: '/blogManage',
           name: 'blogManage',
           component: BlogManage,
+        },
+        {
+          path: '/userManage',
+          name: 'userManage',
+          component: UserManage,
         },
         {
           path: '/setting',

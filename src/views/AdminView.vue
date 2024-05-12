@@ -17,6 +17,7 @@ import {jump} from "@/utils/RouterJumpUtils";
       <ul class="menu">
         <li @click="jump('/menuManage')">目录管理</li>
         <li @click="jump('/blogManage')">文章管理</li>
+        <li @click="jump('/userManage')">用户管理</li>
         <li @click="jump('/setting')">设置</li>
       </ul>
     </aside>
@@ -80,6 +81,7 @@ import {jump} from "@/utils/RouterJumpUtils";
 .sidebar {
   background-color: #c9c9c9;
   width: 200px;
+  min-width: 200px;
   height: inherit;
   padding: 0px;
 }

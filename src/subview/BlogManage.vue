@@ -155,6 +155,9 @@ const dialogVisible = ref(false)
         <el-table-column prop="countryId" label="国家id" width="150" />
         <el-table-column prop="title" label="标题" width="150" />
         <el-table-column prop="TypeId" label="文章类型" />
+        <el-table-column label="操作" width="150" >
+          <a href="">修改</a> |  <a href="">删除</a>
+        </el-table-column>
       </el-table>
     </div>
   </div>
