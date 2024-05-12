@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import type {Blog} from "@/entity/Entity";
 import {api} from "@/utils/axiosPackaging";
-import {getBlogList, getCountyList, getTypeList} from "@/utils/UrlPackaging";
-import {onMounted, ref} from "vue";
+import {addBlog, getBlogList, getCountyList, getTypeList} from "@/utils/UrlPackaging";
+import { ref} from "vue";
 
+import Editor from '@/utils/QuillUtils.vue'
 
-
+const getMsg = (val) => {
+  blogAdd.value.text = val
+}
 
 
 let blogReceive=ref();
@@ -14,6 +17,7 @@ let blogAdd=ref({
   title:"",
   author:"",
   source:"",
+  text:"",
   countryId:null,
   typeId:null
 })
@@ -58,7 +62,14 @@ const onSubmit = () => {
 const dialogVisible = ref(false)
 
 
+const blogSubmit=()=>{
+  api.post(addBlog,blogAdd.value).then(res=>{
+    console.log(res.data)
+    dialogVisible.value = false
+  })
 
+
+}
 </script>
 
 <template>
@@ -102,10 +113,10 @@ const dialogVisible = ref(false)
     <el-dialog
         v-model="dialogVisible"
         title="新增文章"
-        width="500"
+        width="800"
     >
       <template #footer>
-        <el-form :model="blogAdd" label-width="auto" style="max-width: 600px">
+        <el-form :model="blogAdd" label-width="auto" style="max-width: 800px">
           <el-form-item label="文章标题">
             <el-input v-model="blogAdd.title" placeholder="文章标题" clearable />
           </el-form-item>
@@ -135,10 +146,23 @@ const dialogVisible = ref(false)
               <el-option v-for="(item,key) in country" :key="key" :label=item.countryName :value=item.id />
             </el-select>
           </el-form-item>
+          <el-form-item label="作者">
+            <el-input v-model="blogAdd.author" placeholder="作者" clearable/>
+          </el-form-item>
 <!--          TODO:引入富文本框架使得满足上传图文混排富文本-->
-          <quill-editor theme="snow"/>
+          <Editor :value="blogAdd.text" @updateValue="getMsg" style="height: 600px"/>
+<!--          <QuillEditor-->
+<!--              ref="myQuillEditor"-->
+<!--              contentType="html"-->
+<!--              v-model:content="content"-->
+<!--              :options="data.editorOption"-->
+<!--              toolbar="full"-->
+<!--              style="height: 600px;"-->
+<!--              @update:content="setValue()"-->
+<!--          />-->
+<!--          <quill-editor  theme="snow" toolbar="full"/>-->
           <el-button @click="dialogVisible = false">取消</el-button>
-          <el-button type="primary" @click="dialogVisible = false">
+          <el-button type="primary" @click="blogSubmit">
             提交文章
           </el-button>
 
