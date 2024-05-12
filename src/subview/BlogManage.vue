@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type {Blog} from "@/entity/Entity";
 import {api} from "@/utils/axiosPackaging";
-import {addBlog, getBlogList, getCountyList, getTypeList} from "@/utils/UrlPackaging";
+import {addBlog, fileDownloading, fileUploading, getBlogList, getCountyList, getTypeList} from "@/utils/UrlPackaging";
 import { ref} from "vue";
 
 import Editor from '@/utils/QuillUtils.vue'
@@ -68,6 +68,40 @@ const blogSubmit=()=>{
     dialogVisible.value = false
   })
 
+ const editorOption=ref( {
+    modules: {
+      imageUploader: {
+        upload: file => {
+          return new Promise((resolve, reject) => {
+
+            const formData = new FormData();
+            formData.append("file", file);
+
+            api.post(fileUploading, formData)
+                .then(res => {
+                  resolve(res.data.data)
+                })
+                .catch(error => {
+                  reject("upload failed")
+                })
+          })
+        }
+      },
+      toolbar: [
+        ['bold', 'italic', 'underline', 'strike'],
+        [{ 'size': ['small', false, 'large', 'huge'] }],
+        [{ 'font': [] }],
+        [{ 'align': [] }],
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+        [{ 'indent': '-1' }, { 'indent': '+1' }],
+        [{ 'header': 1 }, { 'header': 2 }],
+        ['image'],
+        [{ 'direction': 'rtl' }],
+        [{ 'color': [] }, { 'background': [] }]
+      ]
+    },
+    placeholder: '请输入内容...'
+  })
 
 }
 </script>
@@ -150,16 +184,16 @@ const blogSubmit=()=>{
             <el-input v-model="blogAdd.author" placeholder="作者" clearable/>
           </el-form-item>
 <!--          TODO:引入富文本框架使得满足上传图文混排富文本-->
-          <Editor :value="blogAdd.text" @updateValue="getMsg" style="height: 600px"/>
-<!--          <QuillEditor-->
-<!--              ref="myQuillEditor"-->
-<!--              contentType="html"-->
-<!--              v-model:content="content"-->
-<!--              :options="data.editorOption"-->
-<!--              toolbar="full"-->
-<!--              style="height: 600px;"-->
-<!--              @update:content="setValue()"-->
-<!--          />-->
+<!--          <Editor :value="blogAdd.text" @updateValue="getMsg" style="height: 600px"/>-->
+          <QuillEditor
+              ref="myQuillEditor"
+              contentType="html"
+              v-model:content="blogAdd.text"
+              :options="editorOption"
+              toolbar="full"
+              style="height: 600px;"
+              @update:content="setValue()"
+          />
 <!--          <quill-editor  theme="snow" toolbar="full"/>-->
           <el-button @click="dialogVisible = false">取消</el-button>
           <el-button type="primary" @click="blogSubmit">

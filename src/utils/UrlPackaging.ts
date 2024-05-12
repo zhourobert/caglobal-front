@@ -6,5 +6,6 @@ export const getCountyList:string="/country/getCountryName";
 export const getTypeList:string="/blogType/getBlogType";
 export const login:string="/user/login";
 export const fileUploading:string="/file/upload";
+export const fileDownloading:string="/file/download";
 export const addBlog:string="/blog/addBlog";
 

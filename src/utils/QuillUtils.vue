@@ -31,6 +31,7 @@ const data = reactive({
   content: '',
   editorOption: {
     modules: {
+
       toolbar: [
         ['bold', 'italic', 'underline', 'strike'],
         [{ 'size': ['small', false, 'large', 'huge'] }],
