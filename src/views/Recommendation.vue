@@ -29,7 +29,7 @@
       <ul>
         <li>您的位置：</li>
         <li><a href="/">首页</a></li>
-        <li><a href="/about">资讯中心</a></li>
+        <li><a href="/about">留学建议</a></li>
       </ul>
     </div>
   </div>

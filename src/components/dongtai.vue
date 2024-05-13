@@ -26,14 +26,13 @@
             <div class="uk-flex-middle uk-grid" @click="toBlog(item)">
               <div class="uk-width-expand uk-first-column">
                 <h5 class="uk-text-truncate">
-                  <a href="">{{ item.title }} </a>
+                  <span>{{ item.title }} </span>
                 </h5>
-                <div class="uk-grid-small uk-flex-middle uk-grid" uk-grid="">
+                <div class="uk-grid-small uk-flex-middle uk-grid">
                   <div class="uk-width-1-3@m uk-visible@m uk-first-column">
-                    <a href=""
-                      ><img
-                        src="https://www.yesglobal.com.cn/res/202401/16/thumb_9224.jpg"
-                    /></a>
+                    <img
+                      src="https://www.yesglobal.com.cn/res/202401/16/thumb_9224.jpg"
+                    />
                   </div>
                   <div class="uk-width-2-3@m">
                     <p v-html="item.text"></p>
@@ -43,10 +42,9 @@
               <div class="uk-width-auto">
                 <div class="info-date">
                   <span>{{ item.time }}</span>
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/tpl/www/images/go-info.jpg"
-                  /></a>
+                  <img
+                    src="https://www.yesglobal.com.cn/tpl/www/images/go-info.jpg"
+                  />
                 </div>
               </div>
             </div>
@@ -70,13 +68,11 @@ const getBlogList = () => {
   api.get(queryList).then((res) => {
     blogList.value = res.data.data.records
     blogList.value.forEach((item) => {
-      // item.time =
-      // 创建一个新的 Date 对象
-      var date = new Date(item.updateTime)
+      const date = new Date(item.updateTime)
 
       // 获取月份和日期
-      var month = date.getMonth() + 1 // 月份从 0 开始，所以要加 1
-      var day = date.getDate()
+      const month = date.getMonth() + 1 // 月份从 0 开始，所以要加 1
+      const day = date.getDate()
       item.time = month + '-' + day
     })
   })
@@ -285,7 +281,7 @@ video {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.info-box h5 a {
+.info-box h5 span {
   color: #333;
   font-size: 16px;
 }

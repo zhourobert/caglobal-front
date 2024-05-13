@@ -22,22 +22,27 @@ const router = createRouter({
     {
       path: '/project',
       name: 'project',
-      component: () => import('../views/NewsView.vue')
+      component: () => import('../views/Project.vue')
     },
     {
       path: '/schoolInformation',
       name: 'schoolInformation',
-      component: () => import('../views/NewsView.vue')
+      component: () => import('../views/SchoolInformation.vue')
     },
     {
       path: '/recommendation',
       name: 'recommendation',
-      component: () => import('../views/NewsView.vue')
+      component: () => import('../views/Recommendation.vue')
     },
     {
       path: '/aboutUs',
       name: 'aboutUs',
-      component: () => import('../views/NewsView.vue')
+      component: () => import('../views/AboutUs.vue')
+    },
+    {
+      path: '/case',
+      name: 'case',
+      component: () => import('../views/Case.vue')
     },
     {
       path: '/info',

@@ -37,7 +37,9 @@ const router = useRouter()
                   @mouseenter="item.subMenuShow = true"
                   @mouseleave="item.subMenuShow = false"
                 >
-                  <span @click="router.push(item.route)"> {{ item.name }}</span>
+                  <span @click="router.push({ path: item.route })">
+                    {{ item.name }}</span
+                  >
                   <div
                     v-if="item.subMenu.length !== 0"
                     class="nav-dropdown uk-dropdown"
