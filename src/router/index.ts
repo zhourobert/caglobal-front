@@ -20,13 +20,33 @@ const router = createRouter({
       component: () => import('../views/NewsView.vue')
     },
     {
+      path: '/project',
+      name: 'project',
+      component: () => import('../views/NewsView.vue')
+    },
+    {
+      path: '/schoolInformation',
+      name: 'schoolInformation',
+      component: () => import('../views/NewsView.vue')
+    },
+    {
+      path: '/recommendation',
+      name: 'recommendation',
+      component: () => import('../views/NewsView.vue')
+    },
+    {
+      path: '/aboutUs',
+      name: 'aboutUs',
+      component: () => import('../views/NewsView.vue')
+    },
+    {
       path: '/info',
       name: 'info',
       component: () => import('../views/info.vue')
     },
     {
       path: '/RecommendedactivityView',
-      name: 'info',
+      name: 'RecommendedactivityView',
       component: () => import('../views/RecommendedactivityView.vue')
     },
     {
