@@ -1,13 +1,35 @@
 <template>
   <Header></Header>
+  <div class="index-banner uk-position-relative">
+    <!-- banner-->
+    <div class="page-banner uk-text-center uk-visible@m">
+      <img
+        src="https://www.yesglobal.com.cn/res/201906/10/6215069a21796b8e.jpg"
+      />
+    </div>
+    <div class="page-banner uk-text-center uk-hidden@m">
+      <img
+        src="https://www.yesglobal.com.cn/res/201906/10/6215069a21796b8e.jpg"
+      />
+    </div>
+
+    <div class="page-nav uk-position-bottom-left uk-width-1-1">
+      <div class="uk-container">
+        <div
+          class="uk-child-width-1-5@l uk-child-width-1-4 uk-grid-collapse uk-grid"
+          uk-grid=""
+        ></div>
+      </div>
+    </div>
+  </div>
 
   <div class="breadcrumb">
     <div class="uk-container">
       <ul>
         <li>您的位置：</li>
-        <li><a @click="router.push('/')">首页</a></li>
-        <li><a @click="router.push('/about')">资讯中心</a></li>
-        <li>干货 | EB1A申请为何会被拒？原因在这里！</li>
+        <li @click="router.push('/')">首页</li>
+        <li @click="router.push('/case')">寰球案例</li>
+        <li>{{ info.title }}</li>
       </ul>
     </div>
   </div>
@@ -16,343 +38,7 @@
       <div class="uk-grid-large uk-grid" uk-grid="">
         <div class="uk-width-2-3@m uk-first-column">
           <!-- 详情 -->
-          <article>
-            <h1>干货 | EB1A申请为何会被拒？原因在这里！</h1>
-            <div class="article-meta">
-              时间：2024-04-01 16:27:40 来源：行成国际 点击量：12
-            </div>
-            <hr />
-            <p>
-              <span style="text-wrap: nowrap"
-                >凭借无投资风险及排期时间短等优势，EB1A申请在近几年热度高涨。</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >但EB1A申请需要大量的证据支撑及详实的文件准备，因此专业的文案是EB1A申请的重要基石。</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"><br /></span>
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >行成在咨询过程中发现许多委托非专业机构办理EB1A申请的客户在第一次递交时遭遇了被拒。</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >在此，行成特意对EB1A申请中常见的拒签原因和改进方向做出了总结。</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"><br /></span>
-            </p>
-            <p>
-              <strong
-                ><span style="text-wrap: nowrap"
-                  >常见拒签原因及改进方向：</span
-                ></strong
-              >
-            </p>
-            <p><span style="text-wrap: nowrap">在申请审理中，</span></p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >由于移民官重点考量的是<strong
-                  >“专业性、真实性、优秀性、美国受益”几大方向。</strong
-                ></span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >因此行成建议申请人可重点从<strong
-                  >如下几个维度对材料进行改善和提升。</strong
-                ></span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"><br /></span>
-            </p>
-            <p style="text-align: center">
-              <span style="text-wrap: nowrap"
-                ><img
-                  src="https://www.yesglobal.com.cn/res/202404/01/auto_9408.png"
-                  title="image"
-                  alt="image"
-              /></span>
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"><br /></span>
-            </p>
-            <p>
-              <strong><span style="text-wrap: nowrap">01</span></strong>
-            </p>
-            <p>
-              <strong
-                ><span style="text-wrap: nowrap"
-                  >只有原创材料，而未体现贡献：</span
-                ></strong
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >原创贡献是影响获批的关键，本质是要证明申请人在行业的专业性。</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >EB1A申请中原创贡献主要指专业领域的突出贡献成就，包括可量化的专利、软著、论文、产品等，也包括一些理论成果。</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >在材料准备中，申请人<strong>不仅只是提交专利注册信息、论文引用量等基础信息，更需要证明这些贡献的价值。</strong>很多申请人在材料准备中，</span
-              >
-            </p>
-            <p>
-              <strong
-                ><span style="text-wrap: nowrap">只堆叠原始资料，</span
-                ><span style="text-wrap: nowrap">不阐述应用成果</span></strong
-              ><span style="text-wrap: nowrap"
-                >，结果却被移民局在拒签信中指出<strong>“无法体现应用广泛和行业价值”</strong>。</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >对学术领域申请人来说，需要对论文具体引用情况进行分析，<strong>比如是否被高水平学术期刊引用，被行业中高影响力人士引用等</strong>。</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >同时，还要进一步阐述，论文是否带来了进一步的学术研究或产业应用。对于商业领域申请人，则需要阐述专利的商业转化和应用成果。</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"><br /></span>
-            </p>
-            <p style="text-align: center">
-              <img
-                src="https://www.yesglobal.com.cn/res/202404/01/auto_9409.jpg"
-                title="new-york-4756152_960_720"
-                alt="new-york-4756152_960_720"
-              />
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"><br /></span>
-            </p>
-            <p>
-              <strong><span style="text-wrap: nowrap">02</span></strong>
-            </p>
-            <p>
-              <strong
-                ><span style="text-wrap: nowrap"
-                  >只有浅层媒体报道，而未深入陈述个人：</span
-                ></strong
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >媒体报道是申请人个人成就的一个直观展现。对于一些申请人来说，</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >他们所在的公司在业内影响力较强，有机会出席或参加一些业内活动，</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >因此提供的媒体报道文章多是活动相关的新闻。</span
-              >
-            </p>
-            <p>
-              <strong
-                ><span style="text-wrap: nowrap"
-                  >其实，该类报道对申请人媒体申请项的帮助意义不大。</span
-                ></strong
-              ><span style="text-wrap: nowrap">EB1A的媒体报道必须</span>
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >针对申请人个人的成就内容展开，同时也需要提供证据证明发布平台为主流媒体平台。</span
-              >
-            </p>
-            <p>
-              <strong
-                ><span style="text-wrap: nowrap"
-                  >因此，在媒体报道层面，需要围绕申请人个人，</span
-                ></strong
-              ><strong
-                ><span style="text-wrap: nowrap"
-                  >展现其杰出的工作表现和工作成就，塑造其个人形象和行业地位。</span
-                ></strong
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >同时，报道陈述方式也不可过于浮夸，没有材料支撑的夸大性新闻会使移民局对“真实性”产生疑问。</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"><br /></span>
-            </p>
-            <p style="text-align: center">
-              <span style="text-wrap: nowrap"
-                ><img
-                  src="https://www.yesglobal.com.cn/res/202404/01/auto_9410.jpg"
-                  title="chicago-796121_960_720"
-                  alt="chicago-796121_960_720"
-              /></span>
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"><br /></span>
-            </p>
-            <p>
-              <strong><span style="text-wrap: nowrap">03</span></strong>
-            </p>
-            <p>
-              <strong
-                ><span style="text-wrap: nowrap"
-                  >只罗列经历，而缺乏一致性：</span
-                ></strong
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >EB1A申请不限学历，也不局限行业，但这并不意味着移民局对申请人职业经历就没有要求，</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >移民局在评估申请资格时高度重视申请人职业生涯的连贯性。</span
-              >
-            </p>
-            <p>
-              <strong
-                ><span style="text-wrap: nowrap"
-                  >对于“跨界”申请人，需要明确定位，保持方向的一致性。如果不能“合理融合”，</span
-                ></strong
-              >
-            </p>
-            <p>
-              <strong
-                ><span style="text-wrap: nowrap"
-                  >往往会让移民官混淆定位，对专业性产生质疑。</span
-                ></strong
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >对于“跨界”和转行的申请人，<strong>行成的建议是</strong>，并不需要对两段经历“一视同仁”介绍，</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >而是重点突出目前的领域，从而使移民官明确申请人定位。对于毕业专业和就业领域不一致的申请人</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >以及转职和跨行业的申请人，申请材料应重点描述转入新领域后的工作经历，突出在新领域从事的工作内容和取得的成就。</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"><br /></span>
-            </p>
-            <p>
-              <strong
-                ><span style="text-wrap: nowrap"
-                  >行成曾遇到一位申请人</span
-                ></strong
-              ><span style="text-wrap: nowrap"
-                >，<strong>同时拥有医学学术背景和商业背景</strong>，前期是副主任医师，后自主创办公司，研发相关领域的产品。</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >该申请人在第一次申请委托其他机构办理时被拒，便是因为没有突出两段经历的主次关系，</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap">导致移民官混淆，</span
-              ><strong
-                ><span style="text-wrap: nowrap"
-                  >未能明确申请人具体是医学领域定位还是商业领域定位</span
-                ></strong
-              ><span style="text-wrap: nowrap">。</span>
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >该申请人在委托行成做第二次申请时，<strong>行成为其弱化了前期的学术成就，重点突出了其后期的创业经历、技术成果和企业成就</strong>，于加急后获得无补件批准。</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"><br /></span>
-            </p>
-            <p style="text-align: center">
-              <img
-                src="https://www.yesglobal.com.cn/res/202404/01/auto_9411.jpg"
-                title="taxi-1574278_960_720"
-                alt="taxi-1574278_960_720"
-              />
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"><br /></span>
-            </p>
-            <p>
-              <strong><span style="text-wrap: nowrap">04</span></strong>
-            </p>
-            <p>
-              <strong
-                ><span style="text-wrap: nowrap"
-                  >“自由裁量权”与“整体性优秀”：</span
-                ></strong
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >在多年EB1A文案处理经验中，行成还发现移民官拥有<strong>“自由裁量权”</strong>，能够根据主观判断决定通过与否。</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >即使认可申请人满足了十项申请标准中的三项，移民官依旧可以选择拒签。</span
-              >
-            </p>
-            <p>
-              <strong
-                ><span style="text-wrap: nowrap"
-                  >因此，行成还会特别注重对申请人“整体性优秀”的凸显与表现，避免申请人因“整体性优秀”不够的理由而遭到拒签。</span
-                ></strong
-              >
-            </p>
-            <p>
-              <strong
-                ><span style="text-wrap: nowrap"><br /></span
-              ></strong>
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >最后，行成想跟大家分享的是，<strong
-                  >美国移民局在评定申请人是否符合资格时，并不仅仅依赖于条文与规章。</strong
-                ></span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >他们评价的标准不是材料的堆砌，而是申请人真实的职业生涯。</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"
-                >“杰出人才”的材料要呈现出充分的专业性、深度性、真实性，同时符合美国利益，才能轻松获得移民官的认可。</span
-              >
-            </p>
-            <p>
-              <span style="text-wrap: nowrap"><br /></span>
-            </p>
-            <p><br /></p>
-          </article>
+          <div v-html="info.text"></div>
           <div class="uk-margin-medium">
             <div class="d-page">
               <p>
@@ -367,10 +53,6 @@
             </div>
           </div>
 
-          <!--  相关资讯 -->
-          <h3 class="pg-title uk-margin-remove-bottom">
-            相关资讯 <span>Related news</span>
-          </h3>
           <hr />
           <div
             class="uk-grid-small uk-child-width-1-2@m uk-grid uk-grid-stack"
@@ -609,11 +291,48 @@ import './uikit.css'
 import './iven.css'
 import footer1 from '@/components/footer.vue'
 import Header from '@/components/header.vue'
-import { useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
+import { getBlog } from '@/utils/UrlPackaging'
+import { api } from '@/utils/axiosPackaging'
 const router = useRouter()
+const route = useRoute()
 import { ref } from 'vue'
 const ishaiwai = ref(false)
 const isguanyu = ref(false)
+let info: any = ref({})
+console.log(route)
+if (route.query.type == 'case') {
+  api.get(getBlog + '?id=' + route.query.id).then((res) => {
+    info.value = res.data.data
+
+    // 创建一个新的 Date 对象
+    let date = new Date(info.value.updateTime)
+
+    // 获取年、月、日、小时、分钟和秒
+    let year = date.getFullYear()
+    let month = ('0' + (date.getMonth() + 1)).slice(-2) // 月份从 0 开始，所以要加 1
+    let day = ('0' + date.getDate()).slice(-2)
+    let hours = ('0' + date.getHours()).slice(-2)
+    let minutes = ('0' + date.getMinutes()).slice(-2)
+    let seconds = ('0' + date.getSeconds()).slice(-2)
+
+    // 格式化为指定格式的字符串
+    let formattedDate =
+      year +
+      '-' +
+      month +
+      '-' +
+      day +
+      ' ' +
+      hours +
+      ':' +
+      minutes +
+      ':' +
+      seconds
+
+    info.value.time = formattedDate
+  })
+}
 </script>
 
 <style scoped>

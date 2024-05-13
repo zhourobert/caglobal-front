@@ -3,7 +3,7 @@
     <div class="uk-container">
       <h3 class="pg-title">
         寰球案例 <span>Information</span>
-        <a href="">More</a>
+        <span @click="router.push('/case')" style="float: right">More</span>
       </h3>
       <div class="uk-margin-medium-top uk-grid bet">
         <div class="uk-width-1-2@m uk-first-column">
@@ -79,7 +79,7 @@ const getBlogList = () => {
 }
 getBlogList()
 const toBlog = (item: any) => {
-  router.push({ path: '' })
+  router.push({ path: '/info', query: { type: 'case', id: item.id } })
 }
 </script>
 
