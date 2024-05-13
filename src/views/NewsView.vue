@@ -2,7 +2,7 @@
   <!-- <header1></header1> -->
   <div class="index-banner uk-position-relative">
     <!-- banner-->
-    <div class="page-banner uk-text-center uk-visible@m">
+    <!-- <div class="page-banner uk-text-center uk-visible@m">
       <img
         src="https://www.yesglobal.com.cn/res/201906/10/6215069a21796b8e.jpg"
       />
@@ -11,9 +11,10 @@
       <img
         src="https://www.yesglobal.com.cn/res/201906/10/6215069a21796b8e.jpg"
       />
-    </div>
+    </div> -->
     <!-- nav -->
-    <div class="navbar-container uk-position-top-left uk-visible@m">
+    <Header></Header>
+    <!-- <div class="navbar-container uk-position-top-left uk-visible@m">
       <div class="topbar">
         <div class="uk-container">
           <div uk-grid="" class="uk-grid">
@@ -314,7 +315,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- page-nav -->
     <div
       class="page-nav uk-position-bottom-left uk-width-1-1"
@@ -718,6 +719,7 @@ import './iven.css'
 import { useRouter } from 'vue-router'
 import footer1 from '@/components/footer.vue'
 import { ref } from 'vue'
+import Header from '@/components/header.vue'
 
 const router = useRouter()
 
