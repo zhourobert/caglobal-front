@@ -22,11 +22,11 @@
           </div>
         </div>
         <div class="uk-width-1-2@m">
-          <div class="info-box">
-            <div class="uk-flex-middle uk-grid" uk-grid="">
+          <div class="info-box" v-for="item in blogList">
+            <div class="uk-flex-middle uk-grid" @click="toBlog(item)">
               <div class="uk-width-expand uk-first-column">
                 <h5 class="uk-text-truncate">
-                  <a href="">美国人才类绿卡在线讲座 </a>
+                  <a href="">{{ item.title }} </a>
                 </h5>
                 <div class="uk-grid-small uk-flex-middle uk-grid" uk-grid="">
                   <div class="uk-width-1-3@m uk-visible@m uk-first-column">
@@ -36,81 +36,13 @@
                     /></a>
                   </div>
                   <div class="uk-width-2-3@m">
-                    <p>
-                      讲座内容：1、当下美国EB-1A和EB-2NIW申请政策2、STEM领域申请人的机遇3、成功案例分享..
-                    </p>
+                    <p v-html="item.text"></p>
                   </div>
                 </div>
               </div>
               <div class="uk-width-auto">
                 <div class="info-date">
-                  <span>01-16</span>
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/tpl/www/images/go-info.jpg"
-                  /></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="info-box">
-            <div class="uk-flex-middle uk-grid" uk-grid="">
-              <div class="uk-width-expand uk-first-column">
-                <h5 class="uk-text-truncate">
-                  <a href=""
-                    >拜登时代最适合中国人移民美国的方式——美国Fragomen律所专题线上分享会圆满举办
-                  </a>
-                </h5>
-                <div class="uk-grid-small uk-flex-middle uk-grid" uk-grid="">
-                  <div class="uk-width-1-3@m uk-visible@m uk-first-column">
-                    <a href=""
-                      ><img
-                        src="https://www.yesglobal.com.cn/res/202101/25/thumb_8217.png"
-                    /></a>
-                  </div>
-                  <div class="uk-width-2-3@m">
-                    <p>
-                      1月22日，美国总统拜登正式举行就职仪式，宣布当选美国总统。借此时机，行成海外也是特..
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="uk-width-auto">
-                <div class="info-date">
-                  <span>01-25</span>
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/tpl/www/images/go-info.jpg"
-                  /></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="info-box">
-            <div class="uk-flex-middle uk-grid" uk-grid="">
-              <div class="uk-width-expand uk-first-column">
-                <h5 class="uk-text-truncate">
-                  <a href=""
-                    >活动过程：新民法典背景下的家庭财富规划与海外资产配置交流会
-                  </a>
-                </h5>
-                <div class="uk-grid-small uk-flex-middle uk-grid" uk-grid="">
-                  <div class="uk-width-1-3@m uk-visible@m uk-first-column">
-                    <a href=""
-                      ><img
-                        src="https://www.yesglobal.com.cn/res/202009/08/thumb_7938.jpg"
-                    /></a>
-                  </div>
-                  <div class="uk-width-2-3@m">
-                    <p>
-                      行成海外于2020年8月28日就民法典准备开展一场线下交流会，对关于家庭财富规划以及海外..
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="uk-width-auto">
-                <div class="info-date">
-                  <span>08-24</span>
+                  <span>{{ item.time }}</span>
                   <a href=""
                     ><img
                       src="https://www.yesglobal.com.cn/tpl/www/images/go-info.jpg"
@@ -125,7 +57,35 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { queryList } from '@/utils/UrlPackaging'
+import { api } from '@/utils/axiosPackaging'
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+let blogList = ref([])
+const getBlogList = () => {
+  api.get(queryList).then((res) => {
+    blogList.value = res.data.data.records
+    blogList.value.forEach((item) => {
+      // item.time =
+      // 创建一个新的 Date 对象
+      var date = new Date(item.updateTime)
+
+      // 获取月份和日期
+      var month = date.getMonth() + 1 // 月份从 0 开始，所以要加 1
+      var day = date.getDate()
+      item.time = month + '-' + day
+    })
+  })
+}
+getBlogList()
+const toBlog = (item: any) => {
+  router.push({ path: '' })
+}
+</script>
 
 <style scoped>
 .p80 {
@@ -356,6 +316,8 @@ video {
   font-size: 13px;
   color: #666;
   line-height: 1.8em;
+  height: 4em;
+  overflow: hidden;
 }
 .bet {
   display: flex;

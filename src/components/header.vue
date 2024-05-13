@@ -9,7 +9,9 @@ let menuVo = ref(new Array<MenuVo>())
 api(getHeaderMenu).then((response) => {
   menuVo.value = response.data.data
   for (let i in menuVo) {
-    menuVo[i].value.subMenuShow = false
+    if (menuVo[i].value) {
+      menuVo[i].value.subMenuShow = false
+    }
   }
   console.log(menuVo)
 })
@@ -35,7 +37,7 @@ const router = useRouter()
                   @mouseenter="item.subMenuShow = true"
                   @mouseleave="item.subMenuShow = false"
                 >
-                  <a href="">{{ item.name }}</a>
+                  <span @click="router.push(item.route)"> {{ item.name }}</span>
                   <div
                     v-if="item.subMenu.length !== 0"
                     class="nav-dropdown uk-dropdown"
@@ -63,199 +65,6 @@ const router = useRouter()
       </div>
     </div>
   </div>
-  <!--  次级菜单-->
-  <div class="subnav" style="opacity: 0">
-    <div class="uk-container">
-      <div class="subnav-box">
-        <ul>
-          <li>
-            <a>美洲移民</a>
-            <div class="uk-dropdown">
-              <ul class="dp-switcher-title">
-                <li>
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/res/201812/17/c6f42f55336815e0.png"
-                    />
-                    美国</a
-                  >
-                </li>
-                <li>
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/res/201812/17/2fd3579168d83e25.png"
-                    />
-                    加拿大</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a class="" aria-expanded="false">欧洲移民</a>
-            <div class="uk-dropdown">
-              <ul class="dp-switcher-title">
-                <li>
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/res/201812/17/344ef3826194416f.png"
-                    />
-                    希腊</a
-                  >
-                </li>
-                <li class="">
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/res/201812/17/8c4d7f6487f4b49e.png"
-                    />
-                    西班牙</a
-                  >
-                </li>
-                <li class="">
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/res/201812/17/bab64e00d6379156.png"
-                    />
-                    马耳他</a
-                  >
-                </li>
-                <li>
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/res/201812/17/5ebe795419fabd60.png"
-                    />
-                    塞浦路斯</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a href="javascript:;" class="" aria-expanded="false">大洋洲移民</a>
-            <div class="uk-dropdown">
-              <ul class="dp-switcher-title">
-                <li>
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/res/201812/17/d7f3f37df0f33488.png"
-                    />
-                    澳大利亚</a
-                  >
-                </li>
-                <li>
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/res/201812/17/24e8cba64b0eef7a.png"
-                    />
-                    新西兰</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a href="javascript:;" class="">亚洲移民</a>
-            <div class="uk-dropdown">
-              <ul class="dp-switcher-title">
-                <li>
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/res/201906/13/50893a6357be4fe1.png"
-                    />
-                    土耳其</a
-                  >
-                </li>
-                <li>
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/res/201812/17/55bba832b41b646a.png"
-                    />
-                    中国</a
-                  >
-                </li>
-                <li>
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/res/201812/17/41ba4f2135ef9754.png"
-                    />
-                    中国香港</a
-                  >
-                </li>
-                <li>
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/res/201812/17/ddd4e3625b728756.png"
-                    />
-                    马来西亚</a
-                  >
-                </li>
-                <li>
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/res/201812/17/aa40a748bed4186b.png"
-                    />
-                    泰国</a
-                  >
-                </li>
-                <li>
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/res/201812/17/4c0734db950a6332.png"
-                    />
-                    日本</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li><a href="">海外置业</a></li>
-
-          <li>
-            <a href="javascript:;" class="">国际教育</a>
-            <div class="uk-dropdown">
-              <ul class="dp-switcher-title">
-                <li class="">
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/res/202107/29/148106ac906a65d9.png"
-                    />青少年教育</a
-                  >
-                </li>
-                <li class="">
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/res/202108/02/e211de22d71bb99d.png"
-                    />升学规划</a
-                  >
-                </li>
-                <li>
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/res/202108/02/34d86ca9f8534f11.png"
-                    />海外留学</a
-                  >
-                </li>
-                <li class="">
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/res/202108/02/c8ed286601582761.png"
-                    />背景提升</a
-                  >
-                </li>
-                <li>
-                  <a href=""
-                    ><img
-                      src="https://www.yesglobal.com.cn/res/202108/02/7a89af55e704b4a4.png"
-                    />海归创业班</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
 </template>
 
 <style scoped>
@@ -263,6 +72,8 @@ const router = useRouter()
   background-color: rgb(23, 38, 50);
   height: 42px;
   line-height: 42px;
+  position: relative;
+  z-index: 9;
 }
 @media (min-width: 960px) {
   .uk-container {
@@ -452,7 +263,8 @@ nav ul li {
 .uk-grid > * > :last-child {
   margin-bottom: 0;
 }
-nav ul li a {
+nav ul li span {
+  cursor: pointer;
   color: #fff;
   font-size: 14px;
 }
