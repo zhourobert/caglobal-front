@@ -2,14 +2,15 @@
 import type {Blog} from "@/entity/Entity";
 import {api} from "@/utils/axiosPackaging";
 import {addBlog, fileDownloading, fileUploading, getBlogList, getCountyList, getTypeList} from "@/utils/UrlPackaging";
-import { ref} from "vue";
-
-import Editor from '@/utils/QuillUtils.vue'
+import { ref,reactive,defineAsyncComponent } from "vue";
+import ImageUploader from 'quill-image-uploader';
+import {Quill} from "@vueup/vue-quill";
 
 const getMsg = (val) => {
   blogAdd.value.text = val
 }
 
+// const QuillEditor2 = defineAsyncComponent(() => import('@/utils/QuillUtils.vue'))
 
 let blogReceive=ref();
 
@@ -38,7 +39,7 @@ let blogQuery=ref({
 
 api.get(getBlogList)
 .then((result)=>{
-  blogReceive=result.data.data.records;
+  blogReceive.value=result.data.data.records;
   console.log(blogReceive)
 })
 
@@ -62,47 +63,38 @@ const onSubmit = () => {
 const dialogVisible = ref(false)
 
 
-const blogSubmit=()=>{
-  api.post(addBlog,blogAdd.value).then(res=>{
+const blogSubmit=()=> {
+  api.post(addBlog, blogAdd.value).then(res => {
     console.log(res.data)
     dialogVisible.value = false
   })
+}
 
- const editorOption=ref( {
-    modules: {
-      imageUploader: {
-        upload: file => {
-          return new Promise((resolve, reject) => {
+const modules = {
+  name: 'imageUploader',
+  module: ImageUploader,
+  options: {
+    upload: file => {
+      return new Promise((resolve, reject) => {
+        const formData = new FormData();
+        formData.append("file", file);
 
-            const formData = new FormData();
-            formData.append("file", file);
+        api.post(fileUploading, formData,{
+          headers:{'Content-Type': 'multipart/form-data'}
+        })
+            .then(res => {
+              console.log(res)
+              let newUrl="http://124.222.113.82:8999/file/download/"+res.data.data
+              resolve(newUrl);
+            })
+            .catch(err => {
+              reject("Upload failed");
+              console.error("Error:", err)
+            })
+      })
+    }
 
-            api.post(fileUploading, formData)
-                .then(res => {
-                  resolve(res.data.data)
-                })
-                .catch(error => {
-                  reject("upload failed")
-                })
-          })
-        }
-      },
-      toolbar: [
-        ['bold', 'italic', 'underline', 'strike'],
-        [{ 'size': ['small', false, 'large', 'huge'] }],
-        [{ 'font': [] }],
-        [{ 'align': [] }],
-        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-        [{ 'indent': '-1' }, { 'indent': '+1' }],
-        [{ 'header': 1 }, { 'header': 2 }],
-        ['image'],
-        [{ 'direction': 'rtl' }],
-        [{ 'color': [] }, { 'background': [] }]
-      ]
-    },
-    placeholder: '请输入内容...'
-  })
-
+  }
 }
 </script>
 
@@ -183,17 +175,16 @@ const blogSubmit=()=>{
           <el-form-item label="作者">
             <el-input v-model="blogAdd.author" placeholder="作者" clearable/>
           </el-form-item>
-<!--          TODO:引入富文本框架使得满足上传图文混排富文本-->
-<!--          <Editor :value="blogAdd.text" @updateValue="getMsg" style="height: 600px"/>-->
           <QuillEditor
-              ref="myQuillEditor"
+
               contentType="html"
               v-model:content="blogAdd.text"
-              :options="editorOption"
+              :modules="modules"
               toolbar="full"
               style="height: 600px;"
-              @update:content="setValue()"
           />
+
+<!--          <QuillEditor2 v-model="blogAdd.text" />-->
 <!--          <quill-editor  theme="snow" toolbar="full"/>-->
           <el-button @click="dialogVisible = false">取消</el-button>
           <el-button type="primary" @click="blogSubmit">

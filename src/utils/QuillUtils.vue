@@ -1,88 +1,102 @@
-<template>
-  <div>
-    <!-- 此处注意写法v-model:content -->
-    <QuillEditor ref="myQuillEditor"
-                 theme="snow"
-                 v-model:content="content"
-                 :options="data.editorOption"
-                 contentType="html"
-                 @update:content="setValue()"
-    />
-    <!-- 使用自定义图片上传 -->
-    <input type="file" hidden accept=".jpg,.png" ref="fileBtn" @change="handleUpload" />
-  </div>
-</template>
-
-<script setup>
-import { QuillEditor } from '@vueup/vue-quill'
+<script setup lang="ts">
+import { ref,reactive,toRaw,watch} from "vue";
+import { QuillEditor, Quill } from '@vueup/vue-quill'
 import '@vueup/vue-quill/dist/vue-quill.snow.css'
-import { reactive, onMounted, ref, toRaw, watch } from 'vue'
+// import '@/styles/quill.font.css'
+import 'quill-image-uploader/dist/quill.imageUploader.min.css';
 
-const props = defineProps(['value'])
-const emit = defineEmits(['updateValue'])
-const content = ref('')
-const myQuillEditor = ref()
-// 通过watch监听回显，笔者这边使用v-model:content 不能正常回显
-watch(() => props.value, (val) => {
-  toRaw(myQuillEditor.value).setHTML(val)
-}, { deep: true })
-const fileBtn = ref()
-const data = reactive({
-  content: '',
-  editorOption: {
-    modules: {
+import ImageUploader from 'quill-image-uploader';
+import BlotFormatter from 'quill-blot-formatter'
+import {api} from "@/utils/axiosPackaging";
+import {fileUploading} from "@/utils/UrlPackaging";
 
-      toolbar: [
-        ['bold', 'italic', 'underline', 'strike'],
-        [{ 'size': ['small', false, 'large', 'huge'] }],
-        [{ 'font': [] }],
-        [{ 'align': [] }],
-        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-        [{ 'indent': '-1' }, { 'indent': '+1' }],
-        [{ 'header': 1 }, { 'header': 2 }],
-        ['image'],
-        [{ 'direction': 'rtl' }],
-        [{ 'color': [] }, { 'background': [] }]
-      ]
-    },
-    placeholder: '请输入内容...'
-  }
+const props = withDefaults(defineProps<{
+  modelValue: any, // 双向绑定值
+}>(), {
+  modelValue: '', // 双向绑定值
 })
-const imgHandler = (state) => {
-  if (state) {
-    fileBtn.value.click()
-  }
-}
-// 抛出更改内容，此处避免出错直接使用文档提供的getHTML方法
-const setValue = () => {
-  const text = toRaw(myQuillEditor.value).getHTML()
-}
-const handleUpload = (e) => {
-  const files = Array.prototype.slice.call(e.target.files)
-  // console.log(files, "files")
-  if (!files) {
-    return
-  }
-  const formdata = new FormData()
-  formdata.append('file', files[0])
-  backsite.uploadFile(formdata)  // 此处使用服务端提供上传接口
-      .then(res => {
-        if (res.data.url) {
-          const quill = toRaw(myQuillEditor.value).getQuill()
-          const length = quill.getSelection().index
-          quill.insertEmbed(length, 'image', res.data.url)
-          quill.setSelection(length + 1)
+const emit = defineEmits<{
+  (e: 'update:modelValue', val: any): void
+}>()
+const content = ref<string>('')
+const quillRef = ref<any>(null)
+
+
+Quill.register("modules/imageUploader", ImageUploader);
+Quill.register('modules/blotFormatter', BlotFormatter);
+
+//富文本配置项，将模块功能一起写入到配置项内，也可以单独配置Modules
+const myOptions = reactive({
+  modules: {
+    toolbar: [ //自定义toolbar，或者可以通过essential ,minimal ,full ,以及"" 使用默认选项
+      [{ 'align': [] }],
+      [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+      ['image'],
+      [{ 'direction': 'rtl' }],
+      [{ 'color': [] }, { 'background': [] }],
+      ['clean']
+    ],
+    // 上传图片
+    imageUploader: {
+      upload: async (file: any) => {
+        try {
+          // const compressedFile: any = await compressImage(file); // 压缩图片
+          return new Promise((resolve, reject) => {
+            const formData = new FormData();
+            formData.append("file", file);
+            api.post(fileUploading,formData).then((res: any) => {
+              resolve(res.data.url);
+            }).catch(err => {
+              reject("Upload failed");
+              console.error("Error:", err)
+            })
+          })
+        } catch (error) {
+          console.error('压缩和上传图像时出错:', error);
         }
-      })
+      }
+    },
+    // 图片缩放
+    blotFormatter: {
+    },
+  },
+  placeholder: '请输入内容...'
+})
+
+// 图片压缩
+// const compressImage = (file: any) => {
+//   return new Promise((resolve, reject) => {
+//     new Compressor(file, {
+//       quality: 0.6, // 设置压缩质量
+//       maxWidth: 400, // 设置图片最大宽度
+//       maxHeight: 400, // 设置图片最大高度
+//       success(result) {
+//         resolve(result);
+//       },
+//       error(error) {
+//         reject(error);
+//       },
+//     });
+//   });
+// }
+
+const setValue = () => { //用于设置双向绑定值
+  const text = toRaw(quillRef.value).getHTML()
+  emit('update:modelValue', text)
 }
-// 初始化编辑器
-onMounted(() => {
-  const quill = toRaw(myQuillEditor.value).getQuill()
-  if (myQuillEditor.value) {
-    quill.getModule('toolbar').addHandler('image', imgHandler)
+
+watch(() => props.modelValue, (val: any) => {
+  if (val) {
+    content.value = val //用于监听绑定值进行数据回填
+  } else {
+    toRaw(quillRef.value).setContents('') //可用于弹窗使用富文本框关闭弹窗清除值
   }
 })
-</script>
-<style scoped >
 
+</script>
+
+<style>
+.ql-container {
+  height: calc(100% - 42px);
+}
 </style>

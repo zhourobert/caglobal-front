@@ -39,6 +39,9 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/srv/, ''),
       },
     },
+    fs:{
+      cachedChecks: false
+    }
   }
 })
 
