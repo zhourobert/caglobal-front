@@ -141,6 +141,15 @@
             uk-switcher="connect: .hot-project-switcher"
           >
             <li
+              @click="switchProject(item)"
+              class="uk-first-column"
+              v-for="item in blockTypeList"
+              style="cursor: pointer"
+            >
+              <span>{{ item.typeName }}</span>
+            </li>
+
+            <!-- <li
               @click="isProject = 'tuijian'"
               class="uk-first-column"
               :class="{ 'uk-active': isProject == 'tuijian' }"
@@ -170,13 +179,13 @@
               :class="{ 'uk-active': isProject == 'yiming' }"
             >
               <span>留学生移民</span>
-            </li>
+            </li> -->
           </ul>
         </div>
         <div class="uk-width-auto">
           <div class="uk-switcher hot-project-switcher news-center-more">
             <div class="uk-active">
-              <a href="">More</a>
+              <span @click="router.push('/project')">More</span>
             </div>
           </div>
         </div>
@@ -185,239 +194,23 @@
       <div class="uk-switcher uk-margin-medium-top hot-project-switcher">
         <div :class="{ 'uk-active': isProject == 'tuijian' }">
           <div class="uk-child-width-1-3@m uk-grid-small uk-grid ff">
-            <div class="uk-first-column">
+            <div
+              class="uk-first-column"
+              v-for="item in hotProjectList"
+              style="cursor: pointer"
+              @click="
+                router.push({
+                  path: '/info',
+                  query: { id: item.id, type: 'project' }
+                })
+              "
+            >
               <div class="img-updates uk-position-relative">
-                <a href=""
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201912/26/thumb_5530.png"
-                /></a>
+                <img
+                  src="https://www.yesglobal.com.cn/res/201912/26/thumb_5530.png"
+                />
                 <h6 class="uk-position-bottom-left">
-                  <a href="" target="_blank">美国杰出人才移民</a>
-                </h6>
-              </div>
-            </div>
-            <div>
-              <div class="img-updates uk-position-relative">
-                <a href=""
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201905/23/thumb_2957.jpg"
-                /></a>
-                <h6 class="uk-position-bottom-left">
-                  <a href="" target="_blank">西班牙置业移民</a>
-                </h6>
-              </div>
-            </div>
-            <div>
-              <div class="img-updates uk-position-relative">
-                <a href=""
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201812/19/thumb_328.jpg"
-                /></a>
-                <h6 class="uk-position-bottom-left">
-                  <a href="" target="_blank">马耳他投资移民</a>
-                </h6>
-              </div>
-            </div>
-            <div class="uk-grid-margin uk-first-column">
-              <div class="img-updates uk-position-relative">
-                <a href=""
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201903/18/thumb_1462.jpg"
-                /></a>
-                <h6 class="uk-position-bottom-left">
-                  <a href="" target="_blank">圣基茨尼维斯护照</a>
-                </h6>
-              </div>
-            </div>
-            <div class="uk-grid-margin">
-              <div class="img-updates uk-position-relative">
-                <a href=""
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201906/14/thumb_3285.jpg"
-                /></a>
-                <h6 class="uk-position-bottom-left">
-                  <a href="" target="_blank">土耳其护照</a>
-                </h6>
-              </div>
-            </div>
-            <div class="uk-grid-margin">
-              <div class="img-updates uk-position-relative">
-                <a href=""
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201904/17/thumb_2139.jpg"
-                /></a>
-                <h6 class="uk-position-bottom-left">
-                  <a href="" target="_blank">加拿大投资移民</a>
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div :class="{ 'uk-active': isProject == 'touzi' }">
-          <div
-            class="uk-child-width-1-3@m uk-child-width-1-2 uk-grid-small uk-grid ff"
-          >
-            <div class="uk-first-column">
-              <div class="img-updates uk-position-relative">
-                <a href=""
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201904/17/thumb_2110.jpg"
-                /></a>
-                <h6 class="uk-position-bottom-left">
-                  <a href="">爱尔兰投资移民</a>
-                </h6>
-              </div>
-            </div>
-            <div>
-              <div class="img-updates uk-position-relative">
-                <a href=""
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201903/28/thumb_1536.jpg"
-                /></a>
-                <h6 class="uk-position-bottom-left">
-                  <a href="">葡萄牙35万黄金居留项目</a>
-                </h6>
-              </div>
-            </div>
-            <div>
-              <div class="img-updates uk-position-relative">
-                <a href=""
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201901/28/thumb_859.png"
-                /></a>
-                <h6 class="uk-position-bottom-left">
-                  <a href="">意大利置业移民</a>
-                </h6>
-              </div>
-            </div>
-            <div class="uk-grid-margin uk-first-column">
-              <div class="img-updates uk-position-relative">
-                <a href=""
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201904/17/thumb_2140.jpg"
-                /></a>
-                <h6 class="uk-position-bottom-left">
-                  <a href="">英国企业家移民</a>
-                </h6>
-              </div>
-            </div>
-            <div class="uk-grid-margin">
-              <div class="img-updates uk-position-relative">
-                <a href=""
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201905/23/thumb_2957.jpg"
-                /></a>
-                <h6 class="uk-position-bottom-left">
-                  <a href="">西班牙置业移民</a>
-                </h6>
-              </div>
-            </div>
-            <div class="uk-grid-margin">
-              <div class="img-updates uk-position-relative">
-                <a href=""
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201812/19/thumb_328.jpg"
-                /></a>
-                <h6 class="uk-position-bottom-left">
-                  <a href="">马耳他投资移民</a>
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div :class="{ 'uk-active': isProject == 'rencai' }">
-          <div
-            class="uk-child-width-1-3@m uk-child-width-1-2 uk-grid-small uk-grid uk-grid-stack ff"
-            uk-grid=""
-          >
-            <div class="uk-first-column">
-              <div class="img-updates uk-position-relative">
-                <a href=""
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201912/26/thumb_5530.png"
-                /></a>
-                <h6 class="uk-position-bottom-left">
-                  <a href="" target="_blank">美国杰出人才移民</a>
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div :class="{ 'uk-active': isProject == 'huzhao' }">
-          <div
-            class="uk-child-width-1-3@m uk-child-width-1-2 uk-grid-small uk-grid ff"
-            uk-grid=""
-          >
-            <div class="uk-first-column">
-              <div class="img-updates uk-position-relative">
-                <a href=""
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201812/20/thumb_356.png"
-                /></a>
-                <h6 class="uk-position-bottom-left">
-                  <a href="">塞浦路斯护照</a>
-                </h6>
-              </div>
-            </div>
-            <div>
-              <div class="img-updates uk-position-relative">
-                <a href=""
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201903/18/thumb_1462.jpg"
-                /></a>
-                <h6 class="uk-position-bottom-left">
-                  <a href="">圣基茨尼维斯护照</a>
-                </h6>
-              </div>
-            </div>
-            <div>
-              <div class="img-updates uk-position-relative">
-                <a href=""
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201906/14/thumb_3285.jpg"
-                /></a>
-                <h6 class="uk-position-bottom-left">
-                  <a href="">土耳其护照</a>
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div :class="{ 'uk-active': isProject == 'yiming' }">
-          <div
-            class="uk-child-width-1-3@m uk-child-width-1-2 uk-grid-small uk-grid ff"
-            uk-grid=""
-          >
-            <div class="uk-first-column">
-              <div class="img-updates uk-position-relative">
-                <a href=""
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201905/15/thumb_2621.jpg"
-                /></a>
-                <h6 class="uk-position-bottom-left">
-                  <a href="">新西兰优才移民</a>
-                </h6>
-              </div>
-            </div>
-            <div>
-              <div class="img-updates uk-position-relative">
-                <a href=""
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201905/14/thumb_2579.jpg"
-                /></a>
-                <h6 class="uk-position-bottom-left">
-                  <a href="">澳大利亚留学移民项目</a>
-                </h6>
-              </div>
-            </div>
-            <div>
-              <div class="img-updates uk-position-relative">
-                <a href=""
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/201905/14/thumb_2579.jpg"
-                /></a>
-                <h6 class="uk-position-bottom-left">
-                  <a href="">澳大利亚留学移民项目</a>
+                  <span>{{ item.title }}</span>
                 </h6>
               </div>
             </div>
@@ -459,13 +252,15 @@
   <Dialog1></Dialog1>
 </template>
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import dongtai from '@/components/dongtai.vue'
 import zixun from '@/components/zixun.vue'
 import footer1 from '@/components/footer.vue'
 import header1 from '@/components/header.vue'
 import Dialog1 from '@/components/dialog.vue'
 import { useRouter } from 'vue-router'
+import { getBlogType, queryList } from '@/utils/UrlPackaging'
+import { api } from '@/utils/axiosPackaging'
 
 const router = useRouter()
 const ishaiwai = ref(false)
@@ -477,6 +272,31 @@ const toAbout = () => {
   console.log(router)
   router.push('/about')
 }
+
+const blockTypeList = ref([])
+
+let blogList = ref([])
+const getBlogList = async () => {
+  const res = await api.get(queryList)
+  blogList.value = res.data.data.records
+}
+
+const switchProject = (item1: any) => {
+  hotProjectList.value = blogList.value.filter(
+    (item) => item.typeId == item1.id
+  )
+}
+onMounted(async () => {
+  await getBlogList()
+  api(getBlogType).then((res) => {
+    blockTypeList.value = res.data.data
+
+    hotProjectList.value = blogList.value.filter(
+      (item) => item.typeId == blockTypeList.value[0].id
+    )
+  })
+})
+let hotProjectList = ref([])
 </script>
 
 <style scoped>
@@ -957,7 +777,7 @@ h6,
   color: #333;
   text-transform: none;
 }
-.img-updates h6 a {
+.img-updates h6 span {
   color: #fff;
   display: block;
   padding: 8px 0;
@@ -1006,7 +826,7 @@ h6,
 }
 @media (min-width: 1200px) {
   .uk-width-2-5\@l {
-    width: 45%;
+    width: 56%;
   }
 }
 .hot-project-tab {
