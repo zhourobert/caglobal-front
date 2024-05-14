@@ -28,7 +28,9 @@
       <ul>
         <li>您的位置：</li>
         <li @click="router.push('/')">首页</li>
-        <li @click="router.push('/case')">寰球案例</li>
+        <li @click="router.push('/' + route.query.type)">
+          {{ map[route.query.type] }}
+        </li>
         <li>{{ info.title }}</li>
       </ul>
     </div>
@@ -300,8 +302,8 @@ import { ref } from 'vue'
 const ishaiwai = ref(false)
 const isguanyu = ref(false)
 let info: any = ref({})
-console.log(route)
-if (route.query.type == 'case') {
+let map = { case: '寰球案例', project: '热门项目' }
+if (route.query.type == 'case' || route.query.type == 'project') {
   api.get(getBlog + '?id=' + route.query.id).then((res) => {
     info.value = res.data.data
 
