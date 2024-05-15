@@ -5,7 +5,7 @@
         <div
           class="uk-width-auto@m uk-text-left@m uk-text-center uk-first-column"
         >
-          <h3 class="pg-title">资讯中心 <span>News center</span></h3>
+          <h3 class="pg-title">学校资讯 <span>News center</span></h3>
         </div>
         <div class="uk-width-expand@m"></div>
         <div class="uk-width-1-3@l uk-width-1-2@m">
@@ -42,9 +42,7 @@
         <div class="uk-width-auto@m uk-visible@m">
           <div class="uk-switcher news-switcher-container news-center-more">
             <div class="uk-active">
-              <a href=""
-                >More</a
-              >
+              <a href="">More</a>
             </div>
           </div>
         </div>
@@ -77,9 +75,7 @@
                 </div>
                 <div class="uk-width-expand">
                   <h5 class="uk-text-truncate">
-                    <a href=""
-                      >干货 | EB1A申请为何会被拒？原因在这里！
-                    </a>
+                    <a href="">干货 | EB1A申请为何会被拒？原因在这里！ </a>
                   </h5>
                   <p>
                     凭借无投资风险及排期时间短等优势，EB1A申请在近几年热度高涨。但EB1A申请需要大量的证据支撑及详实的文件准备，因此专业的文案..
@@ -95,9 +91,7 @@
                 </div>
                 <div class="uk-width-expand">
                   <h5 class="uk-text-truncate">
-                    <a href=""
-                      >官宣！新加坡EP申请门槛再次提高
-                    </a>
+                    <a href="">官宣！新加坡EP申请门槛再次提高 </a>
                   </h5>
                   <p>
                     2024年3月4日新加坡人力部宣布：将再次调高新加坡就业准证（EP）的收入门槛！并从2025年1月起，将从原有的5000新元调高至5600新元..
@@ -113,9 +107,7 @@
                 </div>
                 <div class="uk-width-expand">
                   <h5 class="uk-text-truncate">
-                    <a href=""
-                      >最新！希腊移民新政解读
-                    </a>
+                    <a href="">最新！希腊移民新政解读 </a>
                   </h5>
                   <p>
                     2024年3月21日希腊国民经济和财政部长哈齐达基斯宣布了关于希腊本次“黄金签证”的调整细则。哈齐达基斯宣布，希腊“黄金签证”的..
@@ -131,9 +123,7 @@
                 </div>
                 <div class="uk-width-expand">
                   <h5 class="uk-text-truncate">
-                    <a href=""
-                      >十年美签到期，可申请续签免面试！
-                    </a>
+                    <a href="">十年美签到期，可申请续签免面试！ </a>
                   </h5>
                   <p>
                     十年美签如何申请免面试及申请条件2014年11月美国驻华大使馆签证处为首批获得十年签的中国申请人颁发了新签证。如今十年将至，第..
@@ -263,9 +253,7 @@
                 </div>
                 <div class="uk-width-expand">
                   <h5 class="uk-text-truncate">
-                    <a href=""
-                      >关于加拿大访问签证、旅游签转工签的几个问题！
-                    </a>
+                    <a href="">关于加拿大访问签证、旅游签转工签的几个问题！ </a>
                   </h5>
                   <p>
                     近期，加拿大政府重新调整了现有的入境豁免政策，从10月8起，大家庭成员和出于人道主义理由旅行的人可以入境加拿大，不需要强制性..
@@ -338,10 +326,7 @@
                     class="uk-active uk-transition-active"
                     style="transform: translateX(0px)"
                   >
-                    <a href=""
-                      ><img
-                        src=""
-                    /></a>
+                    <a href=""><img src="" /></a>
                   </li>
                 </ul>
               </div>
@@ -356,9 +341,7 @@
                 </div>
                 <div class="uk-width-expand">
                   <h5 class="uk-text-truncate">
-                    <a href=""
-                      >徐女士留学移民成功案例
-                    </a>
+                    <a href="">徐女士留学移民成功案例 </a>
                   </h5>
                   <p>
                     徐女士，1985 年生 国内学历：软件工程（国内本科）
@@ -394,9 +377,7 @@
                 </div>
                 <div class="uk-width-expand">
                   <h5 class="uk-text-truncate">
-                    <a href=""
-                      >入籍加拿大的利与弊！
-                    </a>
+                    <a href="">入籍加拿大的利与弊！ </a>
                   </h5>
                   <p>
                     关于弊：1、中国不承认双国籍，入籍加拿大后，等于自动放弃中国国籍；2、想要再次回中国，可以比较不方便，需要重新办理诸多签证..
@@ -412,9 +393,7 @@
                 </div>
                 <div class="uk-width-expand">
                   <h5 class="uk-text-truncate">
-                    <a href=""
-                      >行成海外恭喜Z先生成功获批日本经营管理签证！
-                    </a>
+                    <a href="">行成海外恭喜Z先生成功获批日本经营管理签证！ </a>
                   </h5>
                   <p>
                     Z先生在国内经营一家电器公司，出售的产品中也有不少日本的品牌。Z先生的夫人非常喜欢日本，经常和孩子去日本度假旅游。在去年的..
