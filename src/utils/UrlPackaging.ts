@@ -12,3 +12,5 @@ export const addBlog: string = '/blog/addBlog'
 export const queryList: string = '/blog/queryList'
 export const getBlog: string = '/blog/getBlog'
 export const getBlogType: string = '/blogType/getBlogType'
+export const modifyBlog: string = '/blog/modifyBlog' //修改文章详细
+export const delBlog: string = '/blog/delBlog' //删除文章

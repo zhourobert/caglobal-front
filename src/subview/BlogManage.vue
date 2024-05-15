@@ -7,7 +7,9 @@ import {
   fileUploading,
   getBlogList,
   getCountyList,
-  getTypeList
+  getTypeList,
+  modifyBlog,
+  delBlog
 } from '@/utils/UrlPackaging'
 import { ref, reactive, defineAsyncComponent, watch } from 'vue'
 import ImageUploader from 'quill-image-uploader'
@@ -45,6 +47,7 @@ let blogQuery = ref({
 
 api.get(getBlogList).then((result) => {
   blogReceive.value = result.data.data.records
+  blogReceive.value = blogReceive.value.filter(!item.delFlag)
   console.log(blogReceive)
 })
 
@@ -64,10 +67,17 @@ const dialogVisible = ref(false)
 
 const blogSubmit = () => {
   blogAdd.value.cover = imageUrl.value
-  api.post(addBlog, blogAdd.value).then((res) => {
-    console.log(res.data)
-    dialogVisible.value = false
-  })
+  if (dialogType.value == 'add') {
+    api.post(addBlog, blogAdd.value).then((res) => {
+      console.log(res.data)
+      dialogVisible.value = false
+    })
+  } else {
+    api.post(modifyBlog, blogAdd.value).then((res) => {
+      console.log(res.data)
+      dialogVisible.value = false
+    })
+  }
 }
 
 const modules = {
@@ -98,10 +108,7 @@ const modules = {
   }
 }
 const imageUrl = ref('')
-const handleAvatarSuccess: UploadProps['onSuccess'] = (
-  response,
-  uploadFile
-) => {
+const handleAvatarSuccess: UploadProps['onSuccess'] = (response) => {
   imageUrl.value = 'http://124.222.113.82:8999/file/download/' + response.data
 }
 watch(
@@ -120,6 +127,17 @@ watch(
     }
   }
 )
+let dialogType = ref('add')
+const edit = (row: any) => {
+  dialogType.value = 'edit'
+  blogAdd.value = row
+  console.log(row)
+  imageUrl.value = row.cover
+  dialogVisible.value = true
+}
+const deleteClick = (row: any) => {
+  api.post(modifyBlog, { ...row, delFlag: 1 })
+}
 </script>
 
 <template>
@@ -165,7 +183,11 @@ watch(
       </el-form>
     </div>
 
-    <el-dialog v-model="dialogVisible" title="新增文章" width="800">
+    <el-dialog
+      v-model="dialogVisible"
+      :title="dialogType == 'add' ? '新增文章' : '编辑文章'"
+      width="800"
+    >
       <template #footer>
         <el-form :model="blogAdd" label-width="auto" style="max-width: 800px">
           <el-form-item label="文章标题">
@@ -245,7 +267,10 @@ watch(
         <el-table-column prop="TypeId" label="文章类型" />
         <el-table-column label="操作" width="150">
           <!--          TODO:增加文章的修改和删除-->
-          <a href="">修改</a> | <a href="">删除</a>
+          <template #default="scope">
+            <span @click="edit(scope.row)">修改</span> |
+            <span @click="deleteClick(scope.row)">删除</span>
+          </template>
         </el-table-column>
       </el-table>
     </div>
