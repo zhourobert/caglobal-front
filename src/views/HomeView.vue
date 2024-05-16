@@ -206,9 +206,7 @@
               "
             >
               <div class="img-updates uk-position-relative">
-                <img
-                  src="https://www.yesglobal.com.cn/res/201912/26/thumb_5530.png"
-                />
+                <img :src="item.cover" style="width: 100%; height: 250px" />
                 <h6 class="uk-position-bottom-left">
                   <span>{{ item.title }}</span>
                 </h6>
@@ -221,7 +219,7 @@
   </div>
 
   <dongtai></dongtai>
-  <zixun></zixun>
+  <zixun :list="blogList"></zixun>
   <div class="links uk-visible@m">
     <div class="uk-container">
       <strong>友情链接:</strong>
@@ -286,8 +284,8 @@ const switchProject = (item1: any) => {
     (item) => item.typeId == item1.id
   )
 }
-onMounted(async () => {
-  await getBlogList()
+onMounted(() => {
+  getBlogList()
   api(getBlogType).then((res) => {
     blockTypeList.value = res.data.data
 

@@ -30,9 +30,7 @@
                 </h5>
                 <div class="uk-grid-small uk-flex-middle uk-grid">
                   <div class="uk-width-1-3@m uk-visible@m uk-first-column">
-                    <img
-                      src="https://www.yesglobal.com.cn/res/202401/16/thumb_9224.jpg"
-                    />
+                    <img :src="item.cover" style="width: 100%; height: 50px" />
                   </div>
                   <div class="uk-width-2-3@m">
                     <p v-html="item.text"></p>
@@ -75,6 +73,7 @@ const getBlogList = () => {
       const day = date.getDate()
       item.time = month + '-' + day
     })
+    blogList.value = blogList.value.splice(0, 3)
   })
 }
 getBlogList()
