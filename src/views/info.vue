@@ -40,6 +40,13 @@
       <div class="uk-grid-large uk-grid" uk-grid="">
         <div class="uk-width-2-3@m uk-first-column">
           <!-- 详情 -->
+          <h1>{{ info.title }}</h1>
+          <div class="article-meta">
+            时间：{{ info.time }} 来源：{{ info.source }} 点击量：{{
+              info.hits
+            }}
+          </div>
+          <hr />
           <div v-html="info.text"></div>
           <div class="uk-margin-medium">
             <div class="d-page">
@@ -286,6 +293,7 @@
     </div>
   </section>
   <footer1></footer1>
+  <Dialog1></Dialog1>
 </template>
 
 <script setup lang="ts">
@@ -296,14 +304,22 @@ import Header from '@/components/header.vue'
 import { useRouter, useRoute } from 'vue-router'
 import { getBlog } from '@/utils/UrlPackaging'
 import { api } from '@/utils/axiosPackaging'
+import Dialog1 from '@/components/dialog.vue'
+
 const router = useRouter()
 const route = useRoute()
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 const ishaiwai = ref(false)
 const isguanyu = ref(false)
 let info: any = ref({})
-let map = { case: '寰球案例', project: '热门项目' }
-if (route.query.type == 'case' || route.query.type == 'project') {
+let map = {
+  case: '寰球案例',
+  project: '热门项目',
+  schoolInformation: '学校资讯',
+  recommendation: '留学建议'
+}
+onMounted(() => {
+  // if (route.query.type == 'case' || route.query.type == 'project') {
   api.get(getBlog + '?id=' + route.query.id).then((res) => {
     info.value = res.data.data
 
@@ -334,7 +350,8 @@ if (route.query.type == 'case' || route.query.type == 'project') {
 
     info.value.time = formattedDate
   })
-}
+  // }
+})
 </script>
 
 <style scoped>

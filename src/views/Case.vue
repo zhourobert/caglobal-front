@@ -179,6 +179,7 @@
     </div>
   </section>
   <footer1></footer1>
+  <Dialog1></Dialog1>
 </template>
 <script setup lang="ts">
 import './uikit.css'
@@ -189,6 +190,7 @@ import { ref } from 'vue'
 import Header from '@/components/header.vue'
 import { queryList } from '@/utils/UrlPackaging'
 import { api } from '@/utils/axiosPackaging'
+import Dialog1 from '@/components/dialog.vue'
 
 let blogList: any = ref([])
 const getBlogList = () => {

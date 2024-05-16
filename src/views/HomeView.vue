@@ -148,38 +148,6 @@
             >
               <span>{{ item.typeName }}</span>
             </li>
-
-            <!-- <li
-              @click="isProject = 'tuijian'"
-              class="uk-first-column"
-              :class="{ 'uk-active': isProject == 'tuijian' }"
-            >
-              <span>推荐</span>
-            </li>
-            <li
-              @click="isProject = 'touzi'"
-              :class="{ 'uk-active': isProject == 'touzi' }"
-            >
-              <span>投资移民</span>
-            </li>
-            <li
-              @click="isProject = 'rencai'"
-              :class="{ 'uk-active': isProject == 'rencai' }"
-            >
-              <span>人才移民</span>
-            </li>
-            <li
-              @click="isProject = 'huzhao'"
-              :class="{ 'uk-active': isProject == 'huzhao' }"
-            >
-              <span>护照移民</span>
-            </li>
-            <li
-              @click="isProject = 'yiming'"
-              :class="{ 'uk-active': isProject == 'yiming' }"
-            >
-              <span>留学生移民</span>
-            </li> -->
           </ul>
         </div>
         <div class="uk-width-auto">

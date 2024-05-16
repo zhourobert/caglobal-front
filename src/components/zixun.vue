@@ -68,7 +68,6 @@ const getBlogList = async () => {
     }
   })
   list.value = list.value.splice(0, 4)
-  console.log(list.value, '------')
 }
 const type = ref('xinwen')
 type Props = { list: any[] }
