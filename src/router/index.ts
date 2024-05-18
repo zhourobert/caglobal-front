@@ -6,6 +6,7 @@ import Setting from '@/subview/Setting.vue'
 import UserManage from '@/subview/UserManage.vue'
 import test from '@/subview/test.vue'
 
+//TODO:新增路由守卫保证用户必须登录才能进入admin
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [

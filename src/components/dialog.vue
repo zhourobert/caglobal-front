@@ -1,4 +1,5 @@
 <template>
+<!--  TODO:填写完毕后调用saveClient接口将客户数据存储-->
   <div class="zixun">
     <a href="http://" target="_blank">
       <img
@@ -96,7 +97,7 @@
       </div>
     </div>
   </div>
-
+<!--  TODO:根据甲方数据更换正确的二维码和电话,小红书频道去掉-->
   <div class="right_fixed uk-visible@m" :class="{ h_fixed: lianxi }">
     <div class="right_fixed1 allright">
       <a

@@ -1,6 +1,7 @@
 <template>
   <header1></header1>
   <!--图片轮换-->
+<!--  TODO:首页轮换图片在后台设置里可以修改设置-->
   <el-carousel class="swiper" height="580px" autoplay>
     <el-carousel-item key="1">
       <img
@@ -18,6 +19,7 @@
     </el-carousel-item>
   </el-carousel>
   <!--  新闻栏-->
+<!--  TODO:新闻栏替换成axios，从热门项目里取-->
   <div class="news">
     <div class="commend-news-box">
       <div class="uk-width-auto uk-first-column">
@@ -71,6 +73,7 @@
         <div class="uk-width-auto@m uk-visible@m uk-first-column">
           <div class="squareslider-box">
             <!--            轮换栏目-->
+<!--            TODO:图片轮换可在后台设置里设置-->
             <div class="bx-wrapper">
               <el-carousel autoplay height="398px">
                 <el-carousel-item key="1">
@@ -92,6 +95,7 @@
           </div>
         </div>
         <!--        实时政策-->
+<!--        TODO:实时政策换为留学建议axios-->
         <div class="uk-width-expand@s uk-visible@m">
           <h3 class="pg-title">
             实时政策 <span>Real time policy</span>
@@ -122,11 +126,41 @@
           </ul>
         </div>
         <!--        活动公告-->
-        <div class="uk-width-expand@s"></div>
+<!--        TODO:移民热议。按照新目录留学教育-->
+        <div class="uk-width-expand@s">
+          <h3 class="pg-title">
+            实时政策 <span>Real time policy</span>
+            <a @click="toAbout">More &gt;</a>
+          </h3>
+          <div class="img-updates uk-position-relative">
+            <a href=""
+            ><img
+                src="https://www.yesglobal.com.cn/res/202404/01/thumb_9407.jpg"
+            /></a>
+            <h6 class="uk-position-bottom-left uk-text-truncate">
+              <a href="">干货 | EB1A申请为何会被拒？原因在这里！</a>
+            </h6>
+          </div>
+          <ul>
+            <li class="uk-text-truncate">
+              <a href="">官宣！新加坡EP申请门槛再次提高</a>
+            </li>
+            <li class="uk-text-truncate">
+              <a href="">最新！希腊移民新政解读</a>
+            </li>
+            <li class="uk-text-truncate">
+              <a href="">十年美签到期，可申请续签免面试！</a>
+            </li>
+            <li class="uk-text-truncate">
+              <a href="">攻略 | 市场型企业高管如何申请EB1A杰出人才移民？</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
   <!--  热门项目-->
+<!--  TODO:热门项目采用getHeaderMenu 入参数type为2-->
   <div class="hot-project p80">
     <div class="uk-container">
       <div class="uk-flex-middle uk-grid" uk-grid="">
@@ -159,6 +193,7 @@
         </div>
       </div>
       <!--      热门项目详情-->
+<!--      TODO:热门项目详情则为每个目录的子文章-->
       <div class="uk-switcher uk-margin-medium-top hot-project-switcher">
         <div :class="{ 'uk-active': isProject == 'tuijian' }">
           <div class="uk-child-width-1-3@m uk-grid-small uk-grid ff">

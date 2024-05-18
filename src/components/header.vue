@@ -20,6 +20,7 @@ const router = useRouter()
 </script>
 
 <template>
+  <!--  TODO:重新显示附属菜单，采用原来样式，getHeaderMenu type为2，附属菜单的二级菜单直接跳转到文章-->
   <div class="topbar">
     <div class="uk-container">
       <div class="uk-grid">
@@ -60,6 +61,7 @@ const router = useRouter()
         </div>
         <div class="uk-width-auto topbar-contact">
           <div class="uk-flex uk-flex-middle">
+<!--            TODO:另外找个电话logo避免版权纠纷，电话号码按资料修改-->
             <img src="https://www.yesglobal.com.cn/tpl/www/images/phone.png" />
             <span>400-001-9801</span>
           </div>

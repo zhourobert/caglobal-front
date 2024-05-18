@@ -4,7 +4,7 @@ import {jump} from "@/utils/RouterJumpUtils";
 import {jwtDecode} from "jwt-decode";
 
 const token=window.localStorage.getItem("userJwt")
-//TODO:解析jwt获得用户数据
+//TODO:解析jwt获得用户数据，决定用户权限
 // const userInfo=jwtDecode(token);
 </script>
 
@@ -23,6 +23,7 @@ const token=window.localStorage.getItem("userJwt")
     <aside class="sidebar">
 <!--      TODO:修改样式使得鼠标悬停和点击底色会变化（采用不同灰度区分）-->
       <ul class="menu">
+<!--        TODO:完成这几个页面的增加删除修改分页功能-->
         <li @click="jump('/menuManage')">目录管理</li>
         <li @click="jump('/blogManage')">文章管理</li>
         <li @click="jump('/userManage')">用户管理</li>

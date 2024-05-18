@@ -1,4 +1,5 @@
 <template>
+<!--  TODO:根据资料替换二维码logo和备案号-->
   <footer class="uk-visible@m">
     <div class="uk-container">
       <div uk-grid="" class="uk-grid">
