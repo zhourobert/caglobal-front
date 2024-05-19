@@ -4,7 +4,7 @@ import MenuManage from '@/subview/MenuManage.vue'
 import BlogManage from '@/subview/BlogManage.vue'
 import Setting from '@/subview/Setting.vue'
 import UserManage from '@/subview/UserManage.vue'
-import test from '@/subview/test.vue'
+import MenuList from '@/views/MenuList.vue'
 
 //TODO:新增路由守卫保证用户必须登录才能进入admin
 const router = createRouter({
@@ -20,35 +20,22 @@ const router = createRouter({
       name: 'about',
       component: () => import('../views/NewsView.vue')
     },
-    {
-      path: '/project',
-      name: 'project',
-      component: () => import('../views/Project.vue')
-    },
-    {
-      path: '/schoolInformation',
-      name: 'schoolInformation',
-      component: () => import('../views/SchoolInformation.vue')
-    },
-    {
-      path: '/recommendation',
-      name: 'recommendation',
-      component: () => import('../views/Recommendation.vue')
-    },
+
     {
       path: '/aboutUs',
       name: 'aboutUs',
       component: () => import('../views/AboutUs.vue')
     },
-    {
-      path: '/case',
-      name: 'case',
-      component: () => import('../views/Case.vue')
-    },
+
     {
       path: '/info',
       name: 'info',
       component: () => import('../views/info.vue')
+    },
+    {
+      path: '/menuList',
+      name: 'menuList',
+      component: MenuList
     },
     {
       path: '/RecommendedactivityView',
@@ -60,11 +47,7 @@ const router = createRouter({
       name: 'login',
       component: () => import('../views/LoginView.vue')
     },
-    {
-      path: '/test',
-      name: 'test',
-      component: test
-    },
+
     //TODO:添加路由守卫检验userJwt，jwt没有或者错误跳转回登录页面
     {
       path: '/admin',

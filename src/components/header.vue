@@ -6,7 +6,7 @@ import { MenuVo } from '@/entity/Entity'
 import { getHeaderMenu } from '@/utils/UrlPackaging'
 
 let menuVo = ref(new Array<MenuVo>())
-api(getHeaderMenu).then((response) => {
+api(getHeaderMenu + '?type=1').then((response) => {
   menuVo.value = response.data.data
   for (let i in menuVo) {
     if (menuVo[i].value) {
@@ -16,19 +16,39 @@ api(getHeaderMenu).then((response) => {
   console.log(menuVo)
 })
 
+const secondMenu = ref([])
+api(getHeaderMenu + '?type=2').then((response) => {
+  secondMenu.value = response.data.data
+  for (let i in menuVo) {
+    if (menuVo[i].value) {
+      menuVo[i].value.subMenuShow = false
+    }
+  }
+})
+const routerPush = (item: any) => {
+  if (item.name == '首页') {
+    router.push('/')
+  } else if (item.name == '关于寰球') {
+    router.push('/aboutUs')
+  } else {
+    router.push({
+      path: '/menuList',
+      query: { type: item.route }
+    })
+  }
+}
 const router = useRouter()
 </script>
 
 <template>
-  <!--  TODO:重新显示附属菜单，采用原来样式，getHeaderMenu type为2，附属菜单的二级菜单直接跳转到文章-->
   <div class="topbar">
     <div class="uk-container">
       <div class="uk-grid">
         <div class="uk-width-auto uk-first-column">
-          <a class="logo" href=""
-            ><img
-              src="https://www.yesglobal.com.cn/res/202010/14/80073c4fdd34f875.jpg"
-          /></a>
+          <img
+            src="../../public/imgs/logo.jpg"
+            style="width: 200px; height: 38px"
+          />
         </div>
         <div class="uk-width-expand">
           <nav>
@@ -38,20 +58,16 @@ const router = useRouter()
                   @mouseenter="item.subMenuShow = true"
                   @mouseleave="item.subMenuShow = false"
                 >
-                  <span @click="router.push({ path: item.route })">
-                    {{ item.name }}</span
-                  >
+                  <span @click="routerPush(item)"> {{ item.name }}</span>
                   <div
                     v-if="item.subMenu.length !== 0"
                     class="nav-dropdown uk-dropdown"
                     :class="{ 'uk-open': item.subMenuShow }"
                   >
-                    <a
+                    <span
                       v-for="subItem in item.subMenu"
-                      href=""
                       v-title="subItem.name"
-                      target=""
-                      >{{ subItem.name }}</a
+                      >{{ subItem.name }}</span
                     >
                   </div>
                 </div>
@@ -61,11 +77,36 @@ const router = useRouter()
         </div>
         <div class="uk-width-auto topbar-contact">
           <div class="uk-flex uk-flex-middle">
-<!--            TODO:另外找个电话logo避免版权纠纷，电话号码按资料修改-->
-            <img src="https://www.yesglobal.com.cn/tpl/www/images/phone.png" />
-            <span>400-001-9801</span>
+            <img src="../../public/imgs/phone.png" />
+            <span>020-88524986</span>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <div class="subnav">
+    <div class="uk-container">
+      <div class="subnav-box">
+        <ul>
+          <li v-for="item in secondMenu">
+            <span
+              @mouseenter="item.subMenuShow = true"
+              @mouseleave="item.subMenuShow = false"
+              >{{ item.name }}</span
+            >
+            <div
+              class="uk-dropdown"
+              v-if="item.subMenu.length !== 0"
+              :class="{ 'uk-open': item.subMenuShow }"
+            >
+              <ul class="dp-switcher-title">
+                <li v-for="item1 in item.subMenu">
+                  <span> {{ item1.name }}</span>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -309,7 +350,7 @@ nav ul li span {
   color: #fff;
 }
 
-.nav-dropdown a {
+.nav-dropdown span {
   display: block;
   color: #fff;
   font-size: 13px;
@@ -348,7 +389,7 @@ nav ul li span {
 .subnav-box > ul > li {
   display: inline-block;
 }
-.subnav-box > ul > li > a {
+.subnav-box > ul > li > span {
   display: inline-block;
   color: #333;
   padding: 11px 41px;
@@ -376,7 +417,7 @@ a,
   display: inline-block;
 }
 
-.dp-switcher-title li a {
+.dp-switcher-title li span {
   color: #fff;
   display: block;
   line-height: 54px;

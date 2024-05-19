@@ -1,12 +1,7 @@
 <template>
-<!--  TODO:填写完毕后调用saveClient接口将客户数据存储-->
+  <!--  TODO:填写完毕后调用saveClient接口将客户数据存储-->
   <div class="zixun">
-    <a href="http://" target="_blank">
-      <img
-        src="https://aff-im.bj.bcebos.com/onlineEnv/imsdk/assets/pcIcon5.png"
-        alt=""
-      />
-    </a>
+    <img src="../../public/imgs/pcIcon5.png" alt="" />
   </div>
   <div class="liuyan">
     <div class="top">
@@ -29,8 +24,9 @@
               ></label
               ><input
                 class="embed-messageboard-form-input"
-                placeholder="姓名"
+                placeholder="姓名（必填）"
                 maxlength="30"
+                @change="name"
               />
             </div>
           </div>
@@ -43,6 +39,7 @@
                 class="embed-messageboard-form-input"
                 placeholder="电话（必填）"
                 maxlength="30"
+                @change="phone"
               />
             </div>
           </div>
@@ -55,6 +52,7 @@
                 class="embed-messageboard-form-input"
                 placeholder="邮箱"
                 maxlength="50"
+                @change="email"
               />
             </div>
           </div>
@@ -67,11 +65,12 @@
                 class="embed-messageboard-form-input"
                 placeholder="地址"
                 maxlength="50"
+                @change="addClient1"
               />
             </div>
           </div>
           <div class="embed-messageboard-send">
-            <div class="embed-messageboard-send-btn">提交</div>
+            <div class="embed-messageboard-send-btn" @click="sub">提交</div>
           </div>
         </div>
         <div
@@ -97,71 +96,38 @@
       </div>
     </div>
   </div>
-<!--  TODO:根据甲方数据更换正确的二维码和电话,小红书频道去掉-->
   <div class="right_fixed uk-visible@m" :class="{ h_fixed: lianxi }">
     <div class="right_fixed1 allright">
-      <a
-        href="http://p.qiao.baidu.com/cps/chat?siteId=16651797&amp;userId=32720806&amp;siteToken=c34331e976edbe5389844a59bb7dd489"
-        target="_blank"
-        style="display: block"
-      >
+      <div>
         <div class="lefttelcon">
           <div class="telpic">
-            <img
-              src="https://www.yesglobal.com.cn/tpl/www/images/f-phone.png"
-              width="16"
-            />
+            <img src="../../public/imgs/f-phone.png" width="16" />
           </div>
           <div class="teltext">在线客服</div>
         </div>
-        <div class="tel">
-          <img src="https://www.yesglobal.com.cn/tpl/www/images/tel_400.png" />
-        </div>
-      </a>
+        <div class="tel">Tel:020-88524986</div>
+      </div>
       <div class="clear_both"></div>
     </div>
+
     <div class="right_fixed2 allright">
-      <a
-        target="_blank"
-        href="http://www.yesglobal.com.cn/cactivity/recommendedactivity.html"
-        style="display: block"
-      >
-        <img
-          src="https://www.yesglobal.com.cn/tpl/www/images/f-yuyue.png"
-          width="24"
-        />
-        <p>小红书频道</p>
-      </a>
-    </div>
-    <div class="right_fixed2 allright">
-      <a href="javascript:;" target="_blank" class="weixin">
-        <img
-          src="https://www.yesglobal.com.cn/tpl/www/images/f-weixin.png"
-          width="32"
-        />
+      <div class="weixin">
+        <img src="../../public/imgs/f-weixin.png" width="32" />
         <p>微信咨询</p>
         <img
-          src="https://www.yesglobal.com.cn/res/202010/14/c7fda8ba3e1d9787.jpg"
-          alt=""
+          src="../../public/imgs/3c6f0174a536e6fa9ea3133ac24d7a0.jpg"
           class="fewm"
         />
-      </a>
+      </div>
     </div>
     <div class="right_fixed3 allright" id="backtop" @click="toTop">
-      <img
-        src="https://www.yesglobal.com.cn/tpl/www/images/f-up.png"
-        alt=""
-        width="30"
-      />
+      <img src="../../public/imgs/f-up.png" alt="" width="30" />
       <p>TOP</p>
     </div>
     <div class="lian" @click="lianxiClick">
       <div class="div">
         <p>联系我们</p>
-        <img
-          src="https://www.yesglobal.com.cn/tpl/www/images/f-arrow.png"
-          width="18"
-        />
+        <img src="../../public/imgs/f-arrow.png" width="18" />
       </div>
     </div>
   </div>
@@ -169,6 +135,22 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { addClient } from '@/utils/UrlPackaging'
+import { api } from '@/utils/axiosPackaging'
+
+const name = (e: any) => {
+  form.value.name = e.target.value
+}
+const phone = (e: any) => {
+  form.value.phone = e.target.value
+}
+const email = (e: any) => {
+  form.value.email = e.target.value
+}
+const addClient1 = (e: any) => {
+  form.value.addClient = e.target.value
+}
+
 let tag = ref(true)
 const clickLiuyan = () => {
   tag.value = !tag.value
@@ -186,6 +168,16 @@ const toTop = () => {
     }
   }
   scrollToTop()
+}
+const form = ref({ name: '', phone: '', email: '', address: '' })
+const sub = () => {
+  if (!form.value.name || !form.value.phone) {
+    alert('姓名与手机号必填')
+    return
+  }
+  api.post(addClient, { ...form.value }).then((res) => {
+    alert('感谢留言,我们会尽快与您联系')
+  })
 }
 </script>
 
@@ -218,13 +210,10 @@ const toTop = () => {
   text-align: center;
   padding-left: 10px;
   float: left;
+  writing-mode: vertical-rl;
+  color: #fff;
 }
-.tel img {
-  display: inline-block;
-  width: 13px;
-  height: 127px;
-  margin-top: 10px;
-}
+
 .right_fixed {
   width: 66px;
   height: 508px;

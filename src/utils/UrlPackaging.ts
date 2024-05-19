@@ -14,3 +14,4 @@ export const getBlog: string = '/blog/getBlog'
 export const getBlogType: string = '/blogType/getBlogType'
 export const modifyBlog: string = '/blog/modifyBlog' //修改文章详细
 export const delBlog: string = '/blog/delBlog' //删除文章
+export const addClient: string = '/client/add' //删除文章

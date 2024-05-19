@@ -70,8 +70,7 @@ const getBlogList = async () => {
   list.value = list.value.splice(0, 4)
 }
 const type = ref('xinwen')
-type Props = { list: any[] }
-const props = defineProps<Props>()
+
 let list = ref([])
 
 onMounted(() => {

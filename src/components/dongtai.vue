@@ -3,7 +3,16 @@
     <div class="uk-container">
       <h3 class="pg-title">
         寰球案例 <span>Information</span>
-        <span @click="router.push('/case')" style="float: right">More</span>
+        <span
+          @click="
+            router.push({
+              path: '/menuList',
+              query: { type: '/case' }
+            })
+          "
+          style="float: right"
+          >More</span
+        >
       </h3>
       <div class="uk-margin-medium-top uk-grid bet">
         <div class="uk-width-1-2@m uk-first-column">
@@ -13,10 +22,7 @@
                 class="uk-active uk-transition-active"
                 style="transform: translateX(0px)"
               >
-                <a href=""
-                  ><img
-                    src="https://www.yesglobal.com.cn/res/202401/16/65e3d9ce33f36006.jpg"
-                /></a>
+                <img src="../../public/imgs/65e3d9ce33f36006.jpg" />
               </li>
             </ul>
           </div>
@@ -29,8 +35,11 @@
                   <span>{{ item.title }} </span>
                 </h5>
                 <div class="uk-grid-small uk-flex-middle uk-grid">
-                  <div class="uk-width-1-3@m uk-visible@m uk-first-column">
-                    <img :src="item.cover" style="width: 100%; height: 50px" />
+                  <div
+                    class="uk-width-1-3@m uk-visible@m uk-first-column"
+                    style="width: 150px"
+                  >
+                    <img :src="item.cover" style="width: 150px; height: 70px" />
                   </div>
                   <div class="uk-width-2-3@m">
                     <p v-html="item.text"></p>
@@ -40,9 +49,7 @@
               <div class="uk-width-auto">
                 <div class="info-date">
                   <span>{{ item.time }}</span>
-                  <img
-                    src="https://www.yesglobal.com.cn/tpl/www/images/go-info.jpg"
-                  />
+                  <img src="../../public/imgs/go-info.jpg" />
                 </div>
               </div>
             </div>
@@ -65,6 +72,7 @@ let blogList = ref([])
 const getBlogList = () => {
   api.get(queryList).then((res) => {
     blogList.value = res.data.data.records
+    blogList.value = blogList.value.filter((item) => item.typeId == 6)
     blogList.value.forEach((item) => {
       const date = new Date(item.updateTime)
 

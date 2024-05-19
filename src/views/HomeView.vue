@@ -1,48 +1,48 @@
 <template>
-  <header1></header1>
-  <!--图片轮换-->
-<!--  TODO:首页轮换图片在后台设置里可以修改设置-->
-  <el-carousel class="swiper" height="580px" autoplay>
-    <el-carousel-item key="1">
-      <img
-        src="https://www.yesglobal.com.cn/res/202109/18/6bde9dd8f8c6df77.jpg"
-        alt=""
-        style="width: 100%; height: 100%"
-      />
-    </el-carousel-item>
-    <el-carousel-item key="2">
-      <img
-        src="https://www.yesglobal.com.cn/res/201905/16/c11b056591f2063d.jpg"
-        alt=""
-        style="width: 100%; height: 100%"
-      />
-    </el-carousel-item>
-  </el-carousel>
-  <!--  新闻栏-->
-<!--  TODO:新闻栏替换成axios，从热门项目里取-->
-  <div class="news">
-    <div class="commend-news-box">
-      <div class="uk-width-auto uk-first-column">
-        <div class="live">LIVE</div>
+  <div>
+    <header1></header1>
+    <!--图片轮换-->
+    <el-carousel class="swiper" height="580px" autoplay>
+      <el-carousel-item key="1">
+        <img
+          src="../../public/imgs/6bde9dd8f8c6df77.jpg"
+          alt=""
+          style="width: 100%; height: 100%"
+        />
+      </el-carousel-item>
+      <el-carousel-item key="2">
+        <img
+          src="../../public/imgs/c11b056591f2063d.jpg"
+          alt=""
+          style="width: 100%; height: 100%"
+        />
+      </el-carousel-item>
+    </el-carousel>
+    <!--  新闻栏-->
+    <div class="news">
+      <div class="commend-news-box">
+        <div class="uk-width-auto uk-first-column">
+          <div class="live">LIVE</div>
+        </div>
+        <div class="uk-width-expand topslidernews">
+          <el-carousel height="49px" direction="vertical" autoplay>
+            <el-carousel-item v-for="item in newsList">
+              <div
+                class="new"
+                @click="
+                  router.push({
+                    path: '/info',
+                    query: { type: 'project', id: item.id }
+                  })
+                "
+              >
+                {{ item.title }}
+              </div>
+            </el-carousel-item>
+          </el-carousel>
+        </div>
       </div>
-      <div class="uk-width-expand topslidernews">
-        <el-carousel height="49px" direction="vertical" autoplay>
-          <!-- <el-carousel-item v-for="item in 2" :key="item">
-            <h3 text="2xl" justify="center">{{ item }}</h3>
-          </el-carousel-item> -->
-          <el-carousel-item>
-            <div class="new">美国杰出人才申请（EB1A）——学历是必选项吗？</div>
-          </el-carousel-item>
-          <el-carousel-item>
-            <div class="new">美国EB-5 |新法下I-526E递交数据和排期预测</div>
-          </el-carousel-item>
-          <el-carousel-item>
-            <div class="new">攻略|中小企业主申请EB1A难点解析</div>
-          </el-carousel-item>
-        </el-carousel>
-      </div>
-    </div>
-    <div class="nb-2">
+      <!-- <div class="nb-2">
       <div class="uk-grid-medium uk-grid">
         <div class="uk-width-auto uk-first-column">
           <div class="immig">IMMIGRATION ALARMS</div>
@@ -50,9 +50,7 @@
       </div>
       <div style="flex: 1">
         <el-carousel height="49px" direction="vertical" autoplay>
-          <!-- <el-carousel-item v-for="item in 2" :key="item">
-            <h3 text="2xl" justify="center">{{ item }}</h3>
-          </el-carousel-item> -->
+         
           <el-carousel-item>
             <div class="new">美国杰出人才申请（EB1A）——学历是必选项吗？</div>
           </el-carousel-item>
@@ -64,203 +62,212 @@
           </el-carousel-item>
         </el-carousel>
       </div>
+    </div> -->
     </div>
-  </div>
-  <!--  第二栏-->
-  <div class="updates m80">
-    <div class="uk-container">
-      <div class="uk-grid">
-        <div class="uk-width-auto@m uk-visible@m uk-first-column">
-          <div class="squareslider-box">
-            <!--            轮换栏目-->
-<!--            TODO:图片轮换可在后台设置里设置-->
-            <div class="bx-wrapper">
-              <el-carousel autoplay height="398px">
-                <el-carousel-item key="1">
-                  <img
-                    src="https://www.yesglobal.com.cn/res/201902/21/5b23173122a7afce.jpg"
-                    alt=""
-                    style="width: 100%; height: 100%"
-                  />
-                </el-carousel-item>
-                <el-carousel-item key="2">
-                  <img
-                    src="https://www.yesglobal.com.cn/res/202009/18/743c74d9ac0ae956.jpg"
-                    alt=""
-                    style="width: 100%; height: 100%"
-                  />
-                </el-carousel-item>
-              </el-carousel>
+    <!--  第二栏-->
+    <div class="updates m80">
+      <div class="uk-container">
+        <div class="uk-grid">
+          <div class="uk-width-auto@m uk-visible@m uk-first-column">
+            <div class="squareslider-box">
+              <!--            轮换栏目-->
+              <div class="bx-wrapper">
+                <el-carousel autoplay height="398px">
+                  <el-carousel-item key="1">
+                    <img
+                      src="../../public/imgs/5b23173122a7afce.jpg"
+                      alt=""
+                      style="width: 100%; height: 100%"
+                    />
+                  </el-carousel-item>
+                  <el-carousel-item key="2">
+                    <img
+                      src="../../public/imgs/743c74d9ac0ae956.jpg"
+                      alt=""
+                      style="width: 100%; height: 100%"
+                    />
+                  </el-carousel-item>
+                </el-carousel>
+              </div>
             </div>
           </div>
-        </div>
-        <!--        实时政策-->
-<!--        TODO:实时政策换为留学建议axios-->
-        <div class="uk-width-expand@s uk-visible@m">
-          <h3 class="pg-title">
-            实时政策 <span>Real time policy</span>
-            <a @click="toAbout">More &gt;</a>
-          </h3>
-          <div class="img-updates uk-position-relative">
-            <a href=""
-              ><img
-                src="https://www.yesglobal.com.cn/res/202404/01/thumb_9407.jpg"
-            /></a>
-            <h6 class="uk-position-bottom-left uk-text-truncate">
-              <a href="">干货 | EB1A申请为何会被拒？原因在这里！</a>
-            </h6>
-          </div>
-          <ul>
-            <li class="uk-text-truncate">
-              <a href="">官宣！新加坡EP申请门槛再次提高</a>
-            </li>
-            <li class="uk-text-truncate">
-              <a href="">最新！希腊移民新政解读</a>
-            </li>
-            <li class="uk-text-truncate">
-              <a href="">十年美签到期，可申请续签免面试！</a>
-            </li>
-            <li class="uk-text-truncate">
-              <a href="">攻略 | 市场型企业高管如何申请EB1A杰出人才移民？</a>
-            </li>
-          </ul>
-        </div>
-        <!--        活动公告-->
-<!--        TODO:移民热议。按照新目录留学教育-->
-        <div class="uk-width-expand@s">
-          <h3 class="pg-title">
-            实时政策 <span>Real time policy</span>
-            <a @click="toAbout">More &gt;</a>
-          </h3>
-          <div class="img-updates uk-position-relative">
-            <a href=""
-            ><img
-                src="https://www.yesglobal.com.cn/res/202404/01/thumb_9407.jpg"
-            /></a>
-            <h6 class="uk-position-bottom-left uk-text-truncate">
-              <a href="">干货 | EB1A申请为何会被拒？原因在这里！</a>
-            </h6>
-          </div>
-          <ul>
-            <li class="uk-text-truncate">
-              <a href="">官宣！新加坡EP申请门槛再次提高</a>
-            </li>
-            <li class="uk-text-truncate">
-              <a href="">最新！希腊移民新政解读</a>
-            </li>
-            <li class="uk-text-truncate">
-              <a href="">十年美签到期，可申请续签免面试！</a>
-            </li>
-            <li class="uk-text-truncate">
-              <a href="">攻略 | 市场型企业高管如何申请EB1A杰出人才移民？</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--  热门项目-->
-<!--  TODO:热门项目采用getHeaderMenu 入参数type为2-->
-  <div class="hot-project p80">
-    <div class="uk-container">
-      <div class="uk-flex-middle uk-grid" uk-grid="">
-        <div class="uk-width-auto@m uk-width-expand uk-first-column">
-          <h3 class="pg-title">热门项目 <span>Hot project</span></h3>
-        </div>
-        <div class="uk-width-expand@m uk-visible@m"></div>
-        <div class="uk-width-2-5@l uk-visible@m">
-          <ul
-            class="hot-project-tab uk-text-center uk-grid-collapse uk-child-width-expand uk-grid"
-            uk-grid=""
-            uk-switcher="connect: .hot-project-switcher"
-          >
-            <li
-              @click="switchProject(item)"
-              class="uk-first-column"
-              v-for="item in blockTypeList"
-              style="cursor: pointer"
-            >
-              <span>{{ item.typeName }}</span>
-            </li>
-          </ul>
-        </div>
-        <div class="uk-width-auto">
-          <div class="uk-switcher hot-project-switcher news-center-more">
-            <div class="uk-active">
-              <span @click="router.push('/project')">More</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--      热门项目详情-->
-<!--      TODO:热门项目详情则为每个目录的子文章-->
-      <div class="uk-switcher uk-margin-medium-top hot-project-switcher">
-        <div :class="{ 'uk-active': isProject == 'tuijian' }">
-          <div class="uk-child-width-1-3@m uk-grid-small uk-grid ff">
+          <!--        实时政策-->
+          <div class="uk-width-expand@s uk-visible@m">
+            <h3 class="pg-title">
+              留学建议 <span>Proposal</span>
+              <i @click="router.push('/recommendation')">More &gt;</i>
+            </h3>
             <div
-              class="uk-first-column"
-              v-for="item in hotProjectList"
+              class="img-updates uk-position-relative"
               style="cursor: pointer"
-              @click="
-                router.push({
-                  path: '/info',
-                  query: { id: item.id, type: 'project' }
-                })
-              "
             >
-              <div class="img-updates uk-position-relative">
-                <img :src="item.cover" style="width: 100%; height: 250px" />
-                <h6 class="uk-position-bottom-left">
-                  <span>{{ item.title }}</span>
-                </h6>
+              <img
+                :src="ProposalList[0]?.cover"
+                style="width: 380px; height: 180px"
+              />
+              <h6 class="uk-position-bottom-left uk-text-truncate">
+                <div>123</div>
+              </h6>
+            </div>
+            <ul>
+              <li
+                class="uk-text-truncate"
+                v-for="item in ProposalList?.splice?.(1, 3)"
+              >
+                <a href="">{{ item?.title }}</a>
+              </li>
+            </ul>
+          </div>
+          <!--        活动公告-->
+
+          <!--        TODO:移民热议。按照新目录留学教育-->
+          <div class="uk-width-expand@s">
+            <h3 class="pg-title">
+              留学教育 <span>Study abroad education</span>
+              <i @click="toAbout">More &gt;</i>
+            </h3>
+            <div class="img-updates uk-position-relative">
+              <a href=""
+                ><img
+                  src="https://www.yesglobal.com.cn/res/202404/01/thumb_9407.jpg"
+              /></a>
+              <h6 class="uk-position-bottom-left uk-text-truncate">
+                <a href="">干货 | EB1A申请为何会被拒？原因在这里！</a>
+              </h6>
+            </div>
+            <ul>
+              <li class="uk-text-truncate">
+                <a href="">官宣！新加坡EP申请门槛再次提高</a>
+              </li>
+              <li class="uk-text-truncate">
+                <a href="">最新！希腊移民新政解读</a>
+              </li>
+              <li class="uk-text-truncate">
+                <a href="">十年美签到期，可申请续签免面试！</a>
+              </li>
+              <li class="uk-text-truncate">
+                <a href="">攻略 | 市场型企业高管如何申请EB1A杰出人才移民？</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  热门项目-->
+    <div class="hot-project p80">
+      <div class="uk-container">
+        <div class="uk-flex-middle uk-grid" uk-grid="">
+          <div class="uk-width-auto@m uk-width-expand uk-first-column">
+            <h3 class="pg-title" style="white-space: nowrap">
+              热门项目 <span style="white-space: nowrap">Hot project</span>
+            </h3>
+          </div>
+          <div class="uk-width-expand@m uk-visible@m"></div>
+          <div class="uk-width-2-5@l uk-visible@m">
+            <ul
+              class="hot-project-tab uk-text-center uk-grid-collapse uk-child-width-expand uk-grid"
+              uk-grid=""
+              uk-switcher="connect: .hot-project-switcher"
+            >
+              <li
+                @click="switchProject(item)"
+                class="uk-first-column"
+                v-for="item in blockTypeList"
+                style="cursor: pointer"
+              >
+                <!-- <span style="white-space: nowrap">{{ item.typeName }}</span> -->
+                <span style="white-space: nowrap">{{ item.name }}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="uk-width-auto">
+            <div class="uk-switcher hot-project-switcher news-center-more">
+              <div class="uk-active">
+                <span
+                  @click="
+                    router.push({
+                      path: '/menuList',
+                      query: { type: '/project' }
+                    })
+                  "
+                  >More</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--      热门项目详情-->
+        <div class="uk-switcher uk-margin-medium-top hot-project-switcher">
+          <div :class="{ 'uk-active': isProject == 'tuijian' }">
+            <div class="uk-child-width-1-3@m uk-grid-small uk-grid ff">
+              <div
+                class="uk-first-column"
+                v-for="item in hotProjectList"
+                style="cursor: pointer"
+                @click="
+                  router.push({
+                    path: '/info',
+                    query: { id: item.id, type: 'project' }
+                  })
+                "
+              >
+                <div class="img-updates uk-position-relative">
+                  <img :src="item.cover" style="width: 100%; height: 250px" />
+                  <h6 class="uk-position-bottom-left">
+                    <span>{{ item.title }}</span>
+                  </h6>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <dongtai></dongtai>
-  <zixun :list="blogList"></zixun>
-  <div class="links uk-visible@m">
-    <div class="uk-container">
-      <strong>友情链接:</strong>
-      <a href="https://www.amchamchina.org/" rel="nofollow" target="_blank"
-        >中国美国商会</a
-      >
-      <a href="https://immi.homeaffairs.gov.au/" rel="nofollow" target="_blank"
-        >澳大利亚移民局官网</a
-      >
-      <a
-        href="https://www.canada.ca/en/services/immigration-citizenship.html"
-        rel="nofollow"
-        target="_blank"
-        >加拿大联邦移民官网</a
-      >
-      <a href="https://www.uscis.gov/" rel="nofollow" target="_blank"
-        >美国移民局官网</a
-      >
-      <a
-        href="http://www.mccusa.org/htm_home/index.asp"
-        rel="nofollow"
-        target="_blank"
-        >美国马里兰中心</a
-      >
+    <dongtai></dongtai>
+    <zixun></zixun>
+    <div class="links uk-visible@m">
+      <div class="uk-container">
+        <strong>友情链接:</strong>
+        <a href="https://www.amchamchina.org/" rel="nofollow" target="_blank"
+          >中国美国商会</a
+        >
+        <a
+          href="https://immi.homeaffairs.gov.au/"
+          rel="nofollow"
+          target="_blank"
+          >澳大利亚移民局官网</a
+        >
+        <a
+          href="https://www.canada.ca/en/services/immigration-citizenship.html"
+          rel="nofollow"
+          target="_blank"
+          >加拿大联邦移民官网</a
+        >
+        <a href="https://www.uscis.gov/" rel="nofollow" target="_blank"
+          >美国移民局官网</a
+        >
+        <a
+          href="http://www.mccusa.org/htm_home/index.asp"
+          rel="nofollow"
+          target="_blank"
+          >美国马里兰中心</a
+        >
+      </div>
     </div>
+    <footer1></footer1>
+    <Dialog1></Dialog1>
   </div>
-  <footer1></footer1>
-  <Dialog1></Dialog1>
 </template>
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 import dongtai from '@/components/dongtai.vue'
 import zixun from '@/components/zixun.vue'
 import footer1 from '@/components/footer.vue'
 import header1 from '@/components/header.vue'
 import Dialog1 from '@/components/dialog.vue'
 import { useRouter } from 'vue-router'
-import { getBlogType, queryList } from '@/utils/UrlPackaging'
+import { getBlogType, queryList, getHeaderMenu } from '@/utils/UrlPackaging'
 import { api } from '@/utils/axiosPackaging'
 
 const router = useRouter()
@@ -270,7 +277,6 @@ const isProject = ref('tuijian')
 
 const isguojia = ref('xibanya')
 const toAbout = () => {
-  console.log(router)
   router.push('/about')
 }
 
@@ -286,10 +292,19 @@ const switchProject = (item1: any) => {
   hotProjectList.value = blogList.value.filter(
     (item) => item.typeId == item1.id
   )
+  hotProjectList.value = hotProjectList.value.splice(0, 3)
 }
+
+const newsList = computed(() =>
+  blogList.value.filter((item) => item.typeId == 1)
+)
+
+const ProposalList = computed(() =>
+  blogList.value.filter((item) => item.typeId == 3)
+)
 onMounted(() => {
   getBlogList()
-  api(getBlogType).then((res) => {
+  api(getHeaderMenu + '?type=2').then((res) => {
     blockTypeList.value = res.data.data
 
     hotProjectList.value = blogList.value.filter(
@@ -676,6 +691,7 @@ a,
   line-height: 49px;
   padding-left: 10px;
   color: #fff;
+  cursor: pointer;
 }
 .nb-2 {
   font-size: 14px;
@@ -730,7 +746,7 @@ h3,
   line-height: 14px;
   color: #999;
 }
-.pg-title a {
+.pg-title i {
   float: right;
   color: #666;
   font-size: 14px;
